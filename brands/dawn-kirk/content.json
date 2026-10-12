@@ -115,7 +115,7 @@
     },
     {
       "id": "q-credibility",
-      "date": "2026-10-16",
+      "date": "2026-10-13",
       "slot": "06:45",
       "kind": "quote",
       "source": "Shaped from Dawn, Apr 25 2026 call (credibility built over 30 years)",
@@ -139,8 +139,145 @@
       "hashtags": "#executivepresence #leadership #careergrowth #hrexecutive #dawnskirk"
     },
     {
+      "id": "ca-d03-call",
+      "date": "2026-10-14",
+      "slot": "06:45",
+      "kind": "call",
+      "door": "masterclass",
+      "slides": [
+        {
+          "t": "call",
+          "photo": "ros_2440B4A2.jpg",
+          "pos": "center 0%",
+          "badge": "Free live masterclass",
+          "headline": "Outside wins begin with inside work.",
+          "lines": [
+            "The Corporate",
+            "Advantage"
+          ],
+          "when": "Thu, Oct 29",
+          "time": "7 PM ET",
+          "price": "Free",
+          "url": "Save your seat: link in bio",
+          "foot": "One hour, live on Zoom, with Dawn S. Kirk"
+        }
+      ],
+      "caption": "Here is what we are going to do together on Thursday, October 29.\n\nOne hour, live, free. Three things only:\n\nHow you are actually being read by decision makers, and how to close that gap without losing yourself.\nThe conversations you keep postponing, the ask, the boundary, the honest feedback, and a simple way to handle them.\nHow to become indispensable on purpose, instead of hoping more hours get noticed.\n\nBring a notebook and one work situation you want to move forward. We will use it.\n\nThe Corporate Advantage, 7 PM ET on Zoom. {door}",
+      "threads": "",
+      "hashtags": "#careergrowth #executivecoach #leadershipdevelopment #hrexecutive #dawnskirk"
+    },
+    {
+      "id": "ca-d04-carousel",
+      "date": "2026-10-15",
+      "slot": "06:45",
+      "kind": "carousel",
+      "door": "masterclass",
+      "engine": "microphone",
+      "slides": [
+        {
+          "t": "cover_bold",
+          "variant": "split",
+          "photo": "cd_5403.jpg",
+          "pos": "45% 15%",
+          "kicker": "Free live masterclass · Oct 29",
+          "lines": [
+            "The feedback",
+            "that stalls careers",
+            "has no example",
+            "attached."
+          ],
+          "sub": "Here is the four-word question that fixes it."
+        },
+        {
+          "t": "bold",
+          "kicker": "You know the one",
+          "lines": [
+            "\"You need",
+            "to be more",
+            "strategic.\""
+          ],
+          "body": "Said in a review. Nodded at. Never explained.\n\nAnd you spend a year trying to fix something nobody defined."
+        },
+        {
+          "t": "bold",
+          "lines": [
+            "Vague feedback",
+            "is a verdict",
+            "with no",
+            "evidence."
+          ],
+          "body": "It feels like a judgment about who you are. It is usually a sentence someone could not finish."
+        },
+        {
+          "t": "bold",
+          "bg": "ink",
+          "lines": [
+            "Can you",
+            "give me",
+            "*an example?*"
+          ],
+          "body": "Four words. Said calmly.\n\nThe most useful question in your career, and most people never ask it."
+        },
+        {
+          "t": "bold",
+          "kicker": "What usually happens next",
+          "lines": [
+            "Crickets."
+          ],
+          "body": "And that tells you something. If they cannot name one moment, the feedback is a feeling, and feelings can be reshaped.\n\nIf they can, you finally have something real to work on."
+        },
+        {
+          "t": "bold",
+          "kicker": "Thirty years in these rooms",
+          "lines": [
+            "I ask it",
+            "every time."
+          ],
+          "body": "When feedback comes out of left field, I say: help me understand what strategic would have looked like in that meeting. I might have a blind spot. I am big enough to own it.\n\nBut I need the example to fix it."
+        },
+        {
+          "t": "bold",
+          "kicker": "Try this at your next one-on-one",
+          "lines": [
+            "Three",
+            "steps."
+          ],
+          "body": "**1.** Thank them for the feedback.\n**2.** Ask: can you give me an example?\n**3.** Write the answer down, with the date.\n\nThat is your development plan. It is also your record."
+        },
+        {
+          "t": "bold",
+          "bg": "ink",
+          "lines": [
+            "Most people",
+            "leave with",
+            "the verdict."
+          ],
+          "body": "Another year of guessing what they meant.\n\nGuessing is not inside work."
+        },
+        {
+          "t": "call",
+          "photo": "cd_5254.jpg",
+          "pos": "40% 15%",
+          "badge": "Free live masterclass",
+          "headline": "Outside wins begin with inside work.",
+          "lines": [
+            "The Corporate",
+            "Advantage"
+          ],
+          "when": "Thu, Oct 29",
+          "time": "7 PM ET",
+          "price": "Free",
+          "url": "Save your seat: link in the comments",
+          "foot": "One hour, live on Zoom, with Dawn S. Kirk"
+        }
+      ],
+      "caption": "\"You need to be more strategic.\"\n\nIf you have ever walked out of a review with that sentence and no idea what to do with it, you are not alone. Most leaders cannot give feedback with an example attached. And most employees do not know they are allowed to ask for one.\n\nSo ask. Calmly. Can you give me an example?\n\nIf they have one, you now have something real to work on. If it is crickets, you have learned the feedback was a feeling, and feelings can be reshaped. Either way, you walked out with evidence instead of a verdict.\n\nThis is the kind of inside work we are doing on Thursday, October 29 at 7 PM ET in The Corporate Advantage, a free live masterclass. {door}\n\nWhat is the vaguest piece of feedback you have ever received?",
+      "threads": "\"you need to be more strategic.\"\n\nsaid in a review. nodded at. never explained.\n\nnext time, ask calmly: can you give me an example? if they have one, you have something to work on. if it's crickets, the feedback was a feeling.\n\nfree live masterclass oct 29, 7pm ET. {door}",
+      "hashtags": "#feedback #careergrowth #leadership #hrexecutive #dawnskirk"
+    },
+    {
       "id": "q-inspect",
-      "date": "2026-10-17",
+      "date": "2026-10-16",
       "slot": "06:45",
       "kind": "quote",
       "source": "Dawn, Jun 18 2026 call (inspect what you expect)",
@@ -165,7 +302,7 @@
     },
     {
       "id": "q-motherhood",
-      "date": "2026-10-18",
+      "date": "2026-10-17",
       "slot": "06:45",
       "kind": "quote",
       "source": "Dawn, Sept 17 2026 call (motherhood taught productivity)",
@@ -186,6 +323,145 @@
       "caption": "Every productivity system I have ever used, I learned in a minivan.\n\nPick them up, get them changed, get myself changed, get everybody where they need to be, and still walk in on time. Nothing in corporate America has asked more of my calendar than that.\n\nSo when someone tells me they cannot find the time, I ask a different question: what are you treating as optional that a mother would not?\n\nMoms in leadership, I see you. What is the one skill parenting gave you that your job gets the benefit of?",
       "threads": "nobody taught me productivity. raising three kids did.\n\nnothing in corporate has asked more of my calendar than getting everybody where they need to be, on time, every day.\n\nmoms in leadership: what skill did parenting give you that your job benefits from?",
       "hashtags": "#workingmom #worklifeintegration #womeninleadership #executivecoach #dawnskirk"
+    },
+    {
+      "id": "q-faith",
+      "date": "2026-10-18",
+      "slot": "06:45",
+      "kind": "quote",
+      "source": "Shaped from Dawn, Jul 22 2026 (God in control, still do your part; faith is an active word)",
+      "slides": [
+        {
+          "t": "quote_card",
+          "variant": "split",
+          "photo": "cd_5427.jpg",
+          "pos": "center 15%",
+          "ph": 600,
+          "lines": [
+            "God is in control.",
+            "That was never",
+            "permission",
+            "to *sit still.*"
+          ]
+        }
+      ],
+      "caption": "Sunday thought.\n\nI believe He is in control. That gives me peace most people are looking for in all the wrong places. But I have watched too many people turn that peace into a parking spot. I prayed about it. The Lord will handle it. And then nothing moves.\n\nFaith is an active word. He does His part. He expects you to show up for yours.\n\nWhat is the one thing you have been praying about that also needs you to pick up the phone this week?",
+      "threads": "God is in control. that was never permission to sit still.\n\nfaith is an active word. He does His part. He expects you to show up for yours.\n\nwhat have you been praying about that also needs you to pick up the phone this week?",
+      "hashtags": "#faithandwork #leadership #sundaythoughts #executivecoach #dawnskirk"
+    },
+    {
+      "id": "ca-d07-carousel",
+      "date": "2026-10-19",
+      "slot": "06:45",
+      "kind": "carousel",
+      "door": "masterclass",
+      "engine": "microphone",
+      "slides": [
+        {
+          "t": "cover_bold",
+          "photo": "ros_4D863792.jpg",
+          "pos": "center 8%",
+          "kicker": "Free live masterclass · Oct 29",
+          "lines": [
+            "Doing your",
+            "job well is",
+            "not good",
+            "enough."
+          ],
+          "sub": "I know. Follow me for a second.",
+          "variant": "split"
+        },
+        {
+          "t": "bold",
+          "kicker": "The quiet math",
+          "lines": [
+            "Every job",
+            "we post gets",
+            "thousands of",
+            "applicants."
+          ],
+          "body": "If the first five hundred produce five solid candidates, nobody reads the rest.\n\nNot because the rest were weaker. Because the pile was already full."
+        },
+        {
+          "t": "bold",
+          "lines": [
+            "Getting to",
+            "the table is",
+            "half the battle."
+          ],
+          "body": "And the table is decided by who knows your name before your resume arrives."
+        },
+        {
+          "t": "bold",
+          "bg": "ink",
+          "lines": [
+            "If your network",
+            "lives only at",
+            "your company,",
+            "your career has",
+            "*one investment.*"
+          ],
+          "body": "You would never do that with your money."
+        },
+        {
+          "t": "bold",
+          "kicker": "The shift",
+          "lines": [
+            "Diversify",
+            "on purpose."
+          ],
+          "body": "One conversation a week with someone who does not sign your paycheck. Peers at other companies. Former colleagues. The person who interviewed you and said no."
+        },
+        {
+          "t": "bold",
+          "kicker": "Thirty years in these rooms",
+          "lines": [
+            "I have watched",
+            "the inside",
+            "referral win."
+          ],
+          "body": "Not the better resume. The one somebody in the building could vouch for.\n\nThat is how it actually goes. It is not unfair. It is how trust works."
+        },
+        {
+          "t": "bold",
+          "kicker": "Try this before Friday",
+          "lines": [
+            "Write",
+            "five names."
+          ],
+          "body": "**1.** Three people outside your company you have not spoken to in six months.\n**2.** Two people inside you want to know better.\n**3.** Send one message today. Not an ask. A hello."
+        },
+        {
+          "t": "bold",
+          "bg": "ink",
+          "lines": [
+            "Most people",
+            "start networking",
+            "the week they",
+            "need a job."
+          ],
+          "body": "That is the one week it does not work."
+        },
+        {
+          "t": "call",
+          "photo": "cd_5170.jpg",
+          "pos": "center 20%",
+          "badge": "Free live masterclass",
+          "headline": "Outside wins begin with inside work.",
+          "lines": [
+            "The Corporate",
+            "Advantage"
+          ],
+          "when": "Thu, Oct 29",
+          "time": "7 PM ET",
+          "price": "Free",
+          "url": "Save your seat: link in the comments",
+          "foot": "One hour, live on Zoom, with Dawn S. Kirk"
+        }
+      ],
+      "caption": "Doing your job well is not good enough. I know how that sounds. Follow me for a second.\n\nEvery role we post draws thousands of applicants. The screening stops the moment the pile has five solid candidates, and the inside referral almost always makes that pile. Not because the resume was better. Because somebody in the building could vouch for them.\n\nThat is not unfair. It is how trust works. And it means your network is the part of your career most people never manage on purpose.\n\nIf your network lives only inside your company, you have one investment. Diversify. One conversation a week with someone who does not sign your paycheck.\n\nWe go deeper on this Thursday, October 29 at 7 PM ET in The Corporate Advantage, free and live. {door}\n\nWho is one person outside your company you should message this week?",
+      "threads": "doing your job well is not good enough. follow me for a second.\n\nthe inside referral almost always makes the pile. not the better resume. the one somebody in the building could vouch for.\n\nif your network lives only at your company, your career has one investment. diversify.\n\nfree live masterclass oct 29. {door}",
+      "hashtags": "#networking #careergrowth #jobsearch #hrexecutive #dawnskirk"
     }
   ]
 }
