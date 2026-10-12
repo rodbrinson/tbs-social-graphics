@@ -1,50 +1,73 @@
 #!/usr/bin/env python3
-"""Render TBS social graphics (1080x1350) from content.json with Playwright."""
+"""Render social graphics (1080x1350) from content.json with Playwright.
+
+Brand-aware: set BRAND=<dir> (or pass --brand <dir>) pointing at a folder with brand.json,
+logo files and a photos/ folder. Defaults to Rod's brand (../brands/rod-brinson).
+"""
 import json, os, sys, base64, pathlib, html
 from playwright.sync_api import sync_playwright
 
 ROOT = pathlib.Path(__file__).parent
-OUT = ROOT / 'out'
 FONTS = ROOT / 'assets' / 'fonts'
-PHOTOS = ROOT / 'assets' / 'photos'
 
-PAL = dict(charcoal='#231f20', teal='#00adb2', orange='#f16b2e', cream='#e8e1ce', white='#ffffff', ink='#161314')
+def _brand_dir():
+    if '--brand' in sys.argv:
+        i = sys.argv.index('--brand'); d = sys.argv[i+1]; del sys.argv[i:i+2]; return pathlib.Path(d).resolve()
+    return pathlib.Path(os.environ.get('BRAND', ROOT.parent / 'brands' / 'rod-brinson')).resolve()
+
+BRAND_DIR = _brand_dir()
+BRAND = json.load(open(BRAND_DIR / 'brand.json'))
+OUT = pathlib.Path(os.environ.get('OUT', BRAND_DIR / 'out'))
+PHOTOS = pathlib.Path(BRAND.get('photos', BRAND_DIR / 'photos'))
+if not PHOTOS.is_absolute(): PHOTOS = BRAND_DIR / PHOTOS
+
+# Palette roles: dark (main bg), light (alt bg + text on dark), accent (flow line, teal words), cta (orange words/badges), white, ink
+_p = BRAND['palette']
+PAL = dict(charcoal=_p['dark'], teal=_p['accent'], orange=_p['cta'], cream=_p['light'], white=_p.get('white', '#ffffff'), ink=_p.get('ink', _p['dark']))
+
+# Fonts: roles display (condensed caps stack), serif (editorial), body (everything else)
+_f = BRAND['fonts']
+F_DISPLAY, F_SERIF, F_BODY = _f['display']['family'], _f['serif']['family'], _f['body']['family']
+DISPLAY_UPPER = 'uppercase' if _f['display'].get('uppercase', True) else 'none'
+DISPLAY_LH = _f['display'].get('line_height', .92)
+DISPLAY_CHAR = _f['display'].get('char_width', .52)  # avg em width per char, for auto-sizing
 
 def font_face(name, file, weight=400, style='normal'):
     return f"@font-face{{font-family:'{name}';src:url('file://{FONTS/file}') format('woff2');font-weight:{weight};font-style:{style};}}"
 
-CSS_FONTS = "\n".join([
-    font_face('Anton', 'anton-latin-400-normal.woff2'),
-    font_face('Instrument Serif', 'instrument-serif-latin-400-normal.woff2'),
-    font_face('Instrument Serif', 'instrument-serif-latin-400-italic.woff2', 400, 'italic'),
-] + [font_face('Montserrat', f'montserrat-latin-{w}-normal.woff2', w) for w in (400,500,600,700,800,900)])
+CSS_FONTS = "\n".join(font_face(ff['family'], ff['file'], ff.get('weight', 400), ff.get('style', 'normal')) for ff in BRAND['font_files'])
+
+DEFAULTS = BRAND.get('defaults', {})
+LOGO_DARK = BRAND_DIR / BRAND['logo']['on_dark']
+LOGO_LIGHT = BRAND_DIR / BRAND['logo']['on_light']
+LOGO_W = BRAND['logo'].get('width', 118)
 
 BASE_CSS = CSS_FONTS + """
 *{box-sizing:border-box;margin:0;padding:0}
-html,body{width:1080px;height:1350px;overflow:hidden;background:%(charcoal)s;color:%(cream)s;font-family:'Montserrat',sans-serif;-webkit-font-smoothing:antialiased}
+html,body{width:1080px;height:1350px;overflow:hidden;background:%(charcoal)s;color:%(cream)s;font-family:'%(fbody)s',sans-serif;-webkit-font-smoothing:antialiased}
 .slide{position:relative;width:1080px;height:1350px;overflow:hidden}
 .photo{position:absolute;inset:0;background-size:cover;background-repeat:no-repeat}
 .grad{position:absolute;inset:0}
-.anton{font-family:'Anton',sans-serif;text-transform:uppercase;line-height:.92;letter-spacing:.005em}
-.serif{font-family:'Instrument Serif',serif;font-weight:400;line-height:.95;letter-spacing:-.02em}
+.anton{font-family:'%(fdisplay)s',sans-serif;text-transform:%(dupper)s;line-height:%(dlh)s;letter-spacing:.005em}
+.serif{font-family:'%(fserif)s',serif;font-weight:400;line-height:.95;letter-spacing:-.02em}
 .serif i,.serif em{font-style:italic}
-.meta{font-family:'Montserrat';font-weight:700;font-size:22px;letter-spacing:.22em;text-transform:uppercase}
+.meta{font-family:'%(fbody)s';font-weight:700;font-size:22px;letter-spacing:.22em;text-transform:uppercase}
 .meta.light{font-weight:500;letter-spacing:.14em;text-transform:none;font-size:24px}
 .pad{position:absolute;left:72px;right:72px}
 .o{color:%(orange)s}.t{color:%(teal)s}.c{color:%(cream)s}.w{color:%(white)s}
-.body{font-family:'Montserrat';font-weight:500;font-size:40px;line-height:1.3;color:%(cream)s}
+.body{font-family:'%(fbody)s';font-weight:500;font-size:40px;line-height:1.3;color:%(cream)s}
 .body em{font-style:italic;font-weight:600;color:%(white)s}
 .body b{font-weight:800;color:%(white)s}
 .rule{height:6px;width:120px;background:%(teal)s}
 .mark{position:absolute;left:72px;bottom:100px;display:flex;align-items:center;gap:18px}
-.mark .rb{font-family:'Anton';font-size:34px;color:%(charcoal)s;background:%(cream)s;padding:6px 12px 2px;line-height:1}
-.mark .nm{font-family:'Montserrat';font-weight:700;font-size:20px;letter-spacing:.2em;text-transform:uppercase;color:%(cream)s;opacity:.85}
-.pg{position:absolute;right:72px;bottom:66px;font-family:'Montserrat';font-weight:600;font-size:24px;letter-spacing:.1em;color:%(cream)s;opacity:.7}
-.corner{position:absolute;top:60px;font-family:'Montserrat';font-weight:600;font-size:22px;letter-spacing:.06em}
+.mark .rb{font-family:'%(fdisplay)s';font-size:34px;color:%(charcoal)s;background:%(cream)s;padding:6px 12px 2px;line-height:1}
+.mark .nm{font-family:'%(fbody)s';font-weight:700;font-size:20px;letter-spacing:.2em;text-transform:uppercase;color:%(cream)s;opacity:.85}
+.pg{position:absolute;right:72px;bottom:66px;font-family:'%(fbody)s';font-weight:600;font-size:24px;letter-spacing:.1em;color:%(cream)s;opacity:.7}
+.corner{position:absolute;top:60px;font-family:'%(fbody)s';font-weight:600;font-size:22px;letter-spacing:.06em}
 .corner.l{left:72px}.corner.r{right:72px}
-.swipe{position:absolute;right:72px;bottom:64px;display:flex;align-items:center;gap:14px;font-family:'Montserrat';font-weight:700;font-size:22px;letter-spacing:.22em;text-transform:uppercase}
+.swipe{position:absolute;right:72px;bottom:64px;display:flex;align-items:center;gap:14px;font-family:'%(fbody)s';font-weight:700;font-size:22px;letter-spacing:.22em;text-transform:uppercase}
 .swipe .arr{width:54px;height:54px;border:3px solid currentColor;border-radius:50%%;display:flex;align-items:center;justify-content:center;font-size:28px}
-""" % PAL
+""" % dict(PAL, fbody=F_BODY, fdisplay=F_DISPLAY, fserif=F_SERIF, dupper=DISPLAY_UPPER, dlh=DISPLAY_LH)
 
 def esc(s):
     return html.escape(s, quote=False)
@@ -62,7 +85,7 @@ def rich(s):
 def anton_size(lines, base=150):
     longest = max(len(l) for l in lines)
     # Anton is narrow; ~ 0.5em per char. Fit within 936px.
-    size = min(base, int(936 / (0.52 * longest)))
+    size = min(base, int(936 / (DISPLAY_CHAR * longest)))
     # also cap by height: lines * size * .92 <= ~ 900
     size = min(size, int(920 / (len(lines) * 0.95)))
     return size
@@ -76,8 +99,8 @@ def t_quote(d):
     lines = d['lines']
     size = anton_size(lines, d.get('size', 160))
     variant = d.get('variant', 'photo')
-    attribution = d.get('attribution', 'Rod Brinson')
-    handle = d.get('handle', '@rod.brinson')
+    attribution = d.get('attribution', DEFAULTS.get('name', ''))
+    handle = d.get('handle', DEFAULTS.get('handle', ''))
     if variant == 'photo':
         body = f"""
         <div class="photo" style="{photo_css(d['photo'], d.get('pos','center'))}"></div>
@@ -111,14 +134,12 @@ def flow_html(idx, total, cover=False):
     marker=f'<circle cx="{mx}" cy="{my:.1f}" r="11" fill="{PAL["orange"]}"/>'
     swipe=''
     if cover:
-        swipe=f'<text x="{W-72}" y="{base-34}" text-anchor="end" font-family="Montserrat" font-weight="700" font-size="20" letter-spacing="5" fill="{PAL["cream"]}">SWIPE</text><path d="M{W-200},{base+amp*math.sin(2*math.pi*((W-200+x0)/wl)):.1f} L{W-72},{base+amp*math.sin(2*math.pi*((W-72+x0)/wl)):.1f}" stroke="{PAL["orange"]}" stroke-width="5" stroke-linecap="round"/><path d="M{W-96},{base+amp*math.sin(2*math.pi*((W-72+x0)/wl))-18:.1f} L{W-72},{base+amp*math.sin(2*math.pi*((W-72+x0)/wl)):.1f} L{W-96},{base+amp*math.sin(2*math.pi*((W-72+x0)/wl))+18:.1f}" stroke="{PAL["orange"]}" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>'
+        swipe=f'<text x="{W-72}" y="{base-34}" text-anchor="end" font-family="{F_BODY}" font-weight="700" font-size="20" letter-spacing="5" fill="{PAL["cream"]}">SWIPE</text><path d="M{W-200},{base+amp*math.sin(2*math.pi*((W-200+x0)/wl)):.1f} L{W-72},{base+amp*math.sin(2*math.pi*((W-72+x0)/wl)):.1f}" stroke="{PAL["orange"]}" stroke-width="5" stroke-linecap="round"/><path d="M{W-96},{base+amp*math.sin(2*math.pi*((W-72+x0)/wl))-18:.1f} L{W-72},{base+amp*math.sin(2*math.pi*((W-72+x0)/wl)):.1f} L{W-96},{base+amp*math.sin(2*math.pi*((W-72+x0)/wl))+18:.1f}" stroke="{PAL["orange"]}" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>'
     return f'<svg style="position:absolute;left:0;top:0" width="1080" height="1350" viewBox="0 0 1080 1350"><path d="{path}" stroke="{PAL["teal"]}" stroke-width="4" fill="none" opacity=".9"/>{marker}{swipe}</svg>'
 
-LOGO_DARK = ROOT / 'assets' / 'logo' / 'logo5.png'   # white mark, teal tagline (for charcoal/photo slides)
-LOGO_LIGHT = ROOT / 'assets' / 'logo' / 'logo2.png'  # black mark, teal tagline (for cream slides)
 def mark_html(label='The Brand Strategist', light=False):
     src = LOGO_LIGHT if light else LOGO_DARK
-    return f'<div class="mark"><img src="file://{src}" style="width:118px;height:auto;display:block"></div>'
+    return f'<div class="mark"><img src="file://{src}" style="width:{LOGO_W}px;height:auto;display:block"></div>'
 
 def t_bold(d, idx, total):
     """Ty-style: charcoal, cream Anton stack, Montserrat body."""
@@ -140,7 +161,7 @@ def t_bold(d, idx, total):
         parts.append(f'<div class="body" style="margin-top:26px;font-size:36px"><em>{rich(d["tail2"])}</em></div>')
     return f"""
     <div class="pad" style="top:{top}px;bottom:240px;display:flex;flex-direction:column;justify-content:{d.get('justify','center')}">{''.join(parts)}</div>
-    {mark_html(d.get('mark','The Brand Strategist'))}{flow_html(idx,total)}"""
+    {mark_html(d.get('mark', DEFAULTS.get('mark', '')))}{flow_html(idx,total)}"""
 
 
 def contain_photo_block(d):
@@ -169,7 +190,7 @@ def t_cover_bold(d, idx, total):
       <div class="anton c" style="font-size:{size}px">{'<br>'.join(rich(l) for l in lines)}</div>
       {f'<div class="body" style="margin-top:34px;font-size:36px">{rich(d["sub"])}</div>' if d.get('sub') else ''}
     </div>
-    {mark_html(d.get('mark','The Brand Strategist'))}{flow_html(idx,total,cover=True)}{f'<div style="position:absolute;right:72px;bottom:118px;font-family:Montserrat;font-weight:500;font-size:18px;letter-spacing:.06em;color:{PAL["cream"]};opacity:.7">{esc(d["credit"])}</div>' if d.get('credit') else ''}"""
+    {mark_html(d.get('mark', DEFAULTS.get('mark', '')))}{flow_html(idx,total,cover=True)}{f'<div style="position:absolute;right:72px;bottom:118px;font-family:{F_BODY};font-weight:500;font-size:18px;letter-spacing:.06em;color:{PAL["cream"]};opacity:.7">{esc(d["credit"])}</div>' if d.get('credit') else ''}"""
 
 def t_editorial(d, idx, total):
     """Raktim-style: full-bleed photo, serif word, light sans subtitle, corner metadata."""
@@ -186,12 +207,12 @@ def t_editorial(d, idx, total):
     <div class="grad" style="background:{grad}"></div>
     <div class="pad" style="{pos_css};text-align:{d.get('textalign','center')}">
       <div class="serif" style="font-size:{size}px;color:{color}">{rich(word)}</div>
-      {f'<div style="font-family:Montserrat;font-weight:500;font-size:{d.get("subsize",44)}px;letter-spacing:-.01em;margin-top:18px;color:{color}">{rich(sub)}</div>' if sub else ''}
+      {f'<div style="font-family:{F_BODY};font-weight:500;font-size:{d.get("subsize",44)}px;letter-spacing:-.01em;margin-top:18px;color:{color}">{rich(sub)}</div>' if sub else ''}
     </div>
     {mark_html()}{(flow_html(idx,total,cover=True) if idx==1 and total>1 else flow_html(idx,total))}
     <div style="position:absolute;right:72px;bottom:118px;text-align:right">
-      <div class="meta" style="color:{PAL['orange']};font-size:18px">{esc(d.get('tag','Keynote Speaker'))}</div>
-      <div style="font-family:Montserrat;font-weight:500;font-size:20px;color:{PAL['cream']}">{esc(d.get('tagline','Brand Strategist'))}</div>
+      <div class="meta" style="color:{PAL['orange']};font-size:18px">{esc(d.get('tag', DEFAULTS.get('tag', '')))}</div>
+      <div style="font-family:{F_BODY};font-weight:500;font-size:20px;color:{PAL['cream']}">{esc(d.get('tagline', DEFAULTS.get('tagline', '')))}</div>
     </div>"""
 
 def t_editorial_text(d, idx, total):
@@ -205,8 +226,8 @@ def t_editorial_text(d, idx, total):
     </div>
     {mark_html(light=True)}{flow_html(idx,total)}
     <div style="position:absolute;right:72px;bottom:118px;text-align:right">
-      <div class="meta" style="color:{PAL['orange']};font-size:18px">{esc(d.get('tag','Keynote Speaker'))}</div>
-      <div style="font-family:Montserrat;font-weight:500;font-size:20px;color:{PAL['charcoal']}">{esc(d.get('tagline','Brand Strategist'))}</div>
+      <div class="meta" style="color:{PAL['orange']};font-size:18px">{esc(d.get('tag', DEFAULTS.get('tag', '')))}</div>
+      <div style="font-family:{F_BODY};font-weight:500;font-size:20px;color:{PAL['charcoal']}">{esc(d.get('tagline', DEFAULTS.get('tagline', '')))}</div>
     </div>"""
 
 def t_call(d, idx=1, total=1):
@@ -217,13 +238,13 @@ def t_call(d, idx=1, total=1):
     return f"""
     <div class="photo" style="{photo_css(d['photo'], d.get('pos','center'))}"></div>
     <div class="grad" style="background:linear-gradient(180deg,rgba(22,19,20,.2) 0%,rgba(22,19,20,.3) 30%,rgba(22,19,20,.92) 58%,rgba(22,19,20,1) 100%)"></div>
-    <div style="position:absolute;left:72px;top:118px;background:{PAL['orange']};color:{PAL['charcoal']};font-family:Anton;font-size:30px;letter-spacing:.08em;text-transform:uppercase;padding:14px 22px 10px">{esc(d.get('badge','Free live call'))}</div>
+    <div style="position:absolute;left:72px;top:118px;background:{PAL['orange']};color:{PAL['charcoal']};font-family:{F_DISPLAY};font-size:30px;letter-spacing:.08em;text-transform:uppercase;padding:14px 22px 10px">{esc(d.get('badge', DEFAULTS.get('badge', '')))}</div>
     <div class="pad" style="bottom:360px">
       {f'<div class="body" style="font-size:40px;margin-bottom:28px;font-weight:600">{rich(headline)}</div>' if headline else ''}
       <div class="anton c" style="font-size:{size}px">{'<br>'.join(rich(l) for l in lines)}</div>
     </div>
     <div class="pad" style="bottom:250px;display:flex;flex-wrap:wrap;gap:16px 0;align-items:center">
-      <div class="anton" style="font-size:54px;color:{PAL['orange']}">{esc(d.get('when','Tue Oct 20'))}</div>
+      <div class="anton" style="font-size:54px;color:{PAL['orange']}">{esc(d.get('when', DEFAULTS.get('when', '')))}</div>
       <div class="anton c" style="font-size:54px;margin-left:30px">{esc(d.get('time','7PM EST'))}</div>
       <div class="anton t" style="font-size:54px;margin-left:30px">{esc(d.get('price','Free'))}</div>
     </div>
@@ -238,7 +259,7 @@ def t_photo(d, idx, total):
     split = d.get('variant') == 'split'
     contain = d.get('variant') == 'contain'
     size = min(anton_size(lines, d.get('size', 190)), int((460 if (split or contain) else 560)/(len(lines)*0.95))) if lines else 0
-    credit = f'<div style="position:absolute;right:72px;bottom:118px;font-family:Montserrat;font-weight:500;font-size:18px;letter-spacing:.06em;color:{PAL["cream"]};opacity:.7">{esc(d["credit"])}</div>' if d.get('credit') else ''
+    credit = f'<div style="position:absolute;right:72px;bottom:118px;font-family:{F_BODY};font-weight:500;font-size:18px;letter-spacing:.06em;color:{PAL["cream"]};opacity:.7">{esc(d["credit"])}</div>' if d.get('credit') else ''
     bg = contain_photo_block(d) if contain else split_photo_block(d) if split else f"""<div class="photo" style="{photo_css(d['photo'], d.get('pos','center'))}"></div>
     <div class="grad" style="background:linear-gradient(180deg,rgba(22,19,20,.1) 0%,rgba(22,19,20,.02) 36%,rgba(22,19,20,.85) 62%,rgba(22,19,20,.99) 100%)"></div>"""
     return f"""
@@ -258,7 +279,7 @@ def render_slide(d, idx, total):
     return f"<!doctype html><html><head><meta charset='utf-8'><style>{BASE_CSS}</style></head><body><div class='slide'>{inner}</div></body></html>"
 
 def build(post_ids=None):
-    content = json.load(open(ROOT / 'content.json'))
+    content = json.load(open(BRAND_DIR / 'content.json'))
     OUT.mkdir(exist_ok=True)
     with sync_playwright() as p:
         b = p.chromium.launch()

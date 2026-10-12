@@ -2,14 +2,17 @@
 """Turn content.json into schedule.json: one entry per Metricool call (IG / FB+LinkedIn / Threads)."""
 import json, sys, glob, os
 ROOT = os.path.dirname(os.path.abspath(__file__))
-BASE = sys.argv[1] if len(sys.argv) > 1 else 'https://raw.githubusercontent.com/OWNER/tbs-social-graphics/main/2026-10/'
-DOORS = {'call': 'https://thecorporateexodus.com', 'speaker': 'https://rodbrinson.com/paid-keynote-speaker-brand-strategy-rod-brinson/'}
-BRAND = '6295498'
-TZ = 'America/New_York'
-content = json.load(open(os.path.join(ROOT, 'content.json')))
+# Usage: python3 make_schedule.py <brand dir> <month folder e.g. 2026-10> [raw base url]
+BDIR = os.path.abspath(sys.argv[1])
+MONTH = sys.argv[2]
+brand = json.load(open(os.path.join(BDIR, 'brand.json')))
+BASE = sys.argv[3] if len(sys.argv) > 3 else f"https://raw.githubusercontent.com/rodbrinson/tbs-social-graphics/main/brands/{brand['slug']}/{MONTH}/"
+DOORS = brand['doors']
+NETS = set(brand['metricool']['networks'])
+content = json.load(open(os.path.join(BDIR, 'content.json')))
 out = []
 for p in content['posts']:
-    media = [BASE + os.path.basename(f)[:-4] + '.jpg' for f in sorted(glob.glob(os.path.join(ROOT, 'out', p['id'] + '-*.png')))]
+    media = [BASE + os.path.basename(f)[:-4] + '.jpg' for f in sorted(glob.glob(os.path.join(BDIR, 'out', p['id'] + '-*.png')))]
     door = DOORS.get(p.get('door'))
     when = f"{p['date']}T{p['slot']}:00"
     cap = p['caption']
@@ -18,11 +21,14 @@ for p in content['posts']:
     th = p['threads'].replace('{door}', door or '')
     if p.get('door') == 'speaker':
         ig = cap.replace('{door}', 'Speaker page is at the link in bio.')
-    out.append(dict(id=p['id']+'-ig', date=when, networks=['instagram'], text=ig.strip(), firstComment=p.get('hashtags',''), media=media))
-    out.append(dict(id=p['id']+'-fbli', date=when, networks=['facebook','linkedin'], text=fb.strip(), firstComment='', media=media))
-    if p['kind'] != 'call':
+    if 'instagram' in NETS:
+        out.append(dict(id=p['id']+'-ig', date=when, networks=['instagram'], text=ig.strip(), firstComment=p.get('hashtags',''), media=media))
+    fbli = [n for n in ('facebook','linkedin') if n in NETS]
+    if fbli:
+        out.append(dict(id=p['id']+'-fbli', date=when, networks=fbli, text=fb.strip(), firstComment='', media=media))
+    if 'threads' in NETS and p['kind'] != 'call' and p.get('threads'):
         out.append(dict(id=p['id']+'-th', date=when, networks=['threads'], text=th.strip(), firstComment='', media=media))
-json.dump(out, open(os.path.join(ROOT, 'schedule.json'), 'w'), indent=1, ensure_ascii=False)
+json.dump(out, open(os.path.join(BDIR, 'schedule.json'), 'w'), indent=1, ensure_ascii=False)
 print(len(out), 'calls')
 for o in out:
     assert len(o['text']) <= 2200, o['id']

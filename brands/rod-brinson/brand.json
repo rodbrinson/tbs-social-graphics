@@ -1,0 +1,42 @@
+{
+  "slug": "rod-brinson",
+  "name": "Rod Brinson / The Brand Strategist",
+  "metricool": {"blogId": "6295498", "timezone": "America/New_York", "utc_offset_std": "-05:00", "utc_offset_dst": "-04:00",
+                "networks": ["instagram", "facebook", "linkedin", "threads"]},
+  "handles": {"instagram": "@rod.brinson", "threads": "@rod.brinson"},
+  "palette": {"dark": "#231f20", "light": "#e8e1ce", "accent": "#00adb2", "cta": "#f16b2e", "white": "#ffffff", "ink": "#161314"},
+  "fonts": {
+    "display": {"family": "Anton", "uppercase": true, "line_height": 0.92, "char_width": 0.52},
+    "serif": {"family": "Instrument Serif"},
+    "body": {"family": "Montserrat"}
+  },
+  "font_files": [
+    {"family": "Anton", "file": "anton-latin-400-normal.woff2"},
+    {"family": "Instrument Serif", "file": "instrument-serif-latin-400-normal.woff2"},
+    {"family": "Instrument Serif", "file": "instrument-serif-latin-400-italic.woff2", "style": "italic"},
+    {"family": "Montserrat", "file": "montserrat-latin-400-normal.woff2", "weight": 400},
+    {"family": "Montserrat", "file": "montserrat-latin-500-normal.woff2", "weight": 500},
+    {"family": "Montserrat", "file": "montserrat-latin-600-normal.woff2", "weight": 600},
+    {"family": "Montserrat", "file": "montserrat-latin-700-normal.woff2", "weight": 700},
+    {"family": "Montserrat", "file": "montserrat-latin-800-normal.woff2", "weight": 800},
+    {"family": "Montserrat", "file": "montserrat-latin-900-normal.woff2", "weight": 900}
+  ],
+  "logo": {"on_dark": "logo-on-dark.png", "on_light": "logo-on-light.png", "width": 118},
+  "photos": "photos",
+  "photo_sources": ["Mac: Documents/BD/Rod Brinson (Buckhead shoot under Customers/The Johnson's/Buckhead/Rod)", "Google Drive: Rod Photos", "Mac: Celebrities (outside faces, skip Getty files)"],
+  "defaults": {"name": "Rod Brinson", "handle": "@rod.brinson", "mark": "The Brand Strategist", "tag": "Keynote Speaker", "tagline": "Brand Strategist", "badge": "Free live call", "when": ""},
+  "doors": {
+    "call": "https://thecorporateexodus.com",
+    "speaker": "https://rodbrinson.com/paid-keynote-speaker-brand-strategy-rod-brinson/",
+    "audit": "https://rodbrinson.com/audit/",
+    "community": "https://community.rodbrinson.com"
+  },
+  "hashtag_base": ["#thebrandstrategist", "#personalbranding", "#corporateentrepreneur"],
+  "voice": {
+    "profile": "carousel-architect references/profile-rod-brinson.md",
+    "rules": ["Softeners: 'I know.... follow me for a second'", "Light sarcasm: 'Congrats, you now have a real company that no one trusts yet'", "'no one' not 'nobody'", "Four-dot pauses", "No 'not X, it's Y' antithesis", "No em dashes", "Tone 4 skin tone on emojis", "One idea per slide", "Receipts over adjectives"]
+  },
+  "audience_lanes": ["Corporate lane: workers with a good job who still feel something else in them", "Builder lane: entrepreneurs building on the side"],
+  "approval": "Review gate on one carousel + one quote, then autonomous. Rod: 'I don't need to approve anything after we set the parameters.'",
+  "text_pipelines": ["Make scenario posts text-only Threads twice daily; call invite daily at 10:35 ET (skip Threads on promo cards)"]
+}
