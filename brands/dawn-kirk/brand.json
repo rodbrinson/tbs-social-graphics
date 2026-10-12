@@ -1,0 +1,163 @@
+{
+  "slug": "dawn-kirk",
+  "name": "Dawn S. Kirk",
+  "theme": "light",
+  "flow": "lane",
+  "metricool": {
+    "blogId": "6297603",
+    "timezone": "America/New_York",
+    "utc_offset_std": "-05:00",
+    "utc_offset_dst": "-04:00",
+    "networks": [
+      "instagram",
+      "facebook",
+      "linkedin",
+      "threads"
+    ],
+    "linkedin_link_in_comment": true
+  },
+  "handles": {
+    "instagram": "@dawn_s_kirk",
+    "threads": "@dawn_s_kirk",
+    "linkedin": "/in/dawnskirk/",
+    "facebook": "/Dawnskirkcoaching"
+  },
+  "palette": {
+    "dark": "#F7F9FA",
+    "light": "#1F2527",
+    "accent": "#80B9C5",
+    "cta": "#BB7297",
+    "white": "#ffffff",
+    "ink": "#1F2527",
+    "photo_text": "#ffffff",
+    "photo_grad": "#1F2527",
+    "_notes": "Light theme. dark role = page background, light role = ink text. Teal #80B9C5 fails contrast on white for text: lane line, rules and chips only. Mauve #BB7297 on white passes only at display size (44px+): accent words in headlines, marker, badge. Pattern-break slides use ink background with white text.",
+    "meta": "#686F73"
+  },
+  "fonts": {
+    "display": {
+      "family": "Archivo Black",
+      "uppercase": false,
+      "line_height": 1.0,
+      "char_width": 0.58
+    },
+    "serif": {
+      "family": "Playfair Display",
+      "weight": 500,
+      "style": "italic"
+    },
+    "body": {
+      "family": "Montserrat"
+    },
+    "utility": {
+      "family": "Barlow Condensed"
+    }
+  },
+  "font_files": [
+    {
+      "family": "Archivo Black",
+      "file": "archivo-black-latin-400-normal.woff2"
+    },
+    {
+      "family": "Barlow Condensed",
+      "file": "barlow-condensed-latin-600-normal.woff2",
+      "weight": 600
+    },
+    {
+      "family": "Barlow Condensed",
+      "file": "barlow-condensed-latin-700-normal.woff2",
+      "weight": 700
+    },
+    {
+      "family": "Playfair Display",
+      "file": "playfair-display-latin-400-italic.woff2",
+      "weight": 400,
+      "style": "italic"
+    },
+    {
+      "family": "Playfair Display",
+      "file": "playfair-display-latin-500-italic.woff2",
+      "weight": 500,
+      "style": "italic"
+    },
+    {
+      "family": "Montserrat",
+      "file": "montserrat-latin-400-normal.woff2",
+      "weight": 400
+    },
+    {
+      "family": "Montserrat",
+      "file": "montserrat-latin-500-normal.woff2",
+      "weight": 500
+    },
+    {
+      "family": "Montserrat",
+      "file": "montserrat-latin-600-normal.woff2",
+      "weight": 600
+    },
+    {
+      "family": "Montserrat",
+      "file": "montserrat-latin-700-normal.woff2",
+      "weight": 700
+    },
+    {
+      "family": "Montserrat",
+      "file": "montserrat-latin-800-normal.woff2",
+      "weight": 800
+    },
+    {
+      "family": "Montserrat",
+      "file": "montserrat-latin-900-normal.woff2",
+      "weight": 900
+    }
+  ],
+  "logo": {
+    "on_dark": "logo-on-dark.png",
+    "on_light": "logo-on-light.png",
+    "width": 118,
+    "_variants": "logo-teal / logo-mauve / logo-slate / logo-ink / logo-white (transparent, cut from the DK monograms Rod supplied Oct 12 2026)"
+  },
+  "photos": "photos",
+  "photo_sources": [
+    "Mac: Documents/BD/Rod Brinson/Customers/Dawn (Content Day 313 frames, Roswell Shoot 17 edits, wetransfer CR3 = The Blueprint Dec 2025). Downscaled picks live in _social_picks/"
+  ],
+  "defaults": {
+    "name": "Dawn S. Kirk",
+    "handle": "@dawn_s_kirk",
+    "mark": "",
+    "tag": "HR Executive / Executive Coach",
+    "tagline": "Dawn S. Kirk",
+    "badge": "Free live masterclass",
+    "when": "Thu, Oct 29"
+  },
+  "doors": {
+    "masterclass": "https://dawnskirk.net/corporate-advantage/",
+    "book": "https://dawnskirk.net/"
+  },
+  "hashtag_base": [
+    "#dawnskirk",
+    "#executivecoach",
+    "#careergrowth"
+  ],
+  "voice": {
+    "profile": "Project docs: corporate-advantage-email-sequence.md is the voice spine. Memory: dawn-kirk-brand-system.md",
+    "rules": [
+      "Career-positive, agency-forward. No threat framing (layoffs, being passed over as danger)",
+      "Persuasion by recognition: make the reader feel seen, never analyzed. Survey data is invisible scaffolding",
+      "Executive thought leadership on LinkedIn: her employer and peers read it. Every post passes 'does this strengthen her professional standing'",
+      "Registration links in the first comment on LinkedIn, never the post body",
+      "Vocabulary: work-life integration (never balance), walk alongside you, indispensable, thirty years in these rooms, driver or passenger, inside work",
+      "Show all sides of Dawn: executive, coach, mom, wife. Growing the person behind the corporate brand",
+      "Business and corporate quotes from well known names are fine; Dawn-only on photos",
+      "No 'not X, it's Y' antithesis. No em dashes. Tone 4 skin tone on emojis"
+    ]
+  },
+  "audience_lanes": [
+    "Mid-career professional who does everything right and still gets overlooked",
+    "Executive-track leader building visibility on purpose",
+    "Working parent integrating career and home"
+  ],
+  "cadence": "One post per day, 06:45 ET (Dawn posts before 7:30am or after 5pm only). Oct 15 to Oct 29 for The Corporate Advantage",
+  "approval": "Rod reviews one carousel + one quote first. Then weekly batches, Rod approves every Monday, until he grants no-approval weekly batches",
+  "text_pipelines": []
+}

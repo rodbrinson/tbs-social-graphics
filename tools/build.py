@@ -24,10 +24,22 @@ if not PHOTOS.is_absolute(): PHOTOS = BRAND_DIR / PHOTOS
 # Palette roles: dark (main bg), light (alt bg + text on dark), accent (flow line, teal words), cta (orange words/badges), white, ink
 _p = BRAND['palette']
 PAL = dict(charcoal=_p['dark'], teal=_p['accent'], orange=_p['cta'], cream=_p['light'], white=_p.get('white', '#ffffff'), ink=_p.get('ink', _p['dark']))
+def _rgb(h): h=h.lstrip('#'); return ','.join(str(int(h[i:i+2],16)) for i in (0,2,4))
+# Light-theme support: text over photos, gradient colour over photos, and the colour a split photo fades into
+PAL['ptext'] = _p.get('photo_text', PAL['cream'])
+GRAD = _rgb(_p.get('photo_grad', '#161314'))
+SPLIT = _rgb(_p['dark'])
+FLOW = BRAND.get('flow', 'wave')
+THEME_LIGHT = BRAND.get('theme') == 'light'
+PAL['meta'] = _p.get('meta', PAL['teal'])
+PAL['strong'] = PAL['ink'] if THEME_LIGHT else PAL['white']
 
 # Fonts: roles display (condensed caps stack), serif (editorial), body (everything else)
 _f = BRAND['fonts']
 F_DISPLAY, F_SERIF, F_BODY = _f['display']['family'], _f['serif']['family'], _f['body']['family']
+F_UTIL = _f.get('utility', {}).get('family', _f['body']['family'])
+SERIF_W = _f['serif'].get('weight', 400)
+SERIF_STYLE = _f['serif'].get('style', 'normal')
 DISPLAY_UPPER = 'uppercase' if _f['display'].get('uppercase', True) else 'none'
 DISPLAY_LH = _f['display'].get('line_height', .92)
 DISPLAY_CHAR = _f['display'].get('char_width', .52)  # avg em width per char, for auto-sizing
@@ -49,15 +61,17 @@ html,body{width:1080px;height:1350px;overflow:hidden;background:%(charcoal)s;col
 .photo{position:absolute;inset:0;background-size:cover;background-repeat:no-repeat}
 .grad{position:absolute;inset:0}
 .anton{font-family:'%(fdisplay)s',sans-serif;text-transform:%(dupper)s;line-height:%(dlh)s;letter-spacing:.005em}
-.serif{font-family:'%(fserif)s',serif;font-weight:400;line-height:.95;letter-spacing:-.02em}
+.serif{font-family:'%(fserif)s',serif;font-weight:%(serifw)s;font-style:%(serifs)s;line-height:.95;letter-spacing:-.02em}
 .serif i,.serif em{font-style:italic}
-.meta{font-family:'%(fbody)s';font-weight:700;font-size:22px;letter-spacing:.22em;text-transform:uppercase}
+.meta{font-family:'%(futil)s';font-weight:700;font-size:22px;letter-spacing:.22em;text-transform:uppercase}
+.p{color:%(ptext)s}
 .meta.light{font-weight:500;letter-spacing:.14em;text-transform:none;font-size:24px}
 .pad{position:absolute;left:72px;right:72px}
 .o{color:%(orange)s}.t{color:%(teal)s}.c{color:%(cream)s}.w{color:%(white)s}
 .body{font-family:'%(fbody)s';font-weight:500;font-size:40px;line-height:1.3;color:%(cream)s}
-.body em{font-style:italic;font-weight:600;color:%(white)s}
-.body b{font-weight:800;color:%(white)s}
+.body em{font-style:italic;font-weight:600;color:%(strong)s}
+.body b{font-weight:800;color:%(strong)s}
+.meta.t{color:%(meta)s}
 .rule{height:6px;width:120px;background:%(teal)s}
 .mark{position:absolute;left:72px;bottom:100px;display:flex;align-items:center;gap:18px}
 .mark .rb{font-family:'%(fdisplay)s';font-size:34px;color:%(charcoal)s;background:%(cream)s;padding:6px 12px 2px;line-height:1}
@@ -67,7 +81,7 @@ html,body{width:1080px;height:1350px;overflow:hidden;background:%(charcoal)s;col
 .corner.l{left:72px}.corner.r{right:72px}
 .swipe{position:absolute;right:72px;bottom:64px;display:flex;align-items:center;gap:14px;font-family:'%(fbody)s';font-weight:700;font-size:22px;letter-spacing:.22em;text-transform:uppercase}
 .swipe .arr{width:54px;height:54px;border:3px solid currentColor;border-radius:50%%;display:flex;align-items:center;justify-content:center;font-size:28px}
-""" % dict(PAL, fbody=F_BODY, fdisplay=F_DISPLAY, fserif=F_SERIF, dupper=DISPLAY_UPPER, dlh=DISPLAY_LH)
+""" % dict(PAL, fbody=F_BODY, fdisplay=F_DISPLAY, fserif=F_SERIF, futil=F_UTIL, dupper=DISPLAY_UPPER, dlh=DISPLAY_LH, serifw=SERIF_W, serifs=SERIF_STYLE)
 
 def esc(s):
     return html.escape(s, quote=False)
@@ -104,15 +118,15 @@ def t_quote(d):
     if variant == 'photo':
         body = f"""
         <div class="photo" style="{photo_css(d['photo'], d.get('pos','center'))}"></div>
-        <div class="grad" style="background:linear-gradient(180deg,rgba(22,19,20,.05) 0%,rgba(22,19,20,.15) 35%,rgba(22,19,20,.88) 68%,rgba(22,19,20,.97) 100%)"></div>
+        <div class="grad" style="background:linear-gradient(180deg,rgba({GRAD},.05) 0%,rgba({GRAD},.15) 35%,rgba({GRAD},.88) 68%,rgba({GRAD},.97) 100%)"></div>
         <div class="pad" style="bottom:250px">
-          <div class="anton c" style="font-size:{size}px">{'<br>'.join(rich(l) for l in lines)}</div>
+          <div class="anton p" style="font-size:{size}px">{'<br>'.join(rich(l) for l in lines)}</div>
         </div>
-        {mark_html()}{flow_html(1,1)}"""
+        {mark_html(light=False)}{flow_html(1,1)}"""
     else:  # split: photo top, text bottom on charcoal
         body = f"""
         <div class="photo" style="{photo_css(d['photo'], d.get('pos','center'))};height:700px"></div>
-        <div class="grad" style="height:700px;background:linear-gradient(180deg,rgba(35,31,32,0) 60%,rgba(35,31,32,1) 100%)"></div>
+        <div class="grad" style="height:700px;background:linear-gradient(180deg,rgba({SPLIT},0) 60%,rgba({SPLIT},1) 100%)"></div>
         <div class="pad" style="top:640px">
           <div class="rule" style="margin-bottom:34px"></div>
           <div class="anton c" style="font-size:{min(size,132,int(470/(len(lines)*0.95)))}px">{'<br>'.join(rich(l) for l in lines)}</div>
@@ -120,9 +134,11 @@ def t_quote(d):
         {mark_html()}{flow_html(1,1)}"""
     return body
 
-def flow_html(idx, total, cover=False):
-    """A continuous wave along the bottom whose phase carries from slide to slide, with a marker that advances."""
+def flow_html(idx, total, cover=False, light=False):
+    """A continuous wave (or a dashed lane) along the bottom whose phase carries from slide to slide, with a marker that advances."""
     import math
+    if FLOW == 'lane':
+        return lane_html(idx, total, cover, light)
     W=1080; H=150; base=1350-70; amp=16; wl=720
     x0=(idx-1)*W
     pts=[]
@@ -137,7 +153,25 @@ def flow_html(idx, total, cover=False):
         swipe=f'<text x="{W-72}" y="{base-34}" text-anchor="end" font-family="{F_BODY}" font-weight="700" font-size="20" letter-spacing="5" fill="{PAL["cream"]}">SWIPE</text><path d="M{W-200},{base+amp*math.sin(2*math.pi*((W-200+x0)/wl)):.1f} L{W-72},{base+amp*math.sin(2*math.pi*((W-72+x0)/wl)):.1f}" stroke="{PAL["orange"]}" stroke-width="5" stroke-linecap="round"/><path d="M{W-96},{base+amp*math.sin(2*math.pi*((W-72+x0)/wl))-18:.1f} L{W-72},{base+amp*math.sin(2*math.pi*((W-72+x0)/wl)):.1f} L{W-96},{base+amp*math.sin(2*math.pi*((W-72+x0)/wl))+18:.1f}" stroke="{PAL["orange"]}" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>'
     return f'<svg style="position:absolute;left:0;top:0" width="1080" height="1350" viewBox="0 0 1080 1350"><path d="{path}" stroke="{PAL["teal"]}" stroke-width="4" fill="none" opacity=".9"/>{marker}{swipe}</svg>'
 
-def mark_html(label='The Brand Strategist', light=False):
+def lane_html(idx, total, cover=False, light=False):
+    """Dawn-style dashed lane marking: a road line across the bottom, dash phase carried across slides, marker advancing."""
+    W=1080; y=1350-82; dash=64; gap=40; period=dash+gap
+    x0=((idx-1)*W) % period
+    segs=[]; x=-x0
+    while x < W:
+        segs.append(f"M{max(x,0)},{y} L{min(x+dash,W)},{y}" if x+dash>0 else "")
+        x+=period
+    col = PAL['teal']
+    mx=int(W*(idx-0.5)/total)
+    marker=f'<circle cx="{mx}" cy="{y}" r="12" fill="{PAL["orange"]}"/>'
+    swipe=''
+    if cover:
+        tc = PAL['cream'] if light else PAL['ptext']
+        swipe=f'<text x="{W-72}" y="{y-30}" text-anchor="end" font-family="{F_UTIL}" font-weight="700" font-size="22" letter-spacing="5" fill="{tc}">SWIPE</text><path d="M{W-200},{y} L{W-72},{y}" stroke="{PAL["orange"]}" stroke-width="6" stroke-linecap="round"/><path d="M{W-96},{y-18} L{W-72},{y} L{W-96},{y+18}" stroke="{PAL["orange"]}" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>'
+    return f'<svg style="position:absolute;left:0;top:0" width="1080" height="1350" viewBox="0 0 1080 1350"><path d="{" ".join(segs)}" stroke="{col}" stroke-width="7" fill="none" stroke-linecap="round" opacity=".95"/>{marker}{swipe}</svg>'
+
+def mark_html(label='The Brand Strategist', light=None):
+    if light is None: light = THEME_LIGHT
     src = LOGO_LIGHT if light else LOGO_DARK
     return f'<div class="mark"><img src="file://{src}" style="width:{LOGO_W}px;height:auto;display:block"></div>'
 
@@ -159,9 +193,17 @@ def t_bold(d, idx, total):
         parts.append(f'<div class="anton c" style="font-size:{d.get("tailsize",110)}px;margin-top:48px">{rich(d["tail"])}</div>')
     if d.get('tail2'):
         parts.append(f'<div class="body" style="margin-top:26px;font-size:36px"><em>{rich(d["tail2"])}</em></div>')
+    # pattern-break: bg = palette role name (accent | cta | ink | light); text flips to fg (default white)
+    bgrole = d.get('bg'); fg = d.get('fg', PAL['white'])
+    bgmap = dict(accent=PAL['teal'], cta=PAL['orange'], ink=PAL['ink'], light=PAL['cream'], dark=PAL['charcoal'])
+    wrap_open = f'<div class="grad" style="background:{bgmap.get(bgrole, bgrole)}"></div><div style="position:absolute;inset:0;color:{fg}" class="pb">' if bgrole else ''
+    wrap_close = '</div>' if bgrole else ''
+    style = f'<style>.pb .anton,.pb .body,.pb .meta,.pb .body b,.pb .body em{{color:{fg}}}</style>' if bgrole else ''
+    logo_light = (not THEME_LIGHT) if bgrole and bgrole != 'light' else None
     return f"""
+    {style}{wrap_open}
     <div class="pad" style="top:{top}px;bottom:240px;display:flex;flex-direction:column;justify-content:{d.get('justify','center')}">{''.join(parts)}</div>
-    {mark_html(d.get('mark', DEFAULTS.get('mark', '')))}{flow_html(idx,total)}"""
+    {wrap_close}{mark_html(light=logo_light)}{flow_html(idx,total)}"""
 
 
 def contain_photo_block(d):
@@ -175,22 +217,22 @@ def split_photo_block(d):
     """Photo on the top ~58%, fading into charcoal; keeps faces clear of the headline."""
     return f"""
     <div class="photo" style="{photo_css(d['photo'], d.get('pos','center top'))};height:800px"></div>
-    <div class="grad" style="height:800px;background:linear-gradient(180deg,rgba(35,31,32,0) 55%,rgba(35,31,32,.6) 80%,rgba(35,31,32,1) 100%)"></div>"""
+    <div class="grad" style="height:800px;background:linear-gradient(180deg,rgba({SPLIT},0) 55%,rgba({SPLIT},.6) 80%,rgba({SPLIT},1) 100%)"></div>"""
 
 def t_cover_bold(d, idx, total):
     lines = d['lines']
     split = d.get('variant') == 'split'
     size = min(anton_size(lines, d.get('size', 210)), int((520 if split else 620)/(len(lines)*0.95)))
     bg = split_photo_block(d) if split else f"""<div class="photo" style="{photo_css(d['photo'], d.get('pos','center'))}"></div>
-    <div class="grad" style="background:linear-gradient(180deg,rgba(22,19,20,.1) 0%,rgba(22,19,20,.02) 38%,rgba(22,19,20,.85) 64%,rgba(22,19,20,.99) 100%)"></div>"""
+    <div class="grad" style="background:linear-gradient(180deg,rgba({GRAD},.1) 0%,rgba({GRAD},.02) 38%,rgba({GRAD},.85) 64%,rgba({GRAD},.99) 100%)"></div>"""
     return f"""
     {bg}
     <div class="pad" style="bottom:250px">
       {f'<div class="meta t" style="margin-bottom:30px">{esc(d["kicker"])}</div>' if d.get('kicker') else ''}
-      <div class="anton c" style="font-size:{size}px">{'<br>'.join(rich(l) for l in lines)}</div>
-      {f'<div class="body" style="margin-top:34px;font-size:36px">{rich(d["sub"])}</div>' if d.get('sub') else ''}
+      <div class="anton {'c' if split else 'p'}" style="font-size:{size}px">{'<br>'.join(rich(l) for l in lines)}</div>
+      {f'<div class="body" style="margin-top:34px;font-size:36px;color:{PAL["cream"] if split else PAL["ptext"]}">{rich(d["sub"])}</div>' if d.get('sub') else ''}
     </div>
-    {mark_html(d.get('mark', DEFAULTS.get('mark', '')))}{flow_html(idx,total,cover=True)}{f'<div style="position:absolute;right:72px;bottom:118px;font-family:{F_BODY};font-weight:500;font-size:18px;letter-spacing:.06em;color:{PAL["cream"]};opacity:.7">{esc(d["credit"])}</div>' if d.get('credit') else ''}"""
+    {mark_html(light=(THEME_LIGHT and split))}{flow_html(idx,total,cover=True,light=split)}{f'<div style="position:absolute;right:72px;bottom:118px;font-family:{F_BODY};font-weight:500;font-size:18px;letter-spacing:.06em;color:{PAL["cream"]};opacity:.7">{esc(d["credit"])}</div>' if d.get('credit') else ''}"""
 
 def t_editorial(d, idx, total):
     """Raktim-style: full-bleed photo, serif word, light sans subtitle, corner metadata."""
@@ -200,8 +242,8 @@ def t_editorial(d, idx, total):
     color = d.get('color', PAL['cream'])
     align = d.get('align', 'top')  # top | bottom
     pos_css = 'top:170px' if align == 'top' else 'bottom:250px'
-    grad = ('linear-gradient(180deg,rgba(22,19,20,.75) 0%,rgba(22,19,20,.25) 45%,rgba(22,19,20,.55) 100%)' if align=='top'
-            else 'linear-gradient(180deg,rgba(22,19,20,.35) 0%,rgba(22,19,20,.1) 40%,rgba(22,19,20,.9) 100%)')
+    grad = (f'linear-gradient(180deg,rgba({GRAD},.75) 0%,rgba({GRAD},.25) 45%,rgba({GRAD},.55) 100%)' if align=='top'
+            else f'linear-gradient(180deg,rgba({GRAD},.35) 0%,rgba({GRAD},.1) 40%,rgba({GRAD},.9) 100%)')
     return f"""
     <div class="photo" style="{photo_css(d['photo'], d.get('pos','center'))}"></div>
     <div class="grad" style="background:{grad}"></div>
@@ -209,7 +251,7 @@ def t_editorial(d, idx, total):
       <div class="serif" style="font-size:{size}px;color:{color}">{rich(word)}</div>
       {f'<div style="font-family:{F_BODY};font-weight:500;font-size:{d.get("subsize",44)}px;letter-spacing:-.01em;margin-top:18px;color:{color}">{rich(sub)}</div>' if sub else ''}
     </div>
-    {mark_html()}{(flow_html(idx,total,cover=True) if idx==1 and total>1 else flow_html(idx,total))}
+    {mark_html(light=False)}{(flow_html(idx,total,cover=True) if idx==1 and total>1 else flow_html(idx,total))}
     <div style="position:absolute;right:72px;bottom:118px;text-align:right">
       <div class="meta" style="color:{PAL['orange']};font-size:18px">{esc(d.get('tag', DEFAULTS.get('tag', '')))}</div>
       <div style="font-family:{F_BODY};font-weight:500;font-size:20px;color:{PAL['cream']}">{esc(d.get('tagline', DEFAULTS.get('tagline', '')))}</div>
@@ -237,21 +279,21 @@ def t_call(d, idx=1, total=1):
     headline = d.get('headline', '')
     return f"""
     <div class="photo" style="{photo_css(d['photo'], d.get('pos','center'))}"></div>
-    <div class="grad" style="background:linear-gradient(180deg,rgba(22,19,20,.2) 0%,rgba(22,19,20,.3) 30%,rgba(22,19,20,.92) 58%,rgba(22,19,20,1) 100%)"></div>
+    <div class="grad" style="background:linear-gradient(180deg,rgba({GRAD},.2) 0%,rgba({GRAD},.3) 30%,rgba({GRAD},.92) 58%,rgba({GRAD},1) 100%)"></div>
     <div style="position:absolute;left:72px;top:118px;background:{PAL['orange']};color:{PAL['charcoal']};font-family:{F_DISPLAY};font-size:30px;letter-spacing:.08em;text-transform:uppercase;padding:14px 22px 10px">{esc(d.get('badge', DEFAULTS.get('badge', '')))}</div>
     <div class="pad" style="bottom:360px">
-      {f'<div class="body" style="font-size:40px;margin-bottom:28px;font-weight:600">{rich(headline)}</div>' if headline else ''}
-      <div class="anton c" style="font-size:{size}px">{'<br>'.join(rich(l) for l in lines)}</div>
+      {f'<div class="body" style="font-size:40px;margin-bottom:28px;font-weight:600;color:{PAL["ptext"]}">{rich(headline)}</div>' if headline else ''}
+      <div class="anton p" style="font-size:{size}px">{'<br>'.join(rich(l) for l in lines)}</div>
     </div>
     <div class="pad" style="bottom:250px;display:flex;flex-wrap:wrap;gap:16px 0;align-items:center">
       <div class="anton" style="font-size:54px;color:{PAL['orange']}">{esc(d.get('when', DEFAULTS.get('when', '')))}</div>
-      <div class="anton c" style="font-size:54px;margin-left:30px">{esc(d.get('time','7PM EST'))}</div>
+      <div class="anton p" style="font-size:54px;margin-left:30px">{esc(d.get('time','7PM EST'))}</div>
       <div class="anton t" style="font-size:54px;margin-left:30px">{esc(d.get('price','Free'))}</div>
     </div>
-    {mark_html()}{flow_html(1,1)}
+    {mark_html(light=False)}{flow_html(1,1)}
     <div style="position:absolute;right:72px;bottom:118px;text-align:right">
-      <div class="meta c" style="letter-spacing:.12em;text-transform:none;font-size:24px">{esc(d.get('url','thecorporateexodus.com'))}</div>
-      <div class="meta c" style="opacity:.8;font-size:18px;margin-top:6px">{esc(d.get('foot','Day 1 is free'))}</div>
+      <div class="meta p" style="letter-spacing:.12em;text-transform:none;font-size:24px">{esc(d.get('url',''))}</div>
+      <div class="meta p" style="opacity:.8;font-size:18px;margin-top:6px">{esc(d.get('foot',''))}</div>
     </div>"""
 
 def t_photo(d, idx, total):
@@ -261,17 +303,52 @@ def t_photo(d, idx, total):
     size = min(anton_size(lines, d.get('size', 190)), int((460 if (split or contain) else 560)/(len(lines)*0.95))) if lines else 0
     credit = f'<div style="position:absolute;right:72px;bottom:118px;font-family:{F_BODY};font-weight:500;font-size:18px;letter-spacing:.06em;color:{PAL["cream"]};opacity:.7">{esc(d["credit"])}</div>' if d.get('credit') else ''
     bg = contain_photo_block(d) if contain else split_photo_block(d) if split else f"""<div class="photo" style="{photo_css(d['photo'], d.get('pos','center'))}"></div>
-    <div class="grad" style="background:linear-gradient(180deg,rgba(22,19,20,.1) 0%,rgba(22,19,20,.02) 36%,rgba(22,19,20,.85) 62%,rgba(22,19,20,.99) 100%)"></div>"""
+    <div class="grad" style="background:linear-gradient(180deg,rgba({GRAD},.1) 0%,rgba({GRAD},.02) 36%,rgba({GRAD},.85) 62%,rgba({GRAD},.99) 100%)"></div>"""
     return f"""
     {bg}
     <div class="pad" style="bottom:250px">
       {f'<div class="meta t" style="margin-bottom:26px">{esc(d["kicker"])}</div>' if d.get('kicker') else ''}
-      {f'<div class="anton c" style="font-size:{size}px">{"<br>".join(rich(l) for l in lines)}</div>' if lines else ''}
-      {f'<div class="body" style="margin-top:30px;font-size:{d.get("bodysize",38)}px">{rich(d["body"])}</div>' if d.get('body') else ''}
+      {f'<div class="anton {"c" if (split or contain) else "p"}" style="font-size:{size}px">{"<br>".join(rich(l) for l in lines)}</div>' if lines else ''}
+      {f'<div class="body" style="margin-top:30px;font-size:{d.get("bodysize",38)}px;color:{PAL["cream"] if (split or contain) else PAL["ptext"]}">{rich(d["body"])}</div>' if d.get('body') else ''}
     </div>
-    {mark_html()}{credit}{flow_html(idx,total)}"""
+    {mark_html(light=(THEME_LIGHT and (split or contain)))}{credit}{flow_html(idx,total)}"""
 
-TEMPLATES = dict(photo=t_photo, quote=t_quote, bold=t_bold, cover_bold=t_cover_bold, editorial=t_editorial, editorial_text=t_editorial_text, call=t_call)
+def t_quote_card(d, idx=1, total=1):
+    """Standalone quote card: no flow line, real words, attribution. variants: photo (full bleed) | split (photo top, quote on light)."""
+    lines = d['lines']
+    variant = d.get('variant', 'photo')
+    who = d.get('attribution', DEFAULTS.get('name', ''))
+    role = d.get('role', DEFAULTS.get('tag', ''))
+    qmark = f'<div class="serif" style="font-size:150px;line-height:.6;color:{PAL["orange"]};margin-bottom:10px">\u201c</div>'
+    attrib = lambda col, sub: f"""<div style="margin-top:38px;display:flex;align-items:center;gap:18px">
+          <div style="width:56px;height:4px;background:{PAL['orange']}"></div>
+          <div><div style="font-family:{F_UTIL};font-weight:700;font-size:30px;letter-spacing:.12em;text-transform:uppercase;color:{col}">{esc(who)}</div>
+          <div style="font-family:{F_BODY};font-weight:500;font-size:22px;letter-spacing:.02em;color:{sub};margin-top:4px">{esc(role)}</div></div></div>"""
+    if variant == 'photo':
+        size = min(anton_size(lines, d.get('size', 112)), int(620/(len(lines)*1.0)))
+        return f"""
+        <div class="photo" style="{photo_css(d['photo'], d.get('pos','center'))}"></div>
+        <div class="grad" style="background:linear-gradient(180deg,rgba({GRAD},.08) 0%,rgba({GRAD},.2) 30%,rgba({GRAD},.9) 62%,rgba({GRAD},.98) 100%)"></div>
+        <div class="pad" style="bottom:150px">
+          {qmark}
+          <div class="anton" style="font-size:{size}px;color:{PAL['ptext']}">{'<br>'.join(rich(l) for l in lines)}</div>
+          {attrib(PAL['ptext'], 'rgba(255,255,255,.75)')}
+        </div>
+        <div style="position:absolute;right:72px;bottom:110px"><img src="file://{LOGO_DARK}" style="width:{LOGO_W}px;height:auto;display:block;opacity:.95"></div>"""
+    else:
+        size = min(anton_size(lines, d.get('size', 104)), int(430/(len(lines)*1.0)))
+        return f"""
+        <div class="grad" style="background:{PAL['charcoal']}"></div>
+        <div class="photo" style="{photo_css(d['photo'], d.get('pos','center top'))};height:{d.get('ph',640)}px"></div>
+        <div class="grad" style="height:{d.get('ph',640)}px;background:linear-gradient(180deg,rgba({SPLIT},0) 70%,rgba({SPLIT},1) 100%)"></div>
+        <div class="pad" style="top:{d.get('ph',640)-60}px;bottom:200px;display:flex;flex-direction:column;justify-content:center">
+          {qmark}
+          <div class="anton" style="font-size:{size}px;color:{PAL['cream']}">{'<br>'.join(rich(l) for l in lines)}</div>
+          {attrib(PAL['cream'], PAL['meta'])}
+        </div>
+        <div style="position:absolute;right:72px;bottom:110px"><img src="file://{LOGO_LIGHT}" style="width:{LOGO_W}px;height:auto;display:block"></div>"""
+
+TEMPLATES = dict(quote_card=t_quote_card, photo=t_photo, quote=t_quote, bold=t_bold, cover_bold=t_cover_bold, editorial=t_editorial, editorial_text=t_editorial_text, call=t_call)
 
 def render_slide(d, idx, total):
     t = d['t']

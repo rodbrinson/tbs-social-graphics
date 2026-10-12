@@ -1,0 +1,193 @@
+{
+  "posts": [
+    {
+      "id": "ca-d01-carousel",
+      "date": "2026-10-15",
+      "slot": "06:45",
+      "kind": "carousel",
+      "door": "masterclass",
+      "engine": "microphone",
+      "slides": [
+        {
+          "t": "cover_bold",
+          "photo": "cd_5218.jpg",
+          "pos": "40% 12%",
+          "kicker": "Free live masterclass · Oct 29",
+          "lines": [
+            "The promotion",
+            "was decided",
+            "before the",
+            "meeting."
+          ],
+          "sub": "And you were not in the room.",
+          "variant": "split"
+        },
+        {
+          "t": "bold",
+          "kicker": "Sound familiar?",
+          "lines": [
+            "You did",
+            "everything",
+            "right."
+          ],
+          "body": "Hit the numbers. Took the extra project. Stayed late. Said yes.\n\nAnd the role went to someone who talks about the work less than you do."
+        },
+        {
+          "t": "bold",
+          "kicker": "How it actually goes",
+          "lines": [
+            "Your name",
+            "comes up."
+          ],
+          "body": "Someone describes you in one sentence.\nEveryone nods.\nThe decision is made.\nYou hear about it on Tuesday."
+        },
+        {
+          "t": "bold",
+          "bg": "ink",
+          "lines": [
+            "Your career",
+            "runs on",
+            "*one sentence.*"
+          ],
+          "body": "In that room, someone sums you up in a line. The line gets repeated. The line gets promoted.\n\nYou have never heard it."
+        },
+        {
+          "t": "bold",
+          "kicker": "The inside work",
+          "lines": [
+            "Write the",
+            "sentence",
+            "yourself."
+          ],
+          "body": "Decide what you want said about you. Then make it true in the three conversations you keep postponing: the ask, the boundary, the honest feedback."
+        },
+        {
+          "t": "photo",
+          "variant": "contain",
+          "photo": "stage_blueprint.jpg",
+          "h": 470,
+          "kicker": "Thirty years in these rooms",
+          "lines": [
+            "I have sat in",
+            "that meeting."
+          ],
+          "body": "As an HR executive I know what gets said when your name comes up, what gets repeated, and what gets someone the role. I walk alongside you with what I have seen."
+        },
+        {
+          "t": "bold",
+          "kicker": "Try this before Friday",
+          "lines": [
+            "Find",
+            "your gap."
+          ],
+          "body": "**1.** Write the one sentence you want a decision maker to say about you.\n**2.** Ask one trusted peer what sentence they would actually say.\n**3.** Name the difference.\n\nThat difference is your inside work."
+        },
+        {
+          "t": "bold",
+          "bg": "ink",
+          "lines": [
+            "Most people",
+            "wait for the",
+            "next cycle."
+          ],
+          "body": "Another year of good work, hoping somebody notices.\n\nHope has never had a seat in that room."
+        },
+        {
+          "t": "call",
+          "photo": "cd_5214.jpg",
+          "pos": "40% 15%",
+          "badge": "Free live masterclass",
+          "headline": "Outside wins begin with inside work.",
+          "lines": [
+            "The Corporate",
+            "Advantage"
+          ],
+          "when": "Thu, Oct 29",
+          "time": "7 PM ET",
+          "price": "Free",
+          "url": "Save your seat: link in the comments",
+          "foot": "One hour, live on Zoom, with Dawn S. Kirk"
+        }
+      ],
+      "caption": "The promotion was decided before the meeting.\n\nI have spent thirty years in the rooms where careers are decided, and here is what I can tell you: nobody in that room ranks your work. Someone describes you in one sentence, everyone nods, and the decision moves on. You find out on Tuesday.\n\nThat sentence is your career. And most people have never heard theirs.\n\nThe inside work is deciding what you want said about you, then making it true in the conversations you keep postponing. The ask. The boundary. The honest feedback.\n\nOn Thursday, October 29 at 7 PM ET I am hosting a free, live masterclass called The Corporate Advantage. One hour on how you are being read by decision makers, how to close the gap without losing yourself, and how to become indispensable on purpose. {door}\n\nTell me: what is the one sentence you would want said about you when your name comes up?",
+      "threads": "the promotion was decided before the meeting.\n\nsomeone described you in one sentence, everyone nodded, and you found out on tuesday. that sentence is your career. most people have never heard theirs.\n\nI am teaching how to write it yourself, free, live, oct 29 at 7pm ET. {door}",
+      "hashtags": "#careergrowth #executivecoach #leadershipdevelopment #hrexecutive #dawnskirk"
+    },
+    {
+      "id": "q-credibility",
+      "date": "2026-10-16",
+      "slot": "06:45",
+      "kind": "quote",
+      "source": "Fathom Apr 25 2026 40:14",
+      "slides": [
+        {
+          "t": "quote_card",
+          "variant": "photo",
+          "photo": "cd_5157.jpg",
+          "pos": "45% 10%",
+          "lines": [
+            "If I say what I'm thinking,",
+            "I will ruin credibility",
+            "I took 30 years to build",
+            "in about 30 seconds.",
+            "And I won't get",
+            "a *second chance.*"
+          ]
+        }
+      ],
+      "caption": "I said this on a call a few months ago and it has not stopped being true.\n\nThirty years of showing up prepared, measured, and consistent can be undone in one unfiltered moment in the wrong room. I know, because I have watched it happen to people with more talent than the person who got the role.\n\nThat is not a reason to go silent. It is a reason to decide, before you walk in, what you are there to say and how you want to be remembered saying it.\n\nWhat is the one room where you have to work hardest to hold your tongue? I read every answer.",
+      "threads": "if I say what I'm thinking in my head, I will ruin credibility I took 30 years to build in about 30 seconds. and I won't get a second chance.\n\nnot a reason to go silent. a reason to decide what you're there to say before you walk in.\n\nwhich room is hardest for you?",
+      "hashtags": "#executivepresence #leadership #careergrowth #hrexecutive #dawnskirk"
+    },
+    {
+      "id": "q-inspect",
+      "date": "2026-10-17",
+      "slot": "06:45",
+      "kind": "quote",
+      "source": "Fathom Jun 18 2026 06:49",
+      "slides": [
+        {
+          "t": "quote_card",
+          "variant": "split",
+          "photo": "cd_5341.jpg",
+          "pos": "center 20%",
+          "ph": 600,
+          "lines": [
+            "You find",
+            "your own facts.",
+            "You inspect",
+            "*what you expect.*"
+          ]
+        }
+      ],
+      "caption": "A leader called my son into the office this summer over something a coworker said. No facts. Just hearsay.\n\nHe handled it better than most grown professionals would: respectful, calm, and clear that he was not going to be corrected on a rumor. I was proud. I was also reminded how many leaders skip the one step that separates leadership from gossip.\n\nYou go investigate. You find your own facts. You inspect what you expect. Then you have the conversation.\n\nLeaders: when was the last time you corrected someone on something you had not verified yourself?",
+      "threads": "you find your own facts. you inspect what you expect. then you have the conversation.\n\nthe number of leaders who skip that step and correct people off hearsay is the quiet reason good employees leave.\n\nwhen did you last verify before you corrected?",
+      "hashtags": "#leadership #management #inspectwhatyouexpect #hrexecutive #dawnskirk"
+    },
+    {
+      "id": "q-motherhood",
+      "date": "2026-10-18",
+      "slot": "06:45",
+      "kind": "quote",
+      "source": "Fathom Sept 17 2026",
+      "slides": [
+        {
+          "t": "quote_card",
+          "variant": "photo",
+          "photo": "cd_5282.jpg",
+          "pos": "52% 12%",
+          "lines": [
+            "My motherhood",
+            "is probably the",
+            "best teacher",
+            "on *productivity*",
+            "I ever had."
+          ]
+        }
+      ],
+      "caption": "Nobody taught me time management. Three kids did.\n\nPick them up, get them changed, get myself changed, get everybody where they need to be, and still walk in on time. Nothing in corporate America has asked more of my calendar than that.\n\nSo when someone tells me they cannot find the time, I usually ask a different question: what are you treating as optional that a mother would not?\n\nMoms in leadership, I see you. What is the one skill parenting gave you that your job gets the benefit of?",
+      "threads": "nobody taught me time management. three kids did.\n\nmy motherhood is probably the best teacher on productivity I ever had. nothing in corporate has asked more of my calendar.\n\nmoms in leadership: what skill did parenting give you that your job benefits from?",
+      "hashtags": "#workingmom #worklifeintegration #womeninleadership #executivecoach #dawnskirk"
+    }
+  ]
+}
