@@ -1,0 +1,133 @@
+{
+ "posts": [
+  {
+   "id": "d1-quote",
+   "date": "2026-10-12",
+   "slot": "09:15",
+   "kind": "quote",
+   "slides": [
+    {
+     "t": "quote",
+     "variant": "photo",
+     "photo": "blue_arms_up.jpg",
+     "pos": "center 20%",
+     "lines": [
+      "Your job",
+      "pays you.",
+      "Your value",
+      "belongs",
+      "to *you.*"
+     ]
+    }
+   ],
+   "caption": "I say this one a lot because people keep getting it twisted...\n\nYour job pays you. That's the deal, and it's a fair one. But the thing they're paying for? The way you think, the problems you solve, the reason people at work come to YOU... that was yours before the title and it'll be yours after.\n\nSo be real with me. What's the thing people come to you for that has nothing to do with your job title?",
+   "threads": "Your job pays you. But your value belongs to you.\n\nso what's the thing people at work come to YOU for that has nothing to do with your title? 👀",
+   "hashtags": "#personalbranding #corporateentrepreneur #brandstrategy #careergrowth #thebrandstrategist"
+  },
+  {
+   "id": "d1-carousel",
+   "date": "2026-10-11",
+   "slot": "18:45",
+   "kind": "carousel",
+   "door": "call",
+   "slides": [
+    {
+     "t": "cover_bold",
+     "photo": "bh_1.jpg",
+     "pos": "center 32%",
+     "kicker": "",
+     "lines": [
+      "Don't rush",
+      "to get",
+      "the LLC."
+     ],
+     "sub": "I know.... follow me for a second"
+    },
+    {
+     "t": "bold",
+     "lines": [
+      "You can",
+      "file it.",
+      "Build a logo.",
+      "Order",
+      "the cards."
+     ],
+     "body": "Congrats, you now have a real company that no one trusts yet... with a face no one has seen."
+    },
+    {
+     "t": "bold",
+     "lines": [
+      "People",
+      "trust",
+      "people."
+     ],
+     "body": "Not paperwork. Not a logo. A person they feel like they already know.",
+     "tail": "Let them meet *you* first.",
+     "tailsize": 100
+    },
+    {
+     "t": "bold",
+     "kicker": "The order that works",
+     "lines": [
+      "Face first.",
+      "Then the",
+      "thing that",
+      "stands",
+      "without you."
+     ],
+     "body": "The personal brand is how you get known. The business brand is how you get free. It's a ~sequence~, not a choice."
+    },
+    {
+     "t": "bold",
+     "lines": [
+      "The",
+      "paperwork",
+      "isn't going",
+      "anywhere."
+     ],
+     "body": "Your face is the first brick. Lay that one this week."
+    },
+    {
+     "t": "bold",
+     "kicker": "Tuesday, Oct 20 · 7pm EST · Free",
+     "lines": [
+      "I built",
+      "mine while",
+      "I was still",
+      "on payroll."
+     ],
+     "body": "And I'm gonna walk you through how. The Corporate Entrepreneur, live. ~Link in bio.~"
+    }
+   ],
+   "caption": "Don't rush to the LLC...\n\nI know that's what everybody tells you to do first. File the paperwork, get the logo, order the cards. And now you've got a company nobody trusts yet, attached to a face nobody has seen.\n\nPeople trust people. Let them meet YOU first. Face first, then build the thing that can stand without you. It's a sequence, not a choice.\n\nI built mine while I was still on payroll, and on Tuesday October 20th at 7pm EST I'm going live, free, to walk you through how. The Corporate Entrepreneur. {door}\n\nBe honest... did you file the paperwork before anybody knew your name?",
+   "threads": "Don't rush to the LLC... people trust people. let them meet YOU first, the paperwork isn't going anywhere.\n\nI built mine while I was still on payroll and Tuesday Oct 20 at 7pm EST I'm going live (free) to show you how. {door}",
+   "hashtags": "#corporateentrepreneur #personalbranding #sidebusiness #entrepreneurship #thebrandstrategist"
+  },
+  {
+   "id": "d1-call",
+   "date": "2026-10-12",
+   "slot": "19:15",
+   "kind": "call",
+   "door": "call",
+   "slides": [
+    {
+     "t": "call",
+     "photo": "blue_profile_mouth.jpg",
+     "pos": "center 30%",
+     "badge": "Free live call",
+     "headline": "You should be working your job while building your own.",
+     "lines": [
+      "The Corporate",
+      "Entrepreneur"
+     ],
+     "when": "Tue Oct 20",
+     "time": "7PM EST",
+     "price": "Free"
+    }
+   ],
+   "caption": "I've been sitting on this one... so here it go.\n\nTuesday, October 20th at 7pm EST I'm going LIVE and it's FREE. The Corporate Entrepreneur.\n\nIf you've got a good job and still feel like there's something else in you, this is for you. I built mine while I was still on payroll, with a family depending on me, and I'm gonna show you how. We're talking about the assets you already have, whether the thing on the side can cover your bills, and your first move.\n\nNo card. No trial. Day one is free. {door}\n\nSave your seat and tell me in the comments: are you staying, going, or still figuring it out?",
+   "threads": "Tuesday Oct 20, 7pm EST, LIVE and FREE... The Corporate Entrepreneur.\n\nif you've got a good job and still feel like there's something else in you, come sit with me. {door}",
+   "hashtags": "#corporateentrepreneur #corporateexodus #sidehustle #entrepreneurship #thebrandstrategist"
+  }
+ ]
+}
