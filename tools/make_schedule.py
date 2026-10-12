@@ -23,9 +23,17 @@ for p in content['posts']:
         ig = cap.replace('{door}', 'Speaker page is at the link in bio.')
     if 'instagram' in NETS:
         out.append(dict(id=p['id']+'-ig', date=when, networks=['instagram'], text=ig.strip(), firstComment=p.get('hashtags',''), media=media))
-    fbli = [n for n in ('facebook','linkedin') if n in NETS]
-    if fbli:
-        out.append(dict(id=p['id']+'-fbli', date=when, networks=fbli, text=fb.strip(), firstComment='', media=media))
+    li_comment = brand['metricool'].get('linkedin_link_in_comment', False)
+    if li_comment:
+        if 'facebook' in NETS:
+            out.append(dict(id=p['id']+'-fb', date=when, networks=['facebook'], text=fb.strip(), firstComment='', media=media))
+        if 'linkedin' in NETS:
+            li = cap.replace('{door}', 'Registration link is in the first comment.')
+            out.append(dict(id=p['id']+'-li', date=when, networks=['linkedin'], text=li.strip(), firstComment=(f"Save your seat: {door}" if door else ''), media=media))
+    else:
+        fbli = [n for n in ('facebook','linkedin') if n in NETS]
+        if fbli:
+            out.append(dict(id=p['id']+'-fbli', date=when, networks=fbli, text=fb.strip(), firstComment='', media=media))
     if 'threads' in NETS and p['kind'] != 'call' and p.get('threads'):
         out.append(dict(id=p['id']+'-th', date=when, networks=['threads'], text=th.strip(), firstComment='', media=media))
 json.dump(out, open(os.path.join(BDIR, 'schedule.json'), 'w'), indent=1, ensure_ascii=False)
