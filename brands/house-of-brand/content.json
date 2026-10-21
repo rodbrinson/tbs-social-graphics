@@ -14,7 +14,7 @@
      "photo": "gen13.jpg",
      "pos": "center 35%",
      "lines": [
-      "Somebody in that room",
+      "Somebody in this room",
       "has already solved the",
       "thing you're stuck on."
      ]
@@ -34,12 +34,10 @@
     {
      "t": "tribe",
      "photo": "gen07.jpg",
-     "pos": "center 40%",
+     "pos": "center 30%",
      "lines": [
       "Your people",
-      "are in this city.",
-      "_You just haven't_",
-      "_met them yet._"
+      "are in this city."
      ],
      "size": 100
     }

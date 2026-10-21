@@ -225,32 +225,33 @@ def brand_plain(inv=False):
     return f'<div class="brand"><img src="file://{LOGO}" style="width:58px;height:auto;display:block"><div class="nm" style="color:{col}">House of Brand</div></div>'
 
 def t_reason(d, idx=1, total=1):
-    """Numbered reason poster: photo top with a diagonal cut, giant number, one line."""
-    n = d['n']; lines = d['lines']; size = hsize(lines, d.get('size', 104), maxh=360, cw=.78)
-    ph = d.get('ph', 700)
+    """Numbered reason poster. Header: Connect & Cultivate | Nov. 7th, Atlanta clear. Photo band with a diagonal cut, giant number, one line."""
+    n = d['n']; lines = d['lines']; size = hsize(lines, d.get('size', 92), maxh=300, cw=.78)
+    top = 262; ph = d.get('ph', 550)
     return f"""
-    <div style="position:absolute;left:0;top:0;width:1080px;height:{ph}px;{photo(d['photo'], d.get('pos','center'))}background-size:cover;clip-path:polygon(0 0,100% 0,100% {ph-110}px,0 100%)"></div>
-    <svg style="position:absolute;left:0;top:0" width="1080" height="{ph+10}"><line x1="0" y1="{ph}" x2="1080" y2="{ph-110}" stroke="{P['orange']}" stroke-width="7" style="filter:drop-shadow(0 0 12px {P['orange']})"/></svg>
-    <div class="blob" style="left:620px;top:{ph-120}px;width:620px;height:620px;background:{P['cyan']};opacity:.38"></div>
-    {brand_plain(inv=True)}
-    <div style="position:absolute;left:64px;top:{ph-160}px;font-family:'Unbounded';font-weight:900;font-size:300px;line-height:.8;color:{P['orange']};text-shadow:0 0 30px rgba(255,106,31,.5),0 0 2px {P['white']};letter-spacing:-.06em">{n:02d}</div>
-    <div class="pad" style="top:{ph+100}px;left:72px">
-      <div class="kick" style="margin-bottom:18px">Reason to come · No. {n}</div>
+    {brand_plain()}
+    <div style="position:absolute;left:64px;top:118px;white-space:nowrap;font-family:'Unbounded';font-weight:900;font-size:43px;line-height:1;letter-spacing:-.02em;color:{P['ink']};text-transform:uppercase">Connect &amp; Cultivate <span style="color:{P['blue']}">|</span> Nov. 7th</div>
+    <div style="position:absolute;left:64px;top:176px;font-family:'Unbounded';font-weight:700;font-size:34px;letter-spacing:.06em;text-transform:uppercase;color:{P['orange']}">Atlanta, GA</div>
+    <div style="position:absolute;left:0;top:{top}px;width:1080px;height:{ph}px;{photo(d['photo'], d.get('pos','center'))}background-size:cover;clip-path:polygon(0 0,100% 0,100% {ph-100}px,0 100%)"></div>
+    <svg style="position:absolute;left:0;top:{top}px" width="1080" height="{ph+10}"><line x1="0" y1="{ph}" x2="1080" y2="{ph-100}" stroke="{P['orange']}" stroke-width="7" style="filter:drop-shadow(0 0 12px {P['orange']})"/></svg>
+    <div class="blob" style="left:640px;top:{top+ph-140}px;width:600px;height:600px;background:{P['cyan']};opacity:.36"></div>
+    <div style="position:absolute;left:64px;top:{top+ph-170}px;font-family:'Unbounded';font-weight:900;font-size:270px;line-height:.8;color:{P['orange']};text-shadow:0 0 30px rgba(255,106,31,.5);letter-spacing:-.06em">{n:02d}</div>
+    <div class="pad" style="top:{top+ph+70}px">
+      <div class="kick" style="margin-bottom:16px">Reason No. {n} to be in this room</div>
       <div class="h" style="font-size:{size}px;text-transform:none;letter-spacing:-.02em">{'<br>'.join(rich(l) for l in lines)}</div>
     </div>
     {footer_line(d)}"""
 
 def t_tribe(d, idx=1, total=1):
-    """Framed photo with a two-tone statement underneath. Straight, poster-like."""
-    lines = d['lines']; size = hsize(lines, d.get('size', 118), maxh=360)
-    return f"""{blobs(d.get('seed', 3), .45)}
+    """Framed photo with a statement underneath and a plain join line. Lots of air."""
+    lines = d['lines']; size = hsize(lines, d.get('size', 104), maxh=300)
+    return f"""{blobs(d.get('seed', 3), .4)}
     {brand_plain()}
-    <div style="position:absolute;left:72px;top:150px;width:936px;height:{d.get('ph',640)}px;border-radius:6px;overflow:hidden;box-shadow:0 30px 70px rgba(21,19,26,.22)"><div class="img" style="position:absolute;inset:0;{photo(d['photo'], d.get('pos','center'))}background-size:cover"></div>
+    <div style="position:absolute;left:72px;top:150px;width:936px;height:{d.get('ph',560)}px;border-radius:6px;overflow:hidden;box-shadow:0 30px 70px rgba(21,19,26,.22)"><div style="position:absolute;inset:0;{photo(d['photo'], d.get('pos','center'))}background-size:cover"></div>
       <div style="position:absolute;left:0;right:0;bottom:0;height:8px;background:linear-gradient(90deg,{P['blue']},{P['cyan']},{P['orange']})"></div></div>
-    <div class="pad" style="top:{d.get('top', 840)}px">
-      {f'<div class="kick" style="margin-bottom:18px">{esc(d["kicker"])}</div>' if d.get('kicker') else ''}
+    <div class="pad" style="top:{d.get('top', 790)}px">
       <div class="h" style="font-size:{size}px">{'<br>'.join(rich(l) for l in lines)}</div>
-      {f'<div class="body" style="margin-top:22px;font-size:32px">{rich(d["body"])}</div>' if d.get('body') else ''}
+      <div class="body" style="margin-top:38px;font-weight:700;font-size:34px">{rich(d.get('join', 'Join us Nov. 7th. *Link in bio.*'))}</div>
     </div>
     {footer_line(d)}"""
 
