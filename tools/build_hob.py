@@ -212,6 +212,68 @@ def t_quote(d, idx=1, total=1):
 
 T = dict(cover=t_cover, text=t_text, photo=t_photo, event=t_event, quote=t_quote)
 
+# ---------- single-post templates (no pills, no swipe, no progress row) ----------
+def footer_line(d, inv=False):
+    txt = d.get('foot', D.get('foot', 'Sat Nov 7  ·  4pm  ·  Buckhead  ·  $35'))
+    url = d.get('url', D.get('url', 'houseofbrand.net'))
+    col = P['white'] if inv else P['ink']
+    return f"""<div style="position:absolute;left:72px;right:72px;bottom:64px;display:flex;justify-content:space-between;align-items:flex-end;font-family:'Space Grotesk';font-weight:700;font-size:21px;letter-spacing:.04em;color:{col}">
+      <div>{esc(txt)}</div><div style="color:{P['orange']}">{esc(url)}</div></div>"""
+
+def brand_plain(inv=False):
+    col = P['white'] if inv else P['ink']
+    return f'<div class="brand"><img src="file://{LOGO}" style="width:58px;height:auto;display:block"><div class="nm" style="color:{col}">House of Brand</div></div>'
+
+def t_reason(d, idx=1, total=1):
+    """Numbered reason poster: photo top with a diagonal cut, giant number, one line."""
+    n = d['n']; lines = d['lines']; size = hsize(lines, d.get('size', 104), maxh=360, cw=.78)
+    ph = d.get('ph', 700)
+    return f"""
+    <div style="position:absolute;left:0;top:0;width:1080px;height:{ph}px;{photo(d['photo'], d.get('pos','center'))}background-size:cover;clip-path:polygon(0 0,100% 0,100% {ph-110}px,0 100%)"></div>
+    <svg style="position:absolute;left:0;top:0" width="1080" height="{ph+10}"><line x1="0" y1="{ph}" x2="1080" y2="{ph-110}" stroke="{P['orange']}" stroke-width="7" style="filter:drop-shadow(0 0 12px {P['orange']})"/></svg>
+    <div class="blob" style="left:620px;top:{ph-120}px;width:620px;height:620px;background:{P['cyan']};opacity:.38"></div>
+    {brand_plain(inv=True)}
+    <div style="position:absolute;left:64px;top:{ph-160}px;font-family:'Unbounded';font-weight:900;font-size:300px;line-height:.8;color:{P['orange']};text-shadow:0 0 30px rgba(255,106,31,.5),0 0 2px {P['white']};letter-spacing:-.06em">{n:02d}</div>
+    <div class="pad" style="top:{ph+100}px;left:72px">
+      <div class="kick" style="margin-bottom:18px">Reason to come · No. {n}</div>
+      <div class="h" style="font-size:{size}px;text-transform:none;letter-spacing:-.02em">{'<br>'.join(rich(l) for l in lines)}</div>
+    </div>
+    {footer_line(d)}"""
+
+def t_tribe(d, idx=1, total=1):
+    """Framed photo with a two-tone statement underneath. Straight, poster-like."""
+    lines = d['lines']; size = hsize(lines, d.get('size', 118), maxh=360)
+    return f"""{blobs(d.get('seed', 3), .45)}
+    {brand_plain()}
+    <div style="position:absolute;left:72px;top:150px;width:936px;height:{d.get('ph',640)}px;border-radius:6px;overflow:hidden;box-shadow:0 30px 70px rgba(21,19,26,.22)"><div class="img" style="position:absolute;inset:0;{photo(d['photo'], d.get('pos','center'))}background-size:cover"></div>
+      <div style="position:absolute;left:0;right:0;bottom:0;height:8px;background:linear-gradient(90deg,{P['blue']},{P['cyan']},{P['orange']})"></div></div>
+    <div class="pad" style="top:{d.get('top', 840)}px">
+      {f'<div class="kick" style="margin-bottom:18px">{esc(d["kicker"])}</div>' if d.get('kicker') else ''}
+      <div class="h" style="font-size:{size}px">{'<br>'.join(rich(l) for l in lines)}</div>
+      {f'<div class="body" style="margin-top:22px;font-size:32px">{rich(d["body"])}</div>' if d.get('body') else ''}
+    </div>
+    {footer_line(d)}"""
+
+def t_countdown(d, idx=1, total=1):
+    """Evening event post: giant day count, typeset details, skyline, photo strip."""
+    days = d['days']
+    return f"""{blobs(d.get('seed', 5), .5)}
+    {skyline(1040, 240)}
+    {brand_plain()}
+    <div style="position:absolute;left:64px;top:150px;display:flex;align-items:flex-end;gap:26px">
+      <div style="font-family:'Unbounded';font-weight:900;font-size:360px;line-height:.78;color:{P['blue']};text-shadow:0 0 34px rgba(31,63,255,.45);letter-spacing:-.06em">{days}</div>
+      <div style="font-family:'Unbounded';font-weight:900;font-size:64px;line-height:.9;color:{P['ink']};padding-bottom:14px;text-transform:uppercase">days<br><span style="color:{P['orange']}">out.</span></div>
+    </div>
+    <div class="pad" style="top:{d.get('top', 490)}px">
+      <div class="h" style="font-size:112px">Connect &amp;<br><span class="k">Cultivate</span></div>
+      <div style="margin-top:30px;font-family:'Space Grotesk';font-weight:700;font-size:34px;line-height:1.35;color:{P['ink']}">Saturday, November 7 · 4pm<br>Buckhead, Atlanta · <span style="color:{P['orange']}">$35</span></div>
+      <div class="body" style="margin-top:16px;font-size:28px;max-width:600px">{rich(d.get('body','60 seats. None at the door. House of Brand, in person.'))}</div>
+    </div>
+    <div style="position:absolute;right:64px;top:{d.get('ptop', 780)}px;width:300px;height:330px;border-radius:6px;overflow:hidden;box-shadow:0 30px 70px rgba(21,19,26,.25);transform:rotate({d.get('rot',3)}deg)"><div style="position:absolute;inset:0;{photo(d['photo'], d.get('pos','center'))}background-size:cover"></div></div>
+    <div style="position:absolute;left:72px;bottom:64px;font-family:'Space Grotesk';font-weight:700;font-size:24px;color:{P['white']};text-shadow:0 2px 10px rgba(0,0,0,.4)">{esc(d.get('url', D.get('url','')))}</div>"""
+
+T.update(reason=t_reason, tribe=t_tribe, countdown=t_countdown)
+
 def render(d, idx, total):
     return f"<!doctype html><html><head><meta charset='utf-8'><style>{CSS}</style></head><body><div class='s'>{T[d['t']](d, idx, total)}</div></body></html>"
 

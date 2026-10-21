@@ -54,8 +54,9 @@
  },
  "photos": "photos",
  "defaults": {
-  "chip": "Atlanta \u00b7 Nov 7",
-  "url": "houseofbrand.net/connect-and-cultivate",
+  "chip": "",
+  "url": "houseofbrand.net",
+  "foot": "Sat Nov 7  \u00b7  4pm  \u00b7  Buckhead  \u00b7  $35",
   "who": "House of Brand",
   "role": "Connect & Cultivate \u00b7 Atlanta"
  },
