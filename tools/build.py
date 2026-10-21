@@ -277,9 +277,14 @@ def t_call(d, idx=1, total=1):
     lines = d.get('lines', ['The Corporate', 'Entrepreneur'])
     size = anton_size(lines, d.get('size', 150))
     headline = d.get('headline', '')
+    if d.get('variant') == 'split':
+        bg = f"""<div class="photo" style="{photo_css(d['photo'], d.get('pos','center top'))};height:{d.get('ph',720)}px"></div>
+    <div class="grad" style="height:{d.get('ph',720)}px;background:linear-gradient(180deg,rgba({SPLIT},0) 55%,rgba({SPLIT},.55) 80%,rgba({SPLIT},1) 100%)"></div>"""
+    else:
+        bg = f"""<div class="photo" style="{photo_css(d['photo'], d.get('pos','center'))}"></div>
+    <div class="grad" style="background:linear-gradient(180deg,rgba({GRAD},.2) 0%,rgba({GRAD},.3) 30%,rgba({GRAD},.92) 58%,rgba({GRAD},1) 100%)"></div>"""
     return f"""
-    <div class="photo" style="{photo_css(d['photo'], d.get('pos','center'))}"></div>
-    <div class="grad" style="background:linear-gradient(180deg,rgba({GRAD},.2) 0%,rgba({GRAD},.3) 30%,rgba({GRAD},.92) 58%,rgba({GRAD},1) 100%)"></div>
+    {bg}
     <div style="position:absolute;left:72px;top:118px;background:{PAL['orange']};color:{PAL['charcoal']};font-family:{F_DISPLAY};font-size:30px;letter-spacing:.08em;text-transform:uppercase;padding:14px 22px 10px">{esc(d.get('badge', DEFAULTS.get('badge', '')))}</div>
     <div class="pad" style="bottom:360px">
       {f'<div class="body" style="font-size:40px;margin-bottom:28px;font-weight:600;color:{PAL["ptext"]}">{rich(headline)}</div>' if headline else ''}

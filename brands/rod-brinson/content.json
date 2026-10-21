@@ -1,133 +1,142 @@
 {
+ "campaign": "Connect & Cultivate 2026-11-07",
  "posts": [
   {
-   "id": "d1-quote",
-   "date": "2026-10-12",
+   "id": "cc01-quote",
+   "date": "2026-10-22",
    "slot": "09:15",
    "kind": "quote",
    "slides": [
     {
-     "t": "quote",
+     "t": "quote_card",
      "variant": "photo",
-     "photo": "blue_arms_up.jpg",
-     "pos": "center 20%",
+     "photo": "hob_two_men_bar.jpg",
+     "pos": "center 30%",
+     "role": "The Brand Strategist",
      "lines": [
-      "Your job",
-      "pays you.",
-      "Your value",
-      "belongs",
-      "to *you.*"
+      "Building",
+      "alone is",
+      "the slowest",
+      "way to",
+      "*build.*"
      ]
     }
    ],
-   "caption": "I say this one a lot because people keep getting it twisted...\n\nYour job pays you. That's the deal, and it's a fair one. But the thing they're paying for? The way you think, the problems you solve, the reason people at work come to YOU... that was yours before the title and it'll be yours after.\n\nSo be real with me. What's the thing people come to you for that has nothing to do with your job title?",
-   "threads": "Your job pays you. But your value belongs to you.\n\nso what's the thing people at work come to YOU for that has nothing to do with your title? 👀",
-   "hashtags": "#personalbranding #corporateentrepreneur #brandstrategy #careergrowth #thebrandstrategist"
+   "caption": "I say this a lot and I'm gonna keep saying it....\n\nBuilding alone is the slowest way to build. That's right.... the slowest. Every question you sit on for three weeks, somebody in the right room answers in three minutes. Every pitch you keep rehearsing in your head gets fixed the first time you say it out loud to people who want you to land it.\n\nSo be real with me. What's the one thing you've been trying to figure out by yourself that you already know you need a room for?",
+   "threads": "building alone is the slowest way to build. that's right.... the slowest.\n\nwhat's the one thing you've been trying to figure out by yourself that you already know you need a room for? 👀🏾",
+   "hashtags": "#buildyourbrand #atlantaentrepreneurs #houseofbrand #networkingatlanta #thebrandstrategist"
   },
   {
-   "id": "d1-carousel",
-   "date": "2026-10-11",
-   "slot": "18:45",
+   "id": "cc01-carousel",
+   "date": "2026-10-22",
+   "slot": "13:15",
    "kind": "carousel",
-   "door": "call",
+   "door": "cc",
    "slides": [
     {
      "t": "cover_bold",
-     "photo": "bh_1.jpg",
-     "pos": "center 32%",
-     "kicker": "",
+     "variant": "split",
+     "photo": "hob_curtain_group.jpg",
+     "pos": "center 40%",
      "lines": [
-      "Don't rush",
-      "to get",
-      "the LLC."
+      "You've been",
+      "to the",
+      "mixer."
      ],
      "sub": "I know.... follow me for a second"
     },
     {
      "t": "bold",
      "lines": [
-      "You can",
-      "file it.",
-      "Build a logo.",
-      "Order",
-      "the cards."
+      "Stood near",
+      "the bar.",
+      "Three",
+      "conversations.",
+      "Zero",
+      "follow up."
      ],
-     "body": "Congrats, you now have a real company that no one trusts yet... with a face no one has seen."
+     "body": "Traded cards with someone whose name you can't remember. Drove home wondering why you went. We've been to that one too."
+    },
+    {
+     "t": "photo",
+     "variant": "split",
+     "photo": "hob_laptop_women.jpg",
+     "pos": "center 35%",
+     "lines": [
+      "This is",
+      "not that",
+      "one."
+     ],
+     "body": "Every room has someone running it. Every conversation has a point."
     },
     {
      "t": "bold",
+     "kicker": "Five things, all afternoon",
      "lines": [
-      "People",
-      "trust",
-      "people."
+      "Ambassador rooms.",
+      "A content station.",
+      "Live pitches."
      ],
-     "body": "Not paperwork. Not a logo. A person they feel like they already know.",
-     "tail": "Let them meet *you* first.",
-     "tailsize": 100
+     "body": "Plus conversations set up so you meet people on purpose.... and something to actually do on Monday.",
+     "size": 140
+    },
+    {
+     "t": "photo",
+     "variant": "split",
+     "photo": "hob_plaid_talk.jpg",
+     "pos": "center 30%",
+     "lines": [
+      "Come",
+      "alone.",
+      "Most",
+      "people do."
+     ],
+     "body": "Introvert or extrovert, you leave with people who will ask what you did with the connection."
     },
     {
      "t": "bold",
-     "kicker": "The order that works",
+     "kicker": "Sat Nov 7  ·  4pm  ·  Buckhead  ·  $35",
      "lines": [
-      "Face first.",
-      "Then the",
-      "thing that",
-      "stands",
-      "without you."
+      "60 seats.",
+      "None at",
+      "the door."
      ],
-     "body": "The personal brand is how you get known. The business brand is how you get free. It's a ~sequence~, not a choice."
-    },
-    {
-     "t": "bold",
-     "lines": [
-      "The",
-      "paperwork",
-      "isn't going",
-      "anywhere."
-     ],
-     "body": "Your face is the first brick. Lay that one this week."
-    },
-    {
-     "t": "bold",
-     "kicker": "Tuesday, Oct 20 · 7pm EST · Free",
-     "lines": [
-      "I built",
-      "mine while",
-      "I was still",
-      "on payroll."
-     ],
-     "body": "And I'm gonna walk you through how. The Corporate Entrepreneur, live. ~Link in bio.~"
+     "body": "That's the size of the room, not a sales trick. Connect & Cultivate.... House of Brand, in person. ~Link in bio.~"
     }
    ],
-   "caption": "Don't rush to the LLC...\n\nI know that's what everybody tells you to do first. File the paperwork, get the logo, order the cards. And now you've got a company nobody trusts yet, attached to a face nobody has seen.\n\nPeople trust people. Let them meet YOU first. Face first, then build the thing that can stand without you. It's a sequence, not a choice.\n\nI built mine while I was still on payroll, and on Tuesday October 20th at 7pm EST I'm going live, free, to walk you through how. The Corporate Entrepreneur. {door}\n\nBe honest... did you file the paperwork before anybody knew your name?",
-   "threads": "Don't rush to the LLC... people trust people. let them meet YOU first, the paperwork isn't going anywhere.\n\nI built mine while I was still on payroll and Tuesday Oct 20 at 7pm EST I'm going live (free) to show you how. {door}",
-   "hashtags": "#corporateentrepreneur #personalbranding #sidebusiness #entrepreneurship #thebrandstrategist"
+   "caption": "You've been to the mixer....\n\nStood near the bar, had three conversations that went nowhere, traded cards with somebody whose name you can't remember, and drove home wondering why you went. I've been to that one too. More than once.\n\nConnect & Cultivate is built the way House of Brand is built. Every room has somebody running it. Every conversation has a point. There's a station to make content on the spot, a floor for anybody brave enough to pitch, and a reason to follow up Monday because the people you met will be asking how it went.\n\nSaturday, November 7th. 4pm. Buckhead. $35, light bites and drinks included. 60 seats and none at the door, because that's the size of the room. {door}\n\nTell me the truth.... what's the last networking event you went to where you actually followed up with somebody?",
+   "threads": "you've been to the mixer. stood near the bar, three conversations that went nowhere, drove home wondering why you went.\n\nConnect & Cultivate is House of Brand in person. every room has somebody running it, every conversation has a point. Sat Nov 7, 4pm, Buckhead, $35. 60 seats.\n\n{door}",
+   "hashtags": "#connectandcultivate #houseofbrand #atlantaevents #atlantaentrepreneurs #thebrandstrategist"
   },
   {
-   "id": "d1-call",
-   "date": "2026-10-12",
+   "id": "cc01-call",
+   "date": "2026-10-22",
    "slot": "19:15",
    "kind": "call",
-   "door": "call",
+   "door": "cc",
    "slides": [
     {
      "t": "call",
-     "photo": "blue_profile_mouth.jpg",
-     "pos": "center 30%",
-     "badge": "Free live call",
-     "headline": "You should be working your job while building your own.",
+     "photo": "hob_curtain_group.jpg",
+     "pos": "center 45%",
+     "badge": "In person  ·  Buckhead",
+     "headline": "Building something and tired of building it alone?",
      "lines": [
-      "The Corporate",
-      "Entrepreneur"
+      "Connect &",
+      "Cultivate"
      ],
-     "when": "Tue Oct 20",
-     "time": "7PM EST",
-     "price": "Free"
+     "when": "Sat Nov 7",
+     "time": "4PM",
+     "price": "$35",
+     "url": "houseofbrand.net/connect-and-cultivate",
+     "foot": "60 seats  ·  sold in advance only",
+     "variant": "split",
+     "ph": 700
     }
    ],
-   "caption": "I've been sitting on this one... so here it go.\n\nTuesday, October 20th at 7pm EST I'm going LIVE and it's FREE. The Corporate Entrepreneur.\n\nIf you've got a good job and still feel like there's something else in you, this is for you. I built mine while I was still on payroll, with a family depending on me, and I'm gonna show you how. We're talking about the assets you already have, whether the thing on the side can cover your bills, and your first move.\n\nNo card. No trial. Day one is free. {door}\n\nSave your seat and tell me in the comments: are you staying, going, or still figuring it out?",
-   "threads": "Tuesday Oct 20, 7pm EST, LIVE and FREE... The Corporate Entrepreneur.\n\nif you've got a good job and still feel like there's something else in you, come sit with me. {door}",
-   "hashtags": "#corporateentrepreneur #corporateexodus #sidehustle #entrepreneurship #thebrandstrategist"
+   "caption": "If you're building something and you're tired of building it by yourself, come sit with us.\n\nConnect & Cultivate. Saturday, November 7th at 4pm in Buckhead. It's House of Brand in person.... the Thursday night screen becomes a table. Ambassador-led rooms so you're never stuck in a corner, a content station to shoot and post before you leave, live pitches in front of a room that wants you to land it, and light bites, beer and wine on us.\n\n$35. 60 seats, sold in advance only. The address goes out by email once you have a ticket. {door}\n\nDrop a 🙋🏾 if you're coming by yourself. I want to make sure you're not standing alone for a single minute.",
+   "threads": "Connect & Cultivate. Sat Nov 7, 4pm, Buckhead. House of Brand in person. $35, 60 seats, none at the door. {door}",
+   "hashtags": "#connectandcultivate #houseofbrand #atlantanetworking #buildyourbrand #thebrandstrategist"
   }
  ]
 }
