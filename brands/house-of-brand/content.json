@@ -1,0 +1,131 @@
+{
+ "campaign": "Connect & Cultivate 2026-11-07",
+ "posts": [
+  {
+   "id": "cc01-quote",
+   "date": "2026-10-22",
+   "slot": "09:15",
+   "kind": "quote",
+   "slides": [
+    {
+     "t": "quote",
+     "photo": "gen15.jpg",
+     "pos": "center 30%",
+     "lines": [
+      "Building alone",
+      "is the slowest",
+      "way to *build.*"
+     ]
+    }
+   ],
+   "caption": "I say this a lot and I'm gonna keep saying it....\n\nBuilding alone is the slowest way to build. That's right.... the slowest. Every question you sit on for three weeks, somebody in the right room answers in three minutes. Every pitch you keep rehearsing in your head gets fixed the first time you say it out loud to people who want you to land it.\n\nSo be real with me. What's the one thing you've been trying to figure out by yourself that you already know you need a room for?",
+   "threads": "building alone is the slowest way to build. that's right.... the slowest.\n\nwhat's the one thing you've been trying to figure out by yourself that you already know you need a room for? 👀🏾",
+   "hashtags": "#buildyourbrand #atlantaentrepreneurs #houseofbrand #networkingatlanta #thebrandstrategist"
+  },
+  {
+   "id": "cc01-carousel",
+   "date": "2026-10-22",
+   "slot": "13:15",
+   "kind": "carousel",
+   "door": "cc",
+   "slides": [
+    {
+     "t": "cover",
+     "photo": "gen13.jpg",
+     "pos": "center 40%",
+     "rot": 4,
+     "lines": [
+      "You've been",
+      "to the",
+      "*mixer.*"
+     ],
+     "sub": "I know.... follow me for a second"
+    },
+    {
+     "t": "text",
+     "lines": [
+      "Stood near",
+      "the bar.",
+      "Three",
+      "conversations.",
+      "Zero",
+      "follow up."
+     ],
+     "size": 120,
+     "body": "Traded cards with someone whose name you can't remember. Drove home wondering why you went. We've been to that one too."
+    },
+    {
+     "t": "photo",
+     "photo": "hob_laptop_women.jpg",
+     "pos": "center 35%",
+     "lines": [
+      "This is",
+      "~not that one.~"
+     ],
+     "body": "Every room has someone running it. Every conversation has a point."
+    },
+    {
+     "t": "text",
+     "bg": "blue",
+     "kicker": "Five things, all afternoon",
+     "lines": [
+      "Ambassador rooms.",
+      "A content station.",
+      "*Live pitches.*"
+     ],
+     "size": 110,
+     "body": "Plus conversations set up so you meet people on purpose.... and something to actually do on Monday."
+    },
+    {
+     "t": "photo",
+     "photo": "gen20.jpg",
+     "pos": "center 30%",
+     "lines": [
+      "Come alone.",
+      "_Most people do._"
+     ],
+     "body": "Introvert or extrovert, you leave with people who will ask what you did with the connection."
+    },
+    {
+     "t": "text",
+     "kicker": "Sat Nov 7  ·  4pm  ·  Buckhead  ·  $35",
+     "lines": [
+      "60 seats.",
+      "*None at*",
+      "*the door.*"
+     ],
+     "body": "That's the size of the room, not a sales trick. Connect & Cultivate.... House of Brand, in person.",
+     "pill": "Link in bio"
+    }
+   ],
+   "caption": "You've been to the mixer....\n\nStood near the bar, had three conversations that went nowhere, traded cards with somebody whose name you can't remember, and drove home wondering why you went. I've been to that one too. More than once.\n\nConnect & Cultivate is built the way House of Brand is built. Every room has somebody running it. Every conversation has a point. There's a station to make content on the spot, a floor for anybody brave enough to pitch, and a reason to follow up Monday because the people you met will be asking how it went.\n\nSaturday, November 7th. 4pm. Buckhead. $35, light bites and drinks included. 60 seats and none at the door, because that's the size of the room. {door}\n\nTell me the truth.... what's the last networking event you went to where you actually followed up with somebody?",
+   "threads": "you've been to the mixer. stood near the bar, three conversations that went nowhere, drove home wondering why you went.\n\nConnect & Cultivate is House of Brand in person. every room has somebody running it, every conversation has a point. Sat Nov 7, 4pm, Buckhead, $35. 60 seats.\n\n{door}",
+   "hashtags": "#connectandcultivate #houseofbrand #atlantaevents #atlantaentrepreneurs #thebrandstrategist"
+  },
+  {
+   "id": "cc01-call",
+   "date": "2026-10-22",
+   "slot": "19:15",
+   "kind": "call",
+   "door": "cc",
+   "slides": [
+    {
+     "t": "event",
+     "photo": "hob_curtain_group.jpg",
+     "pos": "center 45%",
+     "kicker": "Building something and tired of building it alone?",
+     "lines": [
+      "Connect &",
+      "~Cultivate~"
+     ],
+     "body": "House of Brand, in person. Light bites, drinks, live pitches, a content station, and a room that wants you to land it.",
+     "url": "houseofbrand.net/connect-and-cultivate",
+     "foot": "60 seats · sold in advance only"
+    }
+   ],
+   "caption": "If you're building something and you're tired of building it by yourself, come sit with us.\n\nConnect & Cultivate. Saturday, November 7th at 4pm in Buckhead. It's House of Brand in person.... the Thursday night screen becomes a table. Ambassador-led rooms so you're never stuck in a corner, a content station to shoot and post before you leave, live pitches in front of a room that wants you to land it, and light bites, beer and wine on us.\n\n$35. 60 seats, sold in advance only. The address goes out by email once you have a ticket. {door}\n\nDrop a 🙋🏾 if you're coming by yourself. I want to make sure you're not standing alone for a single minute.",
+   "threads": "Connect & Cultivate. Sat Nov 7, 4pm, Buckhead. House of Brand in person. $35, 60 seats, none at the door. {door}",
+   "hashtags": "#connectandcultivate #houseofbrand #atlantanetworking #buildyourbrand #thebrandstrategist"
+  }
+ ]
+}

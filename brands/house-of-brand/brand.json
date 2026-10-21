@@ -1,0 +1,71 @@
+{
+ "slug": "house-of-brand",
+ "name": "House of Brand",
+ "metricool": {
+  "blogId": "6295498",
+  "timezone": "America/New_York",
+  "utc_offset_std": "-05:00",
+  "utc_offset_dst": "-04:00",
+  "networks": [
+   "instagram",
+   "facebook",
+   "linkedin",
+   "threads"
+  ],
+  "instagram_collaborators": [
+   "houseofbrandcommunity"
+  ]
+ },
+ "handles": {
+  "instagram": "@houseofbrandcommunity"
+ },
+ "palette": {
+  "white": "#FFFFFF",
+  "blue": "#1F3FFF",
+  "cyan": "#35D6FF",
+  "orange": "#FF6A1F",
+  "ink": "#15131A",
+  "tint": "#EEF2FF"
+ },
+ "font_files": [
+  {
+   "family": "Unbounded",
+   "file": "unbounded-latin-900-normal.woff2",
+   "weight": 900
+  },
+  {
+   "family": "Unbounded",
+   "file": "unbounded-latin-700-normal.woff2",
+   "weight": 700
+  },
+  {
+   "family": "Space Grotesk",
+   "file": "space-grotesk-latin-500-normal.woff2",
+   "weight": 500
+  },
+  {
+   "family": "Space Grotesk",
+   "file": "space-grotesk-latin-700-normal.woff2",
+   "weight": 700
+  }
+ ],
+ "logo": {
+  "plus": "plus.png"
+ },
+ "photos": "photos",
+ "defaults": {
+  "chip": "Atlanta \u00b7 Nov 7",
+  "url": "houseofbrand.net/connect-and-cultivate",
+  "who": "House of Brand",
+  "role": "Connect & Cultivate \u00b7 Atlanta"
+ },
+ "doors": {
+  "cc": "https://houseofbrand.net/connect-and-cultivate.html",
+  "house": "https://houseofbrand.net"
+ },
+ "hashtag_base": [
+  "#houseofbrand",
+  "#connectandcultivate",
+  "#atlantaentrepreneurs"
+ ]
+}
