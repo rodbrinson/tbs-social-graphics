@@ -9,9 +9,8 @@
    "door": "cc",
    "slides": [
     {
-     "t": "tribe",
-     "photo": "gen13.jpg",
-     "pos": "center 35%",
+     "t": "flyer",
+     "photo": "gen24.jpg",
      "lines": [
       "Being in the room",
       "_changes everything._"
@@ -30,7 +29,7 @@
    "door": "cc",
    "slides": [
     {
-     "t": "say",
+     "t": "flyer",
      "lines": [
       "I just wish",
       "we were all in",
@@ -38,8 +37,7 @@
      ],
      "who": "Mahogany",
      "role": "Brand Mate",
-     "photo": "hob_curtain_group.jpg",
-     "pos": "center 35%"
+     "photo": "hob_curtain_group.jpg"
     }
    ],
    "caption": "Mahogany said this on a call in August. We heard her.\n\nNovember 7th, we're all in the same space. Connect & Cultivate, 4pm, Buckhead, House of Brand in person. $35, 60 seats, none at the door. {door}\n\nIf you've ever said this about an online community, this one's for you.",
@@ -54,9 +52,8 @@
    "door": "cc",
    "slides": [
     {
-     "t": "tribe",
-     "photo": "gen07.jpg",
-     "pos": "center 35%",
+     "t": "flyer",
+     "photo": "gen04.jpg",
      "lines": [
       "This is",
       "more than",
@@ -76,7 +73,7 @@
    "door": "cc",
    "slides": [
     {
-     "t": "say",
+     "t": "flyer",
      "lines": [
       "The meetup was",
       "so amazing. We stayed",
@@ -85,8 +82,7 @@
      ],
      "who": "Natasha",
      "role": "Brand Mate",
-     "photo": "hob_laptop_women.jpg",
-     "pos": "center 35%"
+     "photo": "hob_laptop_women.jpg"
     }
    ],
    "caption": "Natasha said this on a Thursday call the week after our last meetup. She and Mahogany stayed almost an hour after everybody left.\n\nThat's the kind of room this is. November 7th we're doing it again, bigger. Connect & Cultivate, 4pm, Buckhead, House of Brand in person. $35, 60 seats. {door}\n\nWho's staying late with us?",
@@ -101,9 +97,8 @@
    "door": "cc",
    "slides": [
     {
-     "t": "tribe",
-     "photo": "gen20.jpg",
-     "pos": "center 35%",
+     "t": "flyer",
+     "photo": "gen18.jpg",
      "lines": [
       "Come find",
       "_your people._"
@@ -122,15 +117,14 @@
    "door": "cc",
    "slides": [
     {
-     "t": "tribe",
+     "t": "flyer",
      "lines": [
       "Two people forgot",
       "to eat dinner."
      ],
      "kicker": "True story",
      "body": "Our last game night, MJ vs Prince, ran so long nobody noticed the time. It ended in a tie and went to a round 21.",
-     "photo": "hob_two_men_bar.jpg",
-     "pos": "center 35%"
+     "photo": "hob_gamenight.jpg"
     }
    ],
    "caption": "That's a real thing that happened in the house. A Tuesday game night that was supposed to be an hour. Twenty rounds, a tiebreaker, and two people who forgot to eat.\n\nWe do business. We also do this. November 7th is both. Connect & Cultivate, 4pm, Buckhead. $35. {door}\n\nMJ or Prince? Wrong answers only.",
@@ -145,9 +139,8 @@
    "door": "cc",
    "slides": [
     {
-     "t": "tribe",
-     "photo": "gen15.jpg",
-     "pos": "center 35%",
+     "t": "flyer",
+     "photo": "gen12.jpg",
      "lines": [
       "Your people",
       "are in this city."
@@ -166,7 +159,7 @@
    "door": "cc",
    "slides": [
     {
-     "t": "say",
+     "t": "flyer",
      "lines": [
       "Talking with her",
       "was like talking",
@@ -174,8 +167,7 @@
      ],
      "who": "Natasha",
      "role": "Brand Mate",
-     "photo": "hob_coffee_selfie.jpg",
-     "pos": "center 35%"
+     "photo": "hob_two_men_bar.jpg"
     }
    ],
    "caption": "That's Natasha talking about somebody she met at our last meetup. Not a contact. Not a lead. A friend.\n\nThat's what we're going for on November 7th. Connect & Cultivate, 4pm, Buckhead. $35. {door}\n\nWho was the last person you met that felt like you'd known them for years?",
@@ -190,9 +182,8 @@
    "door": "cc",
    "slides": [
     {
-     "t": "tribe",
-     "photo": "gen09.jpg",
-     "pos": "center 35%",
+     "t": "flyer",
+     "photo": "gen08.jpg",
      "lines": [
       "This is a room",
       "you *want*",
@@ -212,7 +203,7 @@
    "door": "cc",
    "slides": [
     {
-     "t": "tribe",
+     "t": "flyer",
      "lines": [
       "They met in the house.",
       "Now they're",
@@ -220,8 +211,7 @@
      ],
      "kicker": "True story",
      "body": "Myron announced on a Thursday call that he's publishing his first book with Mahogany, who runs a publishing company. Both Brand Mates.",
-     "photo": "hob_lobby_group.jpg",
-     "pos": "center 35%",
+     "photo": "gen21.jpg",
      "size": 86
     }
    ],
@@ -237,9 +227,8 @@
    "door": "cc",
    "slides": [
     {
-     "t": "tribe",
-     "photo": "gen24.jpg",
-     "pos": "center 35%",
+     "t": "flyer",
+     "photo": "gen27.jpg",
      "lines": [
       "You don't have",
       "to build *alone.*"
@@ -258,15 +247,14 @@
    "door": "cc",
    "slides": [
     {
-     "t": "say",
+     "t": "flyer",
      "lines": [
       "I needed this today.",
       "I needed all of this."
      ],
      "who": "Krystal",
      "role": "Brand Mate",
-     "photo": "hob_plaid_talk.jpg",
-     "pos": "center 35%"
+     "photo": "hob_coffee_selfie.jpg"
     }
    ],
    "caption": "Krystal said this at the end of a lunchtime workshop. Some days the business is heavy and what you need is a room that gets it.\n\nNovember 7th is that room. Connect & Cultivate, 4pm, Buckhead, House of Brand in person. $35. {door}\n\nWhat do you need from a room right now?",
@@ -281,9 +269,8 @@
    "door": "cc",
    "slides": [
     {
-     "t": "tribe",
-     "photo": "gen04.jpg",
-     "pos": "center 35%",
+     "t": "flyer",
+     "photo": "gen16.jpg",
      "lines": [
       "Trying to grow",
       "your brand?",
@@ -303,15 +290,14 @@
    "door": "cc",
    "slides": [
     {
-     "t": "tribe",
+     "t": "flyer",
      "lines": [
       "$400 saved",
       "in four minutes."
      ],
      "kicker": "True story",
      "body": "Sherry came to a roundtable overwhelmed by a registration service. Four minutes and one link later, she had her answer and kept her money.",
-     "photo": "hob_home_group.jpg",
-     "pos": "center 35%"
+     "photo": "gen13.jpg"
     }
    ],
    "caption": "This is what a Thursday night looks like in the house. Somebody comes in stuck, somebody else drops the link, and four minutes later the problem is gone.\n\nNow imagine that at a table. November 7th, Connect & Cultivate, 4pm, Buckhead. $35, 60 seats. {door}\n\nWhat's the thing you've been overpaying for because you didn't know who to ask?",
@@ -326,9 +312,8 @@
    "door": "cc",
    "slides": [
     {
-     "t": "tribe",
-     "photo": "gen18.jpg",
-     "pos": "center 35%",
+     "t": "flyer",
+     "photo": "gen14.jpg",
      "lines": [
       "Come alone.",
       "_Most people do._"
@@ -347,7 +332,7 @@
    "door": "cc",
    "slides": [
     {
-     "t": "say",
+     "t": "flyer",
      "lines": [
       "Me and the sisters",
       "met last week",
@@ -356,8 +341,7 @@
      ],
      "who": "Adesanya",
      "role": "Brand Mate",
-     "photo": "hob_bar_three.jpg",
-     "pos": "center 35%"
+     "photo": "hob_lobby_group.jpg"
     }
    ],
    "caption": "Adesanya said this to me on the last night of our 8-week cohort. They met on their own, without me, because they didn't want it to end.\n\nThat's the house. On November 7th you can meet it in person. Connect & Cultivate, 4pm, Buckhead. $35, 60 seats. {door}\n\nTag the people you'd keep meeting with.",
@@ -372,9 +356,8 @@
    "door": "cc",
    "slides": [
     {
-     "t": "tribe",
-     "photo": "gen12.jpg",
-     "pos": "center 35%",
+     "t": "flyer",
+     "photo": "gen25.jpg",
      "lines": [
       "Introverts welcome.",
       "_We planned_",
@@ -394,15 +377,14 @@
    "door": "cc",
    "slides": [
     {
-     "t": "tribe",
+     "t": "flyer",
      "lines": [
       "There's a win wall.",
       "Bring something for it."
      ],
      "kicker": "In the house",
      "body": "Brand Mates post their wins and the whole house gives them their flowers. Come get yours.",
-     "photo": "hob_window_talk.jpg",
-     "pos": "center 35%"
+     "photo": "gen07.jpg"
     }
    ],
    "caption": "In the house we've got a win wall. You post it, everybody gives you your flowers. It's one of my favorite things we do.\n\nOn November 7th the win wall is live and in person. Bring a win, any size. Connect & Cultivate, 4pm, Buckhead. $35. {door}\n\nWhat's a win you haven't told anybody about yet?",
@@ -417,9 +399,8 @@
    "door": "cc",
    "slides": [
     {
-     "t": "tribe",
-     "photo": "gen10.jpg",
-     "pos": "center 35%",
+     "t": "flyer",
+     "photo": "gen22.jpg",
      "lines": [
       "Pull up",
       "_a chair._"
@@ -438,15 +419,14 @@
    "door": "cc",
    "slides": [
     {
-     "t": "say",
+     "t": "flyer",
      "lines": [
       "I'm so glad",
       "that I did not fold."
      ],
      "who": "Mahogany",
      "role": "Brand Mate",
-     "photo": "hob_walk.jpg",
-     "pos": "center 35%"
+     "photo": "hob_plaid_talk.jpg"
     }
    ],
    "caption": "Mahogany held her price with a client who was hesitating. She gave them space. Sunday morning the message came in: send me the invoice.\n\nShe told that story to the whole house. That's what the room is for. November 7th, Connect & Cultivate, 4pm, Buckhead. $35. {door}\n\nWhen's the last time you almost folded and didn't?",
@@ -461,9 +441,8 @@
    "door": "cc",
    "slides": [
     {
-     "t": "tribe",
-     "photo": "gen27.jpg",
-     "pos": "center 35%",
+     "t": "flyer",
+     "photo": "gen28.jpg",
      "lines": [
       "Not a mixer.",
       "*A table.*"
@@ -482,15 +461,14 @@
    "door": "cc",
    "slides": [
     {
-     "t": "tribe",
+     "t": "flyer",
      "lines": [
       "One house party",
       "drink is on us."
      ],
      "kicker": "The vibe",
      "body": "Bites, a specialty drink with your ticket, music, and sixty people building. A house party with a point.",
-     "photo": "hob_rod_selfie.jpg",
-     "pos": "center 35%"
+     "photo": "gen20.jpg"
     }
    ],
    "caption": "Let me tell you what the afternoon actually feels like. It's a house party. There's a specialty drink with your ticket, bites to pick at, and a room full of people who are building something.\n\nThe difference is every conversation has a point. Connect & Cultivate, November 7th, 4pm, Buckhead. $35. {door}\n\nWhat should the house drink be? Taking suggestions.",
@@ -505,9 +483,8 @@
    "door": "cc",
    "slides": [
     {
-     "t": "tribe",
-     "photo": "gen16.jpg",
-     "pos": "center 35%",
+     "t": "flyer",
+     "photo": "gen03.jpg",
      "lines": [
       "Walk in a stranger.",
       "_Walk out_",
@@ -527,7 +504,7 @@
    "door": "cc",
    "slides": [
     {
-     "t": "say",
+     "t": "flyer",
      "lines": [
       "I'm definitely",
       "more clear now",
@@ -536,8 +513,7 @@
      ],
      "who": "Sherry",
      "role": "Brand Mate",
-     "photo": "hob_hug.jpg",
-     "pos": "center 35%"
+     "photo": "hob_home_group.jpg"
     }
    ],
    "caption": "Sherry, at the end of eight weeks with the house. Clear is the whole point.\n\nIf you're building something and it still feels foggy, come sit with people who've been where you are. Connect & Cultivate, November 7th, 4pm, Buckhead. $35. {door}\n\nWhat would clear look like for you?",
@@ -552,9 +528,8 @@
    "door": "cc",
    "slides": [
     {
-     "t": "tribe",
-     "photo": "gen14.jpg",
-     "pos": "center 35%",
+     "t": "flyer",
+     "photo": "gen05.jpg",
      "lines": [
       "Say your idea",
       "out loud.",
@@ -574,7 +549,7 @@
    "door": "cc",
    "slides": [
     {
-     "t": "tribe",
+     "t": "flyer",
      "lines": [
       "Nothing worth building",
       "was ever built",
@@ -582,8 +557,7 @@
      ],
      "kicker": "Rod Brinson",
      "body": "I say this on every call. On November 7th I get to say it to your face.",
-     "photo": "hob_gamenight.jpg",
-     "pos": "center 35%"
+     "photo": "gen15.jpg"
     }
    ],
    "caption": "I say this to the house every week and I'll keep saying it. Nothing worth building has ever been built by one person alone.\n\nNovember 7th, come build next to somebody. Connect & Cultivate, 4pm, Buckhead, House of Brand in person. $35, 60 seats. {door}\n\nWho's been in your corner?",
@@ -598,9 +572,8 @@
    "door": "cc",
    "slides": [
     {
-     "t": "tribe",
-     "photo": "gen25.jpg",
-     "pos": "center 35%",
+     "t": "flyer",
+     "photo": "gen29.jpg",
      "lines": [
       "House of Brand,",
       "*in person.*"
@@ -619,7 +592,7 @@
    "door": "cc",
    "slides": [
     {
-     "t": "say",
+     "t": "flyer",
      "lines": [
       "People started saying,",
       "oh my God,",
@@ -627,8 +600,7 @@
      ],
      "who": "Dalin",
      "role": "Brand Mate",
-     "photo": "hob_curtain_group.jpg",
-     "pos": "center 35%"
+     "photo": "hob_bar_three.jpg"
     }
    ],
    "caption": "Dalin was describing a call where people came on camera one by one and realized they weren't the only ones feeling it.\n\nThat moment happens in person too. Faster. November 7th, Connect & Cultivate, 4pm, Buckhead. $35, 60 seats. {door}\n\nWhat's the thing you thought you were the only one dealing with?",
@@ -643,7 +615,7 @@
    "door": "cc",
    "slides": [
     {
-     "t": "say",
+     "t": "flyer",
      "lines": [
       "We need this.",
       "I need this more",
@@ -651,8 +623,7 @@
      ],
      "who": "Krystal",
      "role": "Brand Mate",
-     "photo": "hob_laptop_women.jpg",
-     "pos": "center 35%"
+     "photo": "hob_window_talk.jpg"
     }
    ],
    "caption": "Krystal said this walking into a game night. Not a workshop. A game night.\n\nBecause sometimes what you need from a community is to laugh with people who get it. November 7th has both. Connect & Cultivate, 4pm, Buckhead. $35. {door}\n\nWhat do you need more than ever right now?",
@@ -667,7 +638,7 @@
    "door": "cc",
    "slides": [
     {
-     "t": "tribe",
+     "t": "flyer",
      "lines": [
       "13 of them went",
       "to a concert together",
@@ -675,8 +646,7 @@
      ],
      "kicker": "True story",
      "body": "After our last meetup, a group of ladies who'd just met went to a Tasha Cobbs concert together the following night.",
-     "photo": "hob_two_men_bar.jpg",
-     "pos": "center 35%"
+     "photo": "gen02.jpg"
     }
    ],
    "caption": "After the last meetup, thirteen ladies who had just met went to a concert together the next night. Some of them had never been in the same room before Saturday.\n\nThat's not networking. That's your people. November 7th, Connect & Cultivate, 4pm, Buckhead. $35. {door}\n\nWho are you bringing?",
@@ -691,16 +661,15 @@
    "door": "cc",
    "slides": [
     {
-     "t": "say",
+     "t": "flyer",
      "lines": [
       "You invested",
       "in yourselves."
      ],
      "who": "Dalin",
      "role": "Guest coach",
-     "photo": "hob_coffee_selfie.jpg",
-     "pos": "center 35%",
-     "join": "*Today.* Doors at 4pm. Link in bio."
+     "photo": "hob_walk.jpg",
+     "cta": "*Today.* Doors open at 4pm. Link in bio."
     }
    ],
    "caption": "Dalin, our guest coach, said this to the house: you didn't invest in Rod, you invested in yourselves.\n\n$35 and a Saturday afternoon. That's the investment. Connect & Cultivate, November 7th, 4pm, Buckhead. 60 seats. {door}\n\nWhen's the last time you spent money on yourself and not the business?",
@@ -715,16 +684,15 @@
    "door": "cc",
    "slides": [
     {
-     "t": "say",
+     "t": "flyer",
      "lines": [
       "It's been",
       "life-changing for me."
      ],
      "who": "Adesanya",
      "role": "Brand Mate",
-     "photo": "hob_home_group.jpg",
-     "pos": "center 35%",
-     "join": "*Today.* Doors at 4pm. Link in bio."
+     "photo": "hob_rod_selfie.jpg",
+     "cta": "*Today.* Doors open at 4pm. Link in bio."
     }
    ],
    "caption": "Adesanya's words, not mine. She said it wasn't bells and whistles, it was a couple of things that hit her right in the gut.\n\nThat's what happens when you stop building by yourself. Connect & Cultivate, November 7th, 4pm, Buckhead. House of Brand in person. $35. {door}\n\nCome see for yourself.",

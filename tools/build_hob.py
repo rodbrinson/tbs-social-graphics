@@ -19,6 +19,7 @@ B = json.load(open(BDIR / 'brand.json'))
 OUT = pathlib.Path(os.environ.get('OUT', BDIR / 'out')).resolve()
 PHOTOS = BDIR / B.get('photos', 'photos')
 P = B['palette']  # white, blue, cyan, orange, ink, tint
+P.setdefault('teal', P['blue'])
 LOGO = BDIR / B['logo']['plus']
 D = B.get('defaults', {})
 
@@ -31,8 +32,8 @@ CSS = CSS_FONTS + f"""
 html,body{{width:1080px;height:1350px;overflow:hidden;background:{P['white']};color:{P['ink']};font-family:'Space Grotesk',sans-serif;-webkit-font-smoothing:antialiased}}
 .s{{position:relative;width:1080px;height:1350px;overflow:hidden;background:{P['white']}}}
 .h{{font-family:'Unbounded';font-weight:900;line-height:.98;letter-spacing:-.025em;text-transform:uppercase}}
-.h .o{{color:{P['orange']};text-shadow:0 0 18px rgba(255,106,31,.55)}}
-.h .b{{color:{P['blue']};text-shadow:0 0 18px rgba(31,63,255,.45)}}
+.h .o{{color:{P['orange']}}}
+.h .b{{color:{P['blue']}}}
 .h .k{{color:transparent;-webkit-text-stroke:3px {P['blue']}}}
 .h b{{font-weight:900}}
 .body{{font-family:'Space Grotesk';font-weight:500;font-size:38px;line-height:1.3;color:{P['ink']}}}
@@ -294,6 +295,38 @@ def t_say(d, idx=1, total=1):
     {footer_line(d)}"""
 
 T.update(say=t_say)
+
+# ---------- unified flyer (Rod, Oct 22): title line, subheader, photo, phrase, CTA ----------
+FACES = json.load(open(BDIR / 'faces.json')) if (BDIR / 'faces.json').exists() else {}
+def face_pos(name, override=None):
+    if override: return override
+    f = FACES.get(name)
+    if not f or f.get('n', 0) == 0: return 'center 40%'
+    return f"{min(max(f['cx'],20),80)}% {min(max(f['cy'],18),70)}%"
+
+def t_flyer(d, idx=1, total=1):
+    lines = d['lines']; is_say = bool(d.get('who')); has_body = bool(d.get('body'))
+    ph = 520 if (is_say or has_body) else 560
+    size = hsize(lines, d.get('size', 78 if is_say else 92), maxh=250 if (is_say or has_body) else 290, cw=.78 if is_say else .86)
+    title = B.get('title', 'Connect & Cultivate'); sub = d.get('sub', B.get('subheader', ''))
+    cta = d.get('cta', B.get('cta', 'Sign up today. *Only 60 seats.* Link in bio.'))
+    quote = f"""<span style="font-family:'Unbounded';font-weight:900;color:{P['orange']};margin-right:6px">\u201c</span>""" if is_say else ''
+    return f"""
+    <div class="brand" style="top:52px"><img src="file://{LOGO}" style="width:44px;height:auto;display:block"><div style="font-family:'Space Grotesk';font-weight:500;font-size:22px;color:{P['ink']};opacity:.85">House of Brand, in person</div></div>
+    <div style="position:absolute;left:64px;right:64px;top:108px;font-family:'Archivo Black';font-size:{B.get('title_size',80)}px;line-height:1;letter-spacing:-.02em;color:{P['ink']};text-transform:uppercase;white-space:nowrap">{title.replace('&','<span style="color:'+P['orange']+'">&amp;</span>')}</div>
+    <div style="position:absolute;left:66px;top:{108+B.get('title_size',80)+14}px;font-family:'Space Grotesk';font-weight:700;font-size:25px;letter-spacing:.12em;text-transform:uppercase;color:{P['teal']}">{esc(sub)}</div>
+    <div style="position:absolute;left:64px;right:64px;top:{d.get('ptop',262)}px;height:{ph}px;border-radius:14px;overflow:hidden;box-shadow:0 24px 60px rgba(42,31,26,.22)"><div style="position:absolute;inset:0;{photo(d['photo'], face_pos(d['photo'], d.get('pos')))}background-size:cover"></div>
+      <div style="position:absolute;left:0;right:0;bottom:0;height:9px;background:linear-gradient(90deg,{P['teal']},{P['orange']})"></div></div>
+    <div class="pad" style="top:{d.get('ptop',262)+ph+46}px;left:64px;right:64px">
+      {f'<div class="kick" style="margin-bottom:12px;color:{P["orange"]}">{esc(d["kicker"])}</div>' if d.get('kicker') else ''}
+      <div class="h" style="font-size:{size}px;{'text-transform:none;letter-spacing:-.02em;' if is_say else ''}">{quote}{'<br>'.join(rich(l) for l in lines)}</div>
+      {f'<div style="margin-top:14px;font-family:Space Grotesk;font-weight:700;font-size:24px;color:{P["ink"]}">{esc(d["who"])} <span style="color:{P["teal"]};font-weight:500">{esc(d.get("role","Brand Mate"))}</span></div>' if is_say else ''}
+      {f'<div class="body" style="margin-top:14px;font-size:27px;line-height:1.3">{rich(d["body"])}</div>' if has_body else ''}
+      <div class="body" style="margin-top:{'18' if (is_say or has_body) else '26'}px;font-weight:700;font-size:30px">{rich(cta)}</div>
+    </div>
+    {footer_line(d)}"""
+
+T.update(flyer=t_flyer)
 
 def render(d, idx, total):
     return f"<!doctype html><html><head><meta charset='utf-8'><style>{CSS}</style></head><body><div class='s'>{T[d['t']](d, idx, total)}</div></body></html>"

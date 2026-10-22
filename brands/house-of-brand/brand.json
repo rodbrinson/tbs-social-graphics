@@ -21,11 +21,12 @@
  },
  "palette": {
   "white": "#FFFFFF",
-  "blue": "#1F3FFF",
-  "cyan": "#35D6FF",
-  "orange": "#FF6A1F",
-  "ink": "#15131A",
-  "tint": "#EEF2FF"
+  "blue": "#00adb2",
+  "teal": "#00adb2",
+  "cyan": "#8fdfe2",
+  "orange": "#f16b2e",
+  "ink": "#2a1f1a",
+  "tint": "#eef7f7"
  },
  "font_files": [
   {
@@ -47,6 +48,11 @@
    "family": "Space Grotesk",
    "file": "space-grotesk-latin-700-normal.woff2",
    "weight": 700
+  },
+  {
+   "family": "Archivo Black",
+   "file": "archivo-black-latin-400-normal.woff2",
+   "weight": 400
   }
  ],
  "logo": {
@@ -68,5 +74,9 @@
   "#houseofbrand",
   "#connectandcultivate",
   "#atlantaentrepreneurs"
- ]
+ ],
+ "title": "Connect & Cultivate",
+ "title_size": 78,
+ "subheader": "Meet real people who are building something",
+ "cta": "Sign up today. *Only 60 seats.* Link in bio."
 }
