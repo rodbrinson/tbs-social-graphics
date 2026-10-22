@@ -52,7 +52,7 @@
  },
  "gen10.jpg": {
   "cx": 50,
-  "cy": 40,
+  "cy": 30,
   "n": 1
  },
  "gen11.jpg": {
@@ -226,6 +226,16 @@
  "hob_window_talk.jpg": {
   "cx": 30,
   "cy": 30,
+  "n": 1
+ },
+ "bh_roundtable.jpg": {
+  "cx": 50,
+  "cy": 34,
+  "n": 1
+ },
+ "bh_room_listen.jpg": {
+  "cx": 55,
+  "cy": 34,
   "n": 1
  }
 }

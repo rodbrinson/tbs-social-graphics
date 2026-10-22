@@ -2,6 +2,51 @@
  "campaign": "Connect & Cultivate 2026-11-07",
  "posts": [
   {
+   "id": "d00-am",
+   "date": "2026-10-22",
+   "slot": "09:15",
+   "kind": "invite",
+   "door": "cc",
+   "slides": [
+    {
+     "t": "flyer",
+     "photo": "gen10.jpg",
+     "day": 0,
+     "lines": [
+      "Find",
+      "_your tribe._"
+     ]
+    }
+   ],
+   "caption": "Somewhere in Atlanta there's a group of people who get exactly what you're building. They laugh at the same things. They're stuck on the same things. They're up at the same hours.\n\nYou just haven't met them yet. On November 7th, sixty of them are going to be in one room. Connect & Cultivate, 4pm, Buckhead. House of Brand in person. $35, 60 seats, none at the door. {door}\n\nDescribe your people in three words. I'll go first: builders, believers, funny.",
+   "threads": "find your tribe. sixty builders, one room, Atlanta. Connect & Cultivate, Sat Nov 7, 4pm, Buckhead. $35, 60 seats. {door}",
+   "hashtags": "#connectandcultivate #houseofbrand #atlantaentrepreneurs #findyourtribe #buildyourbrand"
+  },
+  {
+   "id": "d00-pm",
+   "date": "2026-10-22",
+   "slot": "19:15",
+   "kind": "say",
+   "door": "cc",
+   "slides": [
+    {
+     "t": "flyer",
+     "photo": "bh_roundtable.jpg",
+     "day": 0,
+     "lines": [
+      "People grow when",
+      "you're in connection",
+      "with other people."
+     ],
+     "who": "Rod Brinson",
+     "role": "House of Brand"
+    }
+   ],
+   "caption": "I said this on the last night of our 8-week cohort and I meant it. People grow when you're in connection with other people.\n\nNot from another course. Not from another video. From sitting at a table with people who are building too. That's the whole idea behind November 7th. Connect & Cultivate, 4pm, Buckhead. $35, 60 seats. {door}\n\nWho's somebody that made you grow just by being around them?",
+   "threads": "people grow when you're in connection with other people. not another course. a table. Connect & Cultivate, Sat Nov 7, 4pm, Buckhead. $35. {door}",
+   "hashtags": "#houseofbrand #connectandcultivate #brandmates #atlantaevents #findyourpeople"
+  },
+  {
    "id": "d01-am",
    "date": "2026-10-23",
    "slot": "09:15",
