@@ -298,11 +298,36 @@ T.update(say=t_say)
 
 # ---------- unified flyer (Rod, Oct 22): title line, subheader, photo, phrase, CTA ----------
 FACES = json.load(open(BDIR / 'faces.json')) if (BDIR / 'faces.json').exists() else {}
-def face_pos(name, override=None):
+from PIL import Image as _PI
+_DIM = {}
+def face_pos(name, override=None, box=(952, 560)):
+    """Background-position (px) so the mean face center sits at the middle of a cover-fit box."""
     if override: return override
     f = FACES.get(name)
-    if not f or f.get('n', 0) == 0: return 'center 40%'
-    return f"{min(max(f['cx'],20),80)}% {min(max(f['cy'],18),70)}%"
+    if name not in _DIM: _DIM[name] = _PI.open(PHOTOS / name).size
+    iw, ih = _DIM[name]; bw, bh = box
+    sc = max(bw / iw, bh / ih); sw, sh = iw * sc, ih * sc
+    fx = (f['cx'] / 100 if f and f.get('n') else .5); fy = (f['cy'] / 100 if f and f.get('n') else .42)
+    # heads sit above face centers; aim the face a bit above box center
+    ox = min(max(fx * sw - bw / 2, 0), sw - bw); oy = min(max(fy * sh - bh * .46, 0), sh - bh)
+    return f"-{ox:.0f}px -{oy:.0f}px"
+
+def grid_plus(seed):
+    """Plus marks in the margins, half-cut at the edges so they read as floating between tiles on a grid."""
+    r = random.Random(seed)
+    cols = [P['orange'], P['teal'], P['orange']]
+    pts = [(1080-14, 300+r.randint(-40,40), 30), (-14, 820+r.randint(-60,60), 30), (1080-12, 1010+r.randint(-30,30), 22),
+           (r.randint(700, 980), 1250+r.randint(-10,10), 18), (r.randint(30, 60), 232, 16)]
+    out = []
+    for i,(x,y,sz) in enumerate(pts):
+        out.append(f'<svg style="position:absolute;left:{x-sz/2:.0f}px;top:{y-sz/2:.0f}px;transform:rotate({r.randint(-20,20)}deg)" width="{sz}" height="{sz}" viewBox="0 0 10 10"><path d="M5 0v10M0 5h10" stroke="{cols[i%3]}" stroke-width="2.4" stroke-linecap="round" opacity=".9"/></svg>')
+    return ''.join(out)
+
+def soft_bg(seed):
+    corners = [(-300, -300), (700, -300), (700, 900), (-300, 900)]
+    i = seed % 4; (ax, ay), (bx, by) = corners[i], corners[(i+2)%4]
+    return (f'<div class="blob" style="left:{ax}px;top:{ay}px;width:700px;height:700px;background:{P["teal"]};opacity:.22"></div>'
+            f'<div class="blob" style="left:{bx}px;top:{by}px;width:680px;height:680px;background:{P["orange"]};opacity:.18"></div>')
 
 def t_flyer(d, idx=1, total=1):
     lines = d['lines']; is_say = bool(d.get('who')); has_body = bool(d.get('body'))
@@ -311,11 +336,12 @@ def t_flyer(d, idx=1, total=1):
     title = B.get('title', 'Connect & Cultivate'); sub = d.get('sub', B.get('subheader', ''))
     cta = d.get('cta', B.get('cta', 'Sign up today. *Only 60 seats.* Link in bio.'))
     quote = f"""<span style="font-family:'Unbounded';font-weight:900;color:{P['orange']};margin-right:6px">\u201c</span>""" if is_say else ''
-    return f"""
+    seed = d.get('seed', idx)
+    return f"""{soft_bg(seed)}{grid_plus(seed)}
     <div class="brand" style="top:52px"><img src="file://{LOGO}" style="width:44px;height:auto;display:block"><div style="font-family:'Space Grotesk';font-weight:500;font-size:22px;color:{P['ink']};opacity:.85">House of Brand, in person</div></div>
     <div style="position:absolute;left:64px;right:64px;top:108px;font-family:'Archivo Black';font-size:{B.get('title_size',80)}px;line-height:1;letter-spacing:-.02em;color:{P['ink']};text-transform:uppercase;white-space:nowrap">{title.replace('&','<span style="color:'+P['orange']+'">&amp;</span>')}</div>
     <div style="position:absolute;left:66px;top:{108+B.get('title_size',80)+14}px;font-family:'Space Grotesk';font-weight:700;font-size:25px;letter-spacing:.12em;text-transform:uppercase;color:{P['teal']}">{esc(sub)}</div>
-    <div style="position:absolute;left:64px;right:64px;top:{d.get('ptop',262)}px;height:{ph}px;border-radius:14px;overflow:hidden;box-shadow:0 24px 60px rgba(42,31,26,.22)"><div style="position:absolute;inset:0;{photo(d['photo'], face_pos(d['photo'], d.get('pos')))}background-size:cover"></div>
+    <div style="position:absolute;left:64px;right:64px;top:{d.get('ptop',262)}px;height:{ph}px;border-radius:14px;overflow:hidden;box-shadow:0 24px 60px rgba(42,31,26,.22)"><div style="position:absolute;inset:0;{photo(d['photo'], face_pos(d['photo'], d.get('pos'), (952, ph)))}background-size:cover"></div>
       <div style="position:absolute;left:0;right:0;bottom:0;height:9px;background:linear-gradient(90deg,{P['teal']},{P['orange']})"></div></div>
     <div class="pad" style="top:{d.get('ptop',262)+ph+46}px;left:64px;right:64px">
       {f'<div class="kick" style="margin-bottom:12px;color:{P["orange"]}">{esc(d["kicker"])}</div>' if d.get('kicker') else ''}
