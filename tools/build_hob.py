@@ -312,22 +312,28 @@ def face_pos(name, override=None, box=(952, 560)):
     ox = min(max(fx * sw - bw / 2, 0), sw - bw); oy = min(max(fy * sh - bh * .46, 0), sh - bh)
     return f"-{ox:.0f}px -{oy:.0f}px"
 
-def grid_plus(seed):
-    """Plus marks in the margins, half-cut at the edges so they read as floating between tiles on a grid."""
-    r = random.Random(seed)
-    cols = [P['orange'], P['teal'], P['orange']]
-    pts = [(1080-14, 300+r.randint(-40,40), 30), (-14, 820+r.randint(-60,60), 30), (1080-12, 1010+r.randint(-30,30), 22),
-           (r.randint(700, 980), 1250+r.randint(-10,10), 18), (r.randint(30, 60), 232, 16)]
+def _gx(day):
+    return 140 + (day * 397) % 800
+
+def grid_plus(day):
+    """Plus marks that hand off vertically: the one half-off the bottom edge of day d lines up with the one half-off the top edge of day d-1 (the tile below it on the grid)."""
+    r = random.Random(day * 11)
+    marks = [(_gx(day), 1350, 30, P['orange'] if day % 2 == 0 else P['teal']),      # bottom edge
+             (_gx(day + 1), 0, 30, P['orange'] if (day + 1) % 2 == 0 else P['teal']),  # top edge (matches tile above's bottom)
+             (r.choice((28, 1052)), r.randint(300, 1100), 18, P['teal']),
+             (r.randint(640, 1000), r.randint(228, 246), 14, P['orange'])]
     out = []
-    for i,(x,y,sz) in enumerate(pts):
-        out.append(f'<svg style="position:absolute;left:{x-sz/2:.0f}px;top:{y-sz/2:.0f}px;transform:rotate({r.randint(-20,20)}deg)" width="{sz}" height="{sz}" viewBox="0 0 10 10"><path d="M5 0v10M0 5h10" stroke="{cols[i%3]}" stroke-width="2.4" stroke-linecap="round" opacity=".9"/></svg>')
+    for x, y, sz, col in marks:
+        out.append(f'<svg style="position:absolute;left:{x-sz/2:.0f}px;top:{y-sz/2:.0f}px;transform:rotate({r.randint(-15,15)}deg)" width="{sz}" height="{sz}" viewBox="0 0 10 10"><path d="M5 0v10M0 5h10" stroke="{col}" stroke-width="2.4" stroke-linecap="round" opacity=".95"/></svg>')
     return ''.join(out)
 
-def soft_bg(seed):
-    corners = [(-300, -300), (700, -300), (700, 900), (-300, 900)]
-    i = seed % 4; (ax, ay), (bx, by) = corners[i], corners[(i+2)%4]
-    return (f'<div class="blob" style="left:{ax}px;top:{ay}px;width:700px;height:700px;background:{P["teal"]};opacity:.22"></div>'
-            f'<div class="blob" style="left:{bx}px;top:{by}px;width:680px;height:680px;background:{P["orange"]};opacity:.18"></div>')
+def _rgba(h, a):
+    h = h.lstrip('#'); return f"rgba({int(h[:2],16)},{int(h[2:4],16)},{int(h[4:],16)},{a})"
+
+def soft_bg(day):
+    """Vertical wash that flows down the column: even days teal at top fading to orange at bottom, odd days the reverse, so the bottom of one tile matches the top of the tile below it."""
+    top, bot = (P['teal'], P['orange']) if day % 2 == 0 else (P['orange'], P['teal'])
+    return f'<div style="position:absolute;inset:0;background:linear-gradient(180deg,{_rgba(top,.26)} 0%,{_rgba(top,.06)} 34%,rgba(255,255,255,0) 50%,{_rgba(bot,.06)} 66%,{_rgba(bot,.26)} 100%)"></div>'
 
 def t_flyer(d, idx=1, total=1):
     lines = d['lines']; is_say = bool(d.get('who')); has_body = bool(d.get('body'))
@@ -336,8 +342,8 @@ def t_flyer(d, idx=1, total=1):
     title = B.get('title', 'Connect & Cultivate'); sub = d.get('sub', B.get('subheader', ''))
     cta = d.get('cta', B.get('cta', 'Sign up today. *Only 60 seats.* Link in bio.'))
     quote = f"""<span style="font-family:'Unbounded';font-weight:900;color:{P['orange']};margin-right:6px">\u201c</span>""" if is_say else ''
-    seed = d.get('seed', idx)
-    return f"""{soft_bg(seed)}{grid_plus(seed)}
+    day = d.get('day', idx)
+    return f"""{soft_bg(day)}{grid_plus(day)}
     <div class="brand" style="top:52px"><img src="file://{LOGO}" style="width:44px;height:auto;display:block"><div style="font-family:'Space Grotesk';font-weight:500;font-size:22px;color:{P['ink']};opacity:.85">House of Brand, in person</div></div>
     <div style="position:absolute;left:64px;right:64px;top:108px;font-family:'Archivo Black';font-size:{B.get('title_size',80)}px;line-height:1;letter-spacing:-.02em;color:{P['ink']};text-transform:uppercase;white-space:nowrap">{title.replace('&','<span style="color:'+P['orange']+'">&amp;</span>')}</div>
     <div style="position:absolute;left:66px;top:{108+B.get('title_size',80)+14}px;font-family:'Space Grotesk';font-weight:700;font-size:25px;letter-spacing:.12em;text-transform:uppercase;color:{P['teal']}">{esc(sub)}</div>

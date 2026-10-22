@@ -129,10 +129,9 @@
   "n": 1
  },
  "gen24.jpg": {
-  "cx": 57,
-  "cy": 22,
-  "n": 1,
-  "ar": 1.5
+  "cx": 55,
+  "cy": 16,
+  "n": 1
  },
  "gen25.jpg": {
   "cx": 45,
@@ -169,9 +168,8 @@
  },
  "hob_coffee_selfie.jpg": {
   "cx": 48,
-  "cy": 51,
-  "n": 6,
-  "ar": 1.33
+  "cy": 36,
+  "n": 1
  },
  "hob_curtain_group.jpg": {
   "cx": 50,
@@ -186,7 +184,7 @@
  },
  "hob_home_group.jpg": {
   "cx": 55,
-  "cy": 40,
+  "cy": 36,
   "n": 1
  },
  "hob_hug.jpg": {
@@ -206,14 +204,13 @@
  },
  "hob_plaid_talk.jpg": {
   "cx": 70,
-  "cy": 20,
+  "cy": 14,
   "n": 1
  },
  "hob_rod_selfie.jpg": {
   "cx": 50,
-  "cy": 48,
-  "n": 3,
-  "ar": 1.33
+  "cy": 28,
+  "n": 1
  },
  "hob_two_men_bar.jpg": {
   "cx": 32,
