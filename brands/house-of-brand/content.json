@@ -168,18 +168,17 @@
     {
      "t": "flyer",
      "lines": [
-      "Talking with her",
-      "was like talking",
-      "with an old friend."
+      "Time just fell",
+      "off the clock."
      ],
-     "who": "Natasha",
-     "role": "Brand Mate",
+     "who": "Bradley",
+     "role": "Guest teacher",
      "photo": "hob_two_men_bar.jpg",
      "day": 4
     }
    ],
-   "caption": "That's Natasha talking about somebody she met at our last meetup. Not a contact. Not a lead. A friend.\n\nThat's what we're going for on November 7th. Connect & Cultivate, 4pm, Buckhead. $35. {door}\n\nWho was the last person you met that felt like you'd known them for years?",
-   "threads": "\"talking with her was like talking with an old friend.\" Natasha, about somebody she met at our last meetup. Nov 7, 4pm, Buckhead. $35. {door}",
+   "caption": "Bradley teaches storytelling in the house. He was describing a dinner with Krystal, two Brand Mates who'd never sat down together, and the restaurant was closing before they noticed.\n\nThat's what happens when builders get in a room. November 7th we're doing it on purpose. Connect & Cultivate, 4pm, Buckhead. $35, 60 seats. {door}\n\nWho's the person you could talk to for three hours without checking the time?",
+   "threads": "\"time just fell off the clock.\" Bradley, about a dinner with another Brand Mate. this is what the house feels like. Nov 7, 4pm, Buckhead. $35. {door}",
    "hashtags": "#houseofbrand #connectandcultivate #brandmates #atlantaevents #findyourpeople"
   },
   {
@@ -537,7 +536,8 @@
      "who": "Sherry",
      "role": "Brand Mate",
      "photo": "hob_home_group.jpg",
-     "day": 12
+     "day": 12,
+     "aim": 0.22
     }
    ],
    "caption": "Sherry, at the end of eight weeks with the house. Clear is the whole point.\n\nIf you're building something and it still feels foggy, come sit with people who've been where you are. Connect & Cultivate, November 7th, 4pm, Buckhead. $35. {door}\n\nWhat would clear look like for you?",
@@ -621,18 +621,17 @@
     {
      "t": "flyer",
      "lines": [
-      "People started saying,",
-      "oh my God,",
-      "I'm not the only one."
+      "Don't do it",
+      "by yourself."
      ],
-     "who": "Dalin",
-     "role": "Brand Mate",
+     "who": "Rod Brinson",
+     "role": "House of Brand",
      "photo": "hob_bar_three.jpg",
      "day": 14
     }
    ],
-   "caption": "Dalin was describing a call where people came on camera one by one and realized they weren't the only ones feeling it.\n\nThat moment happens in person too. Faster. November 7th, Connect & Cultivate, 4pm, Buckhead. $35, 60 seats. {door}\n\nWhat's the thing you thought you were the only one dealing with?",
-   "threads": "\"people started saying, oh my God, I'm not the only one.\" Dalin, on a House of Brand call. come find out you're not the only one. Nov 7, 4pm, Buckhead. $35. {door}",
+   "caption": "I end most of our calls with this. Don't do it by yourself. If you need help with something, reach out.\n\nIt's the whole reason the house exists, and on November 7th it's the whole reason for the room. Connect & Cultivate, 4pm, Buckhead. $35, 60 seats. {door}\n\nWhat have you been doing by yourself that you don't have to?",
+   "threads": "don't do it by yourself. if you need help with something, reach out. that's the house. Nov 7, 4pm, Buckhead. $35. {door}",
    "hashtags": "#houseofbrand #connectandcultivate #brandmates #atlantaevents #findyourpeople"
   },
   {
@@ -652,7 +651,8 @@
      "who": "Krystal",
      "role": "Brand Mate",
      "photo": "hob_window_talk.jpg",
-     "day": 15
+     "day": 15,
+     "aim": 0.4
     }
    ],
    "caption": "Krystal said this walking into a game night. Not a workshop. A game night.\n\nBecause sometimes what you need from a community is to laugh with people who get it. November 7th has both. Connect & Cultivate, 4pm, Buckhead. $35. {door}\n\nWhat do you need more than ever right now?",
@@ -692,18 +692,19 @@
     {
      "t": "flyer",
      "lines": [
-      "You invested",
-      "in yourselves."
+      "Talking with her",
+      "was like talking",
+      "with an old friend."
      ],
-     "who": "Dalin",
-     "role": "Guest coach",
+     "who": "Natasha",
+     "role": "Brand Mate",
      "photo": "hob_walk.jpg",
      "cta": "*Today.* Doors open at 4pm. Link in bio.",
      "day": 16
     }
    ],
-   "caption": "Dalin, our guest coach, said this to the house: you didn't invest in Rod, you invested in yourselves.\n\n$35 and a Saturday afternoon. That's the investment. Connect & Cultivate, November 7th, 4pm, Buckhead. 60 seats. {door}\n\nWhen's the last time you spent money on yourself and not the business?",
-   "threads": "\"you invested in yourselves.\" Dalin, guest coach, to the house. $35 and a Saturday. Nov 7, 4pm, Buckhead. {door}",
+   "caption": "That's Natasha talking about somebody she met at our last meetup. Not a contact. Not a lead. A friend.\n\nToday is the day. Connect & Cultivate, doors at 4pm, Buckhead. If there are seats left they're at the link in bio. If not, the next one's coming.\n\nWho are you hoping to meet this afternoon?",
+   "threads": "\"talking with her was like talking with an old friend.\" Natasha, about somebody she met at our last meetup. today. doors at 4pm, Buckhead. {door}",
    "hashtags": "#houseofbrand #connectandcultivate #brandmates #atlantaevents #findyourpeople"
   },
   {

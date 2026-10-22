@@ -300,7 +300,7 @@ T.update(say=t_say)
 FACES = json.load(open(BDIR / 'faces.json')) if (BDIR / 'faces.json').exists() else {}
 from PIL import Image as _PI
 _DIM = {}
-def face_pos(name, override=None, box=(952, 560)):
+def face_pos(name, override=None, box=(952, 560), aim=.46):
     """Background-position (px) so the mean face center sits at the middle of a cover-fit box."""
     if override: return override
     f = FACES.get(name)
@@ -309,7 +309,7 @@ def face_pos(name, override=None, box=(952, 560)):
     sc = max(bw / iw, bh / ih); sw, sh = iw * sc, ih * sc
     fx = (f['cx'] / 100 if f and f.get('n') else .5); fy = (f['cy'] / 100 if f and f.get('n') else .42)
     # heads sit above face centers; aim the face a bit above box center
-    ox = min(max(fx * sw - bw / 2, 0), sw - bw); oy = min(max(fy * sh - bh * .46, 0), sh - bh)
+    ox = min(max(fx * sw - bw / 2, 0), sw - bw); oy = min(max(fy * sh - bh * aim, 0), sh - bh)
     return f"-{ox:.0f}px -{oy:.0f}px"
 
 def _gx(day):
@@ -347,7 +347,7 @@ def t_flyer(d, idx=1, total=1):
     <div class="brand" style="top:52px"><img src="file://{LOGO}" style="width:44px;height:auto;display:block"><div style="font-family:'Space Grotesk';font-weight:500;font-size:22px;color:{P['ink']};opacity:.85">House of Brand, in person</div></div>
     <div style="position:absolute;left:64px;right:64px;top:108px;font-family:'Archivo Black';font-size:{B.get('title_size',80)}px;line-height:1;letter-spacing:-.02em;color:{P['ink']};text-transform:uppercase;white-space:nowrap">{title.replace('&','<span style="color:'+P['orange']+'">&amp;</span>')}</div>
     <div style="position:absolute;left:66px;top:{108+B.get('title_size',80)+14}px;font-family:'Space Grotesk';font-weight:700;font-size:25px;letter-spacing:.12em;text-transform:uppercase;color:{P['teal']}">{esc(sub)}</div>
-    <div style="position:absolute;left:64px;right:64px;top:{d.get('ptop',262)}px;height:{ph}px;border-radius:14px;overflow:hidden;box-shadow:0 24px 60px rgba(42,31,26,.22)"><div style="position:absolute;inset:0;{photo(d['photo'], face_pos(d['photo'], d.get('pos'), (952, ph)))}background-size:cover"></div>
+    <div style="position:absolute;left:64px;right:64px;top:{d.get('ptop',262)}px;height:{ph}px;border-radius:14px;overflow:hidden;box-shadow:0 24px 60px rgba(42,31,26,.22)"><div style="position:absolute;inset:0;{photo(d['photo'], face_pos(d['photo'], d.get('pos'), (952, ph), d.get('aim', .46)))}background-size:cover"></div>
       <div style="position:absolute;left:0;right:0;bottom:0;height:9px;background:linear-gradient(90deg,{P['teal']},{P['orange']})"></div></div>
     <div class="pad" style="top:{d.get('ptop',262)+ph+46}px;left:64px;right:64px">
       {f'<div class="kick" style="margin-bottom:12px;color:{P["orange"]}">{esc(d["kicker"])}</div>' if d.get('kicker') else ''}

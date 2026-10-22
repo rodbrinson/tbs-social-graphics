@@ -184,7 +184,7 @@
  },
  "hob_home_group.jpg": {
   "cx": 55,
-  "cy": 36,
+  "cy": 40,
   "n": 1
  },
  "hob_hug.jpg": {
@@ -224,8 +224,8 @@
   "ar": 1.33
  },
  "hob_window_talk.jpg": {
-  "cx": 28,
-  "cy": 24,
+  "cx": 30,
+  "cy": 30,
   "n": 1
  }
 }
