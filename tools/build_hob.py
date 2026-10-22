@@ -250,8 +250,10 @@ def t_tribe(d, idx=1, total=1):
     <div style="position:absolute;left:72px;top:150px;width:936px;height:{d.get('ph',560)}px;border-radius:6px;overflow:hidden;box-shadow:0 30px 70px rgba(21,19,26,.22)"><div style="position:absolute;inset:0;{photo(d['photo'], d.get('pos','center'))}background-size:cover"></div>
       <div style="position:absolute;left:0;right:0;bottom:0;height:8px;background:linear-gradient(90deg,{P['blue']},{P['cyan']},{P['orange']})"></div></div>
     <div class="pad" style="top:{d.get('top', 790)}px">
+      {f'<div class="kick" style="margin-bottom:18px">{esc(d["kicker"])}</div>' if d.get('kicker') else ''}
       <div class="h" style="font-size:{size}px">{'<br>'.join(rich(l) for l in lines)}</div>
-      <div class="body" style="margin-top:38px;font-weight:700;font-size:34px">{rich(d.get('join', 'Join us Nov. 7th. *Link in bio.*'))}</div>
+      {f'<div class="body" style="margin-top:22px;font-size:32px">{rich(d["body"])}</div>' if d.get('body') else ''}
+      <div class="body" style="margin-top:{'26' if d.get('body') else '38'}px;font-weight:700;font-size:34px">{rich(d.get('join', 'Join us Nov. 7th. *Link in bio.*'))}</div>
     </div>
     {footer_line(d)}"""
 
@@ -274,6 +276,24 @@ def t_countdown(d, idx=1, total=1):
     <div style="position:absolute;left:72px;bottom:64px;font-family:'Space Grotesk';font-weight:700;font-size:24px;color:{P['white']};text-shadow:0 2px 10px rgba(0,0,0,.4)">{esc(d.get('url', D.get('url','')))}</div>"""
 
 T.update(reason=t_reason, tribe=t_tribe, countdown=t_countdown)
+
+def t_say(d, idx=1, total=1):
+    """Testimony card: real meetup photo, a Brand Mate's words, their first name, the join line."""
+    lines = d['lines']; size = hsize(lines, d.get('size', 84), maxh=330, cw=.78)
+    return f"""{blobs(d.get('seed', 9), .4)}
+    {brand_plain()}
+    <div style="position:absolute;left:72px;top:150px;width:936px;height:{d.get('ph',470)}px;border-radius:6px;overflow:hidden;box-shadow:0 30px 70px rgba(21,19,26,.22)"><div style="position:absolute;inset:0;{photo(d['photo'], d.get('pos','center'))}background-size:cover"></div>
+      <div style="position:absolute;left:0;right:0;bottom:0;height:8px;background:linear-gradient(90deg,{P['blue']},{P['cyan']},{P['orange']})"></div></div>
+    <div class="pad" style="top:{d.get('top', 680)}px">
+      <div style="font-family:'Unbounded';font-weight:900;font-size:120px;line-height:.5;color:{P['orange']};text-shadow:0 0 22px rgba(255,106,31,.55);margin-bottom:14px">\u201c</div>
+      <div class="h" style="font-size:{size}px;text-transform:none;letter-spacing:-.02em">{'<br>'.join(rich(l) for l in lines)}</div>
+      <div style="margin-top:26px;display:flex;align-items:center;gap:16px"><div style="width:48px;height:6px;background:{P['blue']};border-radius:3px"></div>
+        <div style="font-family:'Space Grotesk';font-weight:700;font-size:28px;color:{P['ink']}">{esc(d.get('who',''))} <span style="color:{P['blue']};font-weight:500">{esc(d.get('role','Brand Mate'))}</span></div></div>
+      <div class="body" style="margin-top:28px;font-weight:700;font-size:32px">{rich(d.get('join', 'Join us Nov. 7th. *Link in bio.*'))}</div>
+    </div>
+    {footer_line(d)}"""
+
+T.update(say=t_say)
 
 def render(d, idx, total):
     return f"<!doctype html><html><head><meta charset='utf-8'><style>{CSS}</style></head><body><div class='s'>{T[d['t']](d, idx, total)}</div></body></html>"

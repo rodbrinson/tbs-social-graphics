@@ -2,68 +2,734 @@
  "campaign": "Connect & Cultivate 2026-11-07",
  "posts": [
   {
-   "id": "d01-reason",
-   "date": "2026-10-22",
+   "id": "d01-am",
+   "date": "2026-10-23",
    "slot": "09:15",
-   "kind": "reason",
+   "kind": "invite",
    "door": "cc",
    "slides": [
     {
-     "t": "reason",
-     "n": 1,
+     "t": "tribe",
      "photo": "gen13.jpg",
      "pos": "center 35%",
      "lines": [
-      "Somebody in this room",
-      "has already solved the",
-      "thing you're stuck on."
+      "Being in the room",
+      "_changes everything._"
      ]
     }
    ],
-   "caption": "Reason number one....\n\nThe thing you've been sitting on for three weeks? Somebody in that room already went through it. They'll tell you in three minutes what took them three months. That's the whole point of being in a room instead of on a feed.\n\nConnect & Cultivate. Saturday, November 7th, 4pm, Buckhead. $35. 60 seats and none at the door. {door}\n\nWhat's the thing you'd ask if the right person was standing in front of you?",
-   "threads": "reason no. 1 to come to Connect & Cultivate: somebody in that room has already solved the thing you're stuck on.\n\nSat Nov 7, 4pm, Buckhead. $35. 60 seats. {door}",
+   "caption": "I can't explain it any better than this....\n\nYou can watch every video, read every book, take every course. And then you sit at a table with people who are building the same thing you are and something shifts in twenty minutes that didn't shift in two years.\n\nConnect & Cultivate. Saturday, November 7th, 4pm, Buckhead. House of Brand in person. $35, 60 seats, none at the door. {door}\n\nWhat's the last room you walked into that changed something for you?",
+   "threads": "being in the room changes everything. Connect & Cultivate, Sat Nov 7, 4pm, Buckhead. House of Brand in person. $35, 60 seats. {door}",
    "hashtags": "#connectandcultivate #houseofbrand #atlantaentrepreneurs #buildyourbrand #networkingatlanta"
   },
   {
-   "id": "d01-tribe",
-   "date": "2026-10-22",
-   "slot": "13:15",
-   "kind": "tribe",
+   "id": "d01-pm",
+   "date": "2026-10-23",
+   "slot": "19:15",
+   "kind": "say",
+   "door": "cc",
+   "slides": [
+    {
+     "t": "say",
+     "lines": [
+      "I just wish",
+      "we were all in",
+      "the same space."
+     ],
+     "who": "Mahogany",
+     "role": "Brand Mate",
+     "photo": "hob_curtain_group.jpg",
+     "pos": "center 35%"
+    }
+   ],
+   "caption": "Mahogany said this on a call in August. We heard her.\n\nNovember 7th, we're all in the same space. Connect & Cultivate, 4pm, Buckhead, House of Brand in person. $35, 60 seats, none at the door. {door}\n\nIf you've ever said this about an online community, this one's for you.",
+   "threads": "\"I just wish we were all in the same space.\" Mahogany said that in August. Nov 7 we will be. 4pm, Buckhead. $35. {door}",
+   "hashtags": "#houseofbrand #connectandcultivate #brandmates #atlantaevents #findyourpeople"
+  },
+  {
+   "id": "d02-am",
+   "date": "2026-10-24",
+   "slot": "09:15",
+   "kind": "invite",
    "door": "cc",
    "slides": [
     {
      "t": "tribe",
      "photo": "gen07.jpg",
-     "pos": "center 30%",
+     "pos": "center 35%",
      "lines": [
-      "Your people",
-      "are in this city."
-     ],
-     "size": 100
+      "This is",
+      "more than",
+      "*networking.*"
+     ]
     }
    ],
-   "caption": "I know how it feels to be building something and look around and nobody near you gets it....\n\nYour family loves you but they don't understand it. Your coworkers think it's a hobby. So you build alone and call it discipline.\n\nYour people are in this city. Builders, dreamers, people on their second and third try. You just haven't been in the same room yet. November 7th fixes that. {door}\n\nTell me what you're building. I want to know who's coming.",
-   "threads": "your people are in this city. you just haven't met them yet.\n\nConnect & Cultivate, Sat Nov 7, 4pm, Buckhead. $35, 60 seats. come alone, most people do. {door}",
-   "hashtags": "#findyourtribe #atlantaentrepreneurs #houseofbrand #connectandcultivate #buildtogether"
+   "caption": "I know what you're picturing. Name tags. A bar. Three conversations that go nowhere.\n\nThis is House of Brand in person. Every room has somebody hosting it. There's a corner to shoot content, a floor if you've got a pitch, one house party drink on us, and sixty people who chose to spend a Saturday afternoon building.\n\nNovember 7th. 4pm. Buckhead. $35. {door}\n\nTell me what you need from a room like this and I'll make sure it's there.",
+   "threads": "this is more than networking. House of Brand in person, Sat Nov 7, 4pm, Buckhead. one house party drink on us. $35, 60 seats. {door}",
+   "hashtags": "#connectandcultivate #houseofbrand #atlantaentrepreneurs #buildyourbrand #networkingatlanta"
   },
   {
-   "id": "d01-count",
-   "date": "2026-10-22",
+   "id": "d02-pm",
+   "date": "2026-10-24",
    "slot": "19:15",
-   "kind": "call",
+   "kind": "say",
    "door": "cc",
    "slides": [
     {
-     "t": "countdown",
-     "days": 16,
-     "photo": "hob_curtain_group.jpg",
-     "pos": "center 45%",
-     "body": "Anything but your average networking event. 60 seats, none at the door."
+     "t": "say",
+     "lines": [
+      "The meetup was",
+      "so amazing. We stayed",
+      "45 minutes after",
+      "everyone else."
+     ],
+     "who": "Natasha",
+     "role": "Brand Mate",
+     "photo": "hob_laptop_women.jpg",
+     "pos": "center 35%"
     }
    ],
-   "caption": "16 days out.\n\nIf you've been to the mixer where you stand by the bar and leave with cards you never call, this is not that. Every room has somebody running it. There's a content station, live pitches, light bites and drinks, and people who will ask you Monday what you did with the connection.\n\nConnect & Cultivate. Saturday, November 7th, 4pm, Buckhead. $35, 60 seats, sold in advance only. {door}\n\nDrop a 🙋🏾 if you're coming by yourself. You won't be standing alone for a minute.",
-   "threads": "16 days out. Connect & Cultivate, Sat Nov 7, 4pm, Buckhead. $35, 60 seats, none at the door. {door}",
-   "hashtags": "#connectandcultivate #houseofbrand #atlantaevents #atlantanetworking #buildyourbrand"
+   "caption": "Natasha said this on a Thursday call the week after our last meetup. She and Mahogany stayed almost an hour after everybody left.\n\nThat's the kind of room this is. November 7th we're doing it again, bigger. Connect & Cultivate, 4pm, Buckhead, House of Brand in person. $35, 60 seats. {door}\n\nWho's staying late with us?",
+   "threads": "\"the meetup was so amazing. we stayed 45 minutes after everyone else.\" Natasha, Brand Mate. next one is Nov 7, 4pm, Buckhead. $35. {door}",
+   "hashtags": "#houseofbrand #connectandcultivate #brandmates #atlantaevents #findyourpeople"
+  },
+  {
+   "id": "d03-am",
+   "date": "2026-10-25",
+   "slot": "09:15",
+   "kind": "invite",
+   "door": "cc",
+   "slides": [
+    {
+     "t": "tribe",
+     "photo": "gen20.jpg",
+     "pos": "center 35%",
+     "lines": [
+      "Come find",
+      "_your people._"
+     ]
+    }
+   ],
+   "caption": "Somewhere in this city there's a handful of people who get exactly what you're trying to build. You just haven't been in the same room yet.\n\nThat's what November 7th is for. Connect & Cultivate, 4pm, Buckhead, House of Brand in person. $35, 60 seats. {door}\n\nWho's coming with you? Tag them.",
+   "threads": "come find your people. Connect & Cultivate, Sat Nov 7, 4pm, Buckhead. $35, 60 seats. {door}",
+   "hashtags": "#connectandcultivate #houseofbrand #atlantaentrepreneurs #buildyourbrand #networkingatlanta"
+  },
+  {
+   "id": "d03-pm",
+   "date": "2026-10-25",
+   "slot": "19:15",
+   "kind": "moment",
+   "door": "cc",
+   "slides": [
+    {
+     "t": "tribe",
+     "lines": [
+      "Two people forgot",
+      "to eat dinner."
+     ],
+     "kicker": "True story",
+     "body": "Our last game night, MJ vs Prince, ran so long nobody noticed the time. It ended in a tie and went to a round 21.",
+     "photo": "hob_two_men_bar.jpg",
+     "pos": "center 35%"
+    }
+   ],
+   "caption": "That's a real thing that happened in the house. A Tuesday game night that was supposed to be an hour. Twenty rounds, a tiebreaker, and two people who forgot to eat.\n\nWe do business. We also do this. November 7th is both. Connect & Cultivate, 4pm, Buckhead. $35. {door}\n\nMJ or Prince? Wrong answers only.",
+   "threads": "true story: our last game night ran so long two people forgot to eat dinner. MJ vs Prince, 20 rounds, tiebreaker. this is the house. Nov 7, 4pm, Buckhead. $35. {door}",
+   "hashtags": "#houseofbrand #connectandcultivate #brandmates #atlantaevents #findyourpeople"
+  },
+  {
+   "id": "d04-am",
+   "date": "2026-10-26",
+   "slot": "09:15",
+   "kind": "invite",
+   "door": "cc",
+   "slides": [
+    {
+     "t": "tribe",
+     "photo": "gen15.jpg",
+     "pos": "center 35%",
+     "lines": [
+      "Your people",
+      "are in this city."
+     ]
+    }
+   ],
+   "caption": "Builders. Dreamers. People on their second and third try. People who left the job and people who are still planning it.\n\nThey're here in Atlanta, and on November 7th we're putting sixty of them in one room. Connect & Cultivate, 4pm, Buckhead, $35. {door}\n\nWhat are you building right now? Say it in the comments so your people can find you before Saturday.",
+   "threads": "your people are in this city. you just haven't met them yet. Sat Nov 7, 4pm, Buckhead. $35, 60 seats. {door}",
+   "hashtags": "#connectandcultivate #houseofbrand #atlantaentrepreneurs #buildyourbrand #networkingatlanta"
+  },
+  {
+   "id": "d04-pm",
+   "date": "2026-10-26",
+   "slot": "19:15",
+   "kind": "say",
+   "door": "cc",
+   "slides": [
+    {
+     "t": "say",
+     "lines": [
+      "Talking with her",
+      "was like talking",
+      "with an old friend."
+     ],
+     "who": "Natasha",
+     "role": "Brand Mate",
+     "photo": "hob_coffee_selfie.jpg",
+     "pos": "center 35%"
+    }
+   ],
+   "caption": "That's Natasha talking about somebody she met at our last meetup. Not a contact. Not a lead. A friend.\n\nThat's what we're going for on November 7th. Connect & Cultivate, 4pm, Buckhead. $35. {door}\n\nWho was the last person you met that felt like you'd known them for years?",
+   "threads": "\"talking with her was like talking with an old friend.\" Natasha, about somebody she met at our last meetup. Nov 7, 4pm, Buckhead. $35. {door}",
+   "hashtags": "#houseofbrand #connectandcultivate #brandmates #atlantaevents #findyourpeople"
+  },
+  {
+   "id": "d05-am",
+   "date": "2026-10-27",
+   "slot": "09:15",
+   "kind": "invite",
+   "door": "cc",
+   "slides": [
+    {
+     "t": "tribe",
+     "photo": "gen09.jpg",
+     "pos": "center 35%",
+     "lines": [
+      "This is a room",
+      "you *want*",
+      "to be in."
+     ]
+    }
+   ],
+   "caption": "Not every room is worth the drive. This one is.\n\nSixty people, every one of them building something. Somebody hosting every conversation so you're never stuck. A content corner, a pitch floor, bites and a drink. House of Brand, in person, for one afternoon.\n\nSaturday, November 7th, 4pm, Buckhead. $35. {door}\n\nDrop a 🙋🏾 if you're in.",
+   "threads": "this is a room you want to be in. Connect & Cultivate, Sat Nov 7, 4pm, Buckhead. $35, 60 seats. {door}",
+   "hashtags": "#connectandcultivate #houseofbrand #atlantaentrepreneurs #buildyourbrand #networkingatlanta"
+  },
+  {
+   "id": "d05-pm",
+   "date": "2026-10-27",
+   "slot": "19:15",
+   "kind": "moment",
+   "door": "cc",
+   "slides": [
+    {
+     "t": "tribe",
+     "lines": [
+      "They met in the house.",
+      "Now they're",
+      "publishing a book."
+     ],
+     "kicker": "True story",
+     "body": "Myron announced on a Thursday call that he's publishing his first book with Mahogany, who runs a publishing company. Both Brand Mates.",
+     "photo": "hob_lobby_group.jpg",
+     "pos": "center 35%",
+     "size": 86
+    }
+   ],
+   "caption": "Myron got on a call and told us he's publishing his first book. His publisher? Mahogany. They met in House of Brand.\n\nThat's what happens when builders are in the same room. November 7th, come be in it. Connect & Cultivate, 4pm, Buckhead. $35. {door}\n\nWho do you need to meet?",
+   "threads": "true story: Myron and Mahogany met in the house. now he's publishing his first book with her. come meet your person Nov 7. 4pm, Buckhead. $35. {door}",
+   "hashtags": "#houseofbrand #connectandcultivate #brandmates #atlantaevents #findyourpeople"
+  },
+  {
+   "id": "d06-am",
+   "date": "2026-10-28",
+   "slot": "09:15",
+   "kind": "invite",
+   "door": "cc",
+   "slides": [
+    {
+     "t": "tribe",
+     "photo": "gen24.jpg",
+     "pos": "center 35%",
+     "lines": [
+      "You don't have",
+      "to build *alone.*"
+     ]
+    }
+   ],
+   "caption": "I built alone for years and called it discipline. It wasn't. It was just lonely, and it was slow.\n\nHouse of Brand exists so nobody has to do that. On November 7th the house meets in person. Come sit with people who are building too. Connect & Cultivate, 4pm, Buckhead, $35. {door}\n\nWhat's the thing you've been carrying by yourself?",
+   "threads": "you don't have to build alone. House of Brand in person, Sat Nov 7, 4pm, Buckhead. $35, 60 seats. {door}",
+   "hashtags": "#connectandcultivate #houseofbrand #atlantaentrepreneurs #buildyourbrand #networkingatlanta"
+  },
+  {
+   "id": "d06-pm",
+   "date": "2026-10-28",
+   "slot": "19:15",
+   "kind": "say",
+   "door": "cc",
+   "slides": [
+    {
+     "t": "say",
+     "lines": [
+      "I needed this today.",
+      "I needed all of this."
+     ],
+     "who": "Krystal",
+     "role": "Brand Mate",
+     "photo": "hob_plaid_talk.jpg",
+     "pos": "center 35%"
+    }
+   ],
+   "caption": "Krystal said this at the end of a lunchtime workshop. Some days the business is heavy and what you need is a room that gets it.\n\nNovember 7th is that room. Connect & Cultivate, 4pm, Buckhead, House of Brand in person. $35. {door}\n\nWhat do you need from a room right now?",
+   "threads": "\"I needed this today. I needed all of this.\" Krystal, Brand Mate. come get what you need Nov 7. 4pm, Buckhead. $35. {door}",
+   "hashtags": "#houseofbrand #connectandcultivate #brandmates #atlantaevents #findyourpeople"
+  },
+  {
+   "id": "d07-am",
+   "date": "2026-10-29",
+   "slot": "09:15",
+   "kind": "invite",
+   "door": "cc",
+   "slides": [
+    {
+     "t": "tribe",
+     "photo": "gen04.jpg",
+     "pos": "center 35%",
+     "lines": [
+      "Trying to grow",
+      "your brand?",
+      "_Start here._"
+     ]
+    }
+   ],
+   "caption": "Your brand doesn't grow on a feed. It grows in rooms where people remember your name.\n\nNovember 7th is that room. Sixty people paying attention, a corner to shoot content, and a floor to say your idea out loud. Connect & Cultivate, 4pm, Buckhead, $35. {door}\n\nWhat's your brand? One sentence. Go.",
+   "threads": "trying to grow your brand? start in a room. Connect & Cultivate, Sat Nov 7, 4pm, Buckhead. $35, 60 seats. {door}",
+   "hashtags": "#connectandcultivate #houseofbrand #atlantaentrepreneurs #buildyourbrand #networkingatlanta"
+  },
+  {
+   "id": "d07-pm",
+   "date": "2026-10-29",
+   "slot": "19:15",
+   "kind": "moment",
+   "door": "cc",
+   "slides": [
+    {
+     "t": "tribe",
+     "lines": [
+      "$400 saved",
+      "in four minutes."
+     ],
+     "kicker": "True story",
+     "body": "Sherry came to a roundtable overwhelmed by a registration service. Four minutes and one link later, she had her answer and kept her money.",
+     "photo": "hob_home_group.jpg",
+     "pos": "center 35%"
+    }
+   ],
+   "caption": "This is what a Thursday night looks like in the house. Somebody comes in stuck, somebody else drops the link, and four minutes later the problem is gone.\n\nNow imagine that at a table. November 7th, Connect & Cultivate, 4pm, Buckhead. $35, 60 seats. {door}\n\nWhat's the thing you've been overpaying for because you didn't know who to ask?",
+   "threads": "true story: $400 saved in four minutes on a Thursday call. that's what a room full of builders does. Nov 7, 4pm, Buckhead. $35. {door}",
+   "hashtags": "#houseofbrand #connectandcultivate #brandmates #atlantaevents #findyourpeople"
+  },
+  {
+   "id": "d08-am",
+   "date": "2026-10-30",
+   "slot": "09:15",
+   "kind": "invite",
+   "door": "cc",
+   "slides": [
+    {
+     "t": "tribe",
+     "photo": "gen18.jpg",
+     "pos": "center 35%",
+     "lines": [
+      "Come alone.",
+      "_Most people do._"
+     ]
+    }
+   ],
+   "caption": "You don't need a plus one. Most people walk in by themselves, and within ten minutes somebody has pulled them into a conversation. That's not luck, that's how we built the afternoon.\n\nConnect & Cultivate. Saturday, November 7th, 4pm, Buckhead. $35. {door}\n\nIf you're coming solo, say so. I'll make sure somebody's looking for you.",
+   "threads": "come alone. most people do. and nobody stays alone for long. Sat Nov 7, 4pm, Buckhead. $35. {door}",
+   "hashtags": "#connectandcultivate #houseofbrand #atlantaentrepreneurs #buildyourbrand #networkingatlanta"
+  },
+  {
+   "id": "d08-pm",
+   "date": "2026-10-30",
+   "slot": "19:15",
+   "kind": "say",
+   "door": "cc",
+   "slides": [
+    {
+     "t": "say",
+     "lines": [
+      "Me and the sisters",
+      "met last week",
+      "without you. We want",
+      "to keep being in it."
+     ],
+     "who": "Adesanya",
+     "role": "Brand Mate",
+     "photo": "hob_bar_three.jpg",
+     "pos": "center 35%"
+    }
+   ],
+   "caption": "Adesanya said this to me on the last night of our 8-week cohort. They met on their own, without me, because they didn't want it to end.\n\nThat's the house. On November 7th you can meet it in person. Connect & Cultivate, 4pm, Buckhead. $35, 60 seats. {door}\n\nTag the people you'd keep meeting with.",
+   "threads": "\"me and the sisters met last week without you. we want to keep being in it.\" Adesanya, Brand Mate. this is the house. Nov 7, 4pm, Buckhead. $35. {door}",
+   "hashtags": "#houseofbrand #connectandcultivate #brandmates #atlantaevents #findyourpeople"
+  },
+  {
+   "id": "d09-am",
+   "date": "2026-10-31",
+   "slot": "09:15",
+   "kind": "invite",
+   "door": "cc",
+   "slides": [
+    {
+     "t": "tribe",
+     "photo": "gen12.jpg",
+     "pos": "center 35%",
+     "lines": [
+      "Introverts welcome.",
+      "_We planned_",
+      "_for you._"
+     ]
+    }
+   ],
+   "caption": "If walking into a room of strangers makes your stomach turn, this was built with you in mind.\n\nEvery room has a host. The conversations are set up on purpose. Nobody is going to make you work the room. The room comes to you.\n\nNovember 7th, 4pm, Buckhead. $35. {door}\n\nIntroverts, let me hear from you. 🙋🏾",
+   "threads": "introverts welcome. we planned for you. every room has a host, nobody works the room. Sat Nov 7, 4pm, Buckhead. $35. {door}",
+   "hashtags": "#connectandcultivate #houseofbrand #atlantaentrepreneurs #buildyourbrand #networkingatlanta"
+  },
+  {
+   "id": "d09-pm",
+   "date": "2026-10-31",
+   "slot": "19:15",
+   "kind": "moment",
+   "door": "cc",
+   "slides": [
+    {
+     "t": "tribe",
+     "lines": [
+      "There's a win wall.",
+      "Bring something for it."
+     ],
+     "kicker": "In the house",
+     "body": "Brand Mates post their wins and the whole house gives them their flowers. Come get yours.",
+     "photo": "hob_window_talk.jpg",
+     "pos": "center 35%"
+    }
+   ],
+   "caption": "In the house we've got a win wall. You post it, everybody gives you your flowers. It's one of my favorite things we do.\n\nOn November 7th the win wall is live and in person. Bring a win, any size. Connect & Cultivate, 4pm, Buckhead. $35. {door}\n\nWhat's a win you haven't told anybody about yet?",
+   "threads": "there's a win wall in the house. you post it, everybody gives you your flowers. Nov 7 it's in person. 4pm, Buckhead. $35. {door}",
+   "hashtags": "#houseofbrand #connectandcultivate #brandmates #atlantaevents #findyourpeople"
+  },
+  {
+   "id": "d10-am",
+   "date": "2026-11-01",
+   "slot": "09:15",
+   "kind": "invite",
+   "door": "cc",
+   "slides": [
+    {
+     "t": "tribe",
+     "photo": "gen10.jpg",
+     "pos": "center 35%",
+     "lines": [
+      "Pull up",
+      "_a chair._"
+     ]
+    }
+   ],
+   "caption": "That's it. That's the invite.\n\nHouse of Brand, in person. Saturday, November 7th, 4pm, Buckhead. Bites, a drink, sixty people building. $35, none at the door. {door}\n\nSee you there?",
+   "threads": "pull up a chair. House of Brand in person, Sat Nov 7, 4pm, Buckhead. $35, 60 seats. {door}",
+   "hashtags": "#connectandcultivate #houseofbrand #atlantaentrepreneurs #buildyourbrand #networkingatlanta"
+  },
+  {
+   "id": "d10-pm",
+   "date": "2026-11-01",
+   "slot": "19:15",
+   "kind": "say",
+   "door": "cc",
+   "slides": [
+    {
+     "t": "say",
+     "lines": [
+      "I'm so glad",
+      "that I did not fold."
+     ],
+     "who": "Mahogany",
+     "role": "Brand Mate",
+     "photo": "hob_walk.jpg",
+     "pos": "center 35%"
+    }
+   ],
+   "caption": "Mahogany held her price with a client who was hesitating. She gave them space. Sunday morning the message came in: send me the invoice.\n\nShe told that story to the whole house. That's what the room is for. November 7th, Connect & Cultivate, 4pm, Buckhead. $35. {door}\n\nWhen's the last time you almost folded and didn't?",
+   "threads": "\"I'm so glad that I did not fold.\" Mahogany held her price and the client said send the invoice. stories like this are why we meet. Nov 7, 4pm, Buckhead. $35. {door}",
+   "hashtags": "#houseofbrand #connectandcultivate #brandmates #atlantaevents #findyourpeople"
+  },
+  {
+   "id": "d11-am",
+   "date": "2026-11-02",
+   "slot": "09:15",
+   "kind": "invite",
+   "door": "cc",
+   "slides": [
+    {
+     "t": "tribe",
+     "photo": "gen27.jpg",
+     "pos": "center 35%",
+     "lines": [
+      "Not a mixer.",
+      "*A table.*"
+     ]
+    }
+   ],
+   "caption": "The difference is simple. At a mixer you stand. At a table you sit down and actually talk.\n\nConnect & Cultivate is a table. Sixty seats, somebody hosting each one, and conversations with a point. Saturday, November 7th, 4pm, Buckhead. $35. {door}\n\nWhen's the last time you left a networking event with somebody you actually called?",
+   "threads": "not a mixer. a table. Connect & Cultivate, Sat Nov 7, 4pm, Buckhead. $35, 60 seats. {door}",
+   "hashtags": "#connectandcultivate #houseofbrand #atlantaentrepreneurs #buildyourbrand #networkingatlanta"
+  },
+  {
+   "id": "d11-pm",
+   "date": "2026-11-02",
+   "slot": "19:15",
+   "kind": "moment",
+   "door": "cc",
+   "slides": [
+    {
+     "t": "tribe",
+     "lines": [
+      "One house party",
+      "drink is on us."
+     ],
+     "kicker": "The vibe",
+     "body": "Bites, a specialty drink with your ticket, music, and sixty people building. A house party with a point.",
+     "photo": "hob_rod_selfie.jpg",
+     "pos": "center 35%"
+    }
+   ],
+   "caption": "Let me tell you what the afternoon actually feels like. It's a house party. There's a specialty drink with your ticket, bites to pick at, and a room full of people who are building something.\n\nThe difference is every conversation has a point. Connect & Cultivate, November 7th, 4pm, Buckhead. $35. {door}\n\nWhat should the house drink be? Taking suggestions.",
+   "threads": "one house party drink is on us. bites, music, sixty people building. a house party with a point. Nov 7, 4pm, Buckhead. $35. {door}",
+   "hashtags": "#houseofbrand #connectandcultivate #brandmates #atlantaevents #findyourpeople"
+  },
+  {
+   "id": "d12-am",
+   "date": "2026-11-03",
+   "slot": "09:15",
+   "kind": "invite",
+   "door": "cc",
+   "slides": [
+    {
+     "t": "tribe",
+     "photo": "gen16.jpg",
+     "pos": "center 35%",
+     "lines": [
+      "Walk in a stranger.",
+      "_Walk out_",
+      "_with people._"
+     ]
+    }
+   ],
+   "caption": "That's the promise, and it's one we can actually keep because the afternoon is built for it.\n\nHouse of Brand in person. November 7th, 4pm, Buckhead. $35, 60 seats. {door}\n\nWho do you wish you'd met a year ago?",
+   "threads": "walk in a stranger. walk out with people. Sat Nov 7, 4pm, Buckhead. $35, 60 seats. {door}",
+   "hashtags": "#connectandcultivate #houseofbrand #atlantaentrepreneurs #buildyourbrand #networkingatlanta"
+  },
+  {
+   "id": "d12-pm",
+   "date": "2026-11-03",
+   "slot": "19:15",
+   "kind": "say",
+   "door": "cc",
+   "slides": [
+    {
+     "t": "say",
+     "lines": [
+      "I'm definitely",
+      "more clear now",
+      "than I was when",
+      "we started."
+     ],
+     "who": "Sherry",
+     "role": "Brand Mate",
+     "photo": "hob_hug.jpg",
+     "pos": "center 35%"
+    }
+   ],
+   "caption": "Sherry, at the end of eight weeks with the house. Clear is the whole point.\n\nIf you're building something and it still feels foggy, come sit with people who've been where you are. Connect & Cultivate, November 7th, 4pm, Buckhead. $35. {door}\n\nWhat would clear look like for you?",
+   "threads": "\"I'm definitely more clear now than I was when we started.\" Sherry, Brand Mate. come get clear Nov 7. 4pm, Buckhead. $35. {door}",
+   "hashtags": "#houseofbrand #connectandcultivate #brandmates #atlantaevents #findyourpeople"
+  },
+  {
+   "id": "d13-am",
+   "date": "2026-11-04",
+   "slot": "09:15",
+   "kind": "invite",
+   "door": "cc",
+   "slides": [
+    {
+     "t": "tribe",
+     "photo": "gen14.jpg",
+     "pos": "center 35%",
+     "lines": [
+      "Say your idea",
+      "out loud.",
+      "_We'll listen._"
+     ]
+    }
+   ],
+   "caption": "You've been practicing it in the car. In the mirror. In your head at 2am.\n\nOn November 7th there's a floor for it and a room that wants you to land it. Connect & Cultivate, 4pm, Buckhead, $35. {door}\n\nWhat's the idea? Give me one line.",
+   "threads": "say your idea out loud. we'll listen. there's a floor for it Nov 7. 4pm, Buckhead. $35. {door}",
+   "hashtags": "#connectandcultivate #houseofbrand #atlantaentrepreneurs #buildyourbrand #networkingatlanta"
+  },
+  {
+   "id": "d13-pm",
+   "date": "2026-11-04",
+   "slot": "19:15",
+   "kind": "moment",
+   "door": "cc",
+   "slides": [
+    {
+     "t": "tribe",
+     "lines": [
+      "Nothing worth building",
+      "was ever built",
+      "by one person."
+     ],
+     "kicker": "Rod Brinson",
+     "body": "I say this on every call. On November 7th I get to say it to your face.",
+     "photo": "hob_gamenight.jpg",
+     "pos": "center 35%"
+    }
+   ],
+   "caption": "I say this to the house every week and I'll keep saying it. Nothing worth building has ever been built by one person alone.\n\nNovember 7th, come build next to somebody. Connect & Cultivate, 4pm, Buckhead, House of Brand in person. $35, 60 seats. {door}\n\nWho's been in your corner?",
+   "threads": "nothing worth building was ever built by one person alone. come build next to somebody. Nov 7, 4pm, Buckhead. $35. {door}",
+   "hashtags": "#houseofbrand #connectandcultivate #brandmates #atlantaevents #findyourpeople"
+  },
+  {
+   "id": "d14-am",
+   "date": "2026-11-05",
+   "slot": "09:15",
+   "kind": "invite",
+   "door": "cc",
+   "slides": [
+    {
+     "t": "tribe",
+     "photo": "gen25.jpg",
+     "pos": "center 35%",
+     "lines": [
+      "House of Brand,",
+      "*in person.*"
+     ]
+    }
+   ],
+   "caption": "Every Thursday night we're on a screen. On November 7th the screen comes down.\n\nConnect & Cultivate. 4pm, Buckhead. Bites, a house party drink on us, a content corner, live pitches, and sixty people who are building. $35, none at the door. {door}\n\nBrand Mates, tag somebody who needs to be in the house.",
+   "threads": "House of Brand, in person. Sat Nov 7, 4pm, Buckhead. $35, 60 seats, none at the door. {door}",
+   "hashtags": "#connectandcultivate #houseofbrand #atlantaentrepreneurs #buildyourbrand #networkingatlanta"
+  },
+  {
+   "id": "d14-pm",
+   "date": "2026-11-05",
+   "slot": "19:15",
+   "kind": "say",
+   "door": "cc",
+   "slides": [
+    {
+     "t": "say",
+     "lines": [
+      "People started saying,",
+      "oh my God,",
+      "I'm not the only one."
+     ],
+     "who": "Dalin",
+     "role": "Brand Mate",
+     "photo": "hob_curtain_group.jpg",
+     "pos": "center 35%"
+    }
+   ],
+   "caption": "Dalin was describing a call where people came on camera one by one and realized they weren't the only ones feeling it.\n\nThat moment happens in person too. Faster. November 7th, Connect & Cultivate, 4pm, Buckhead. $35, 60 seats. {door}\n\nWhat's the thing you thought you were the only one dealing with?",
+   "threads": "\"people started saying, oh my God, I'm not the only one.\" Dalin, on a House of Brand call. come find out you're not the only one. Nov 7, 4pm, Buckhead. $35. {door}",
+   "hashtags": "#houseofbrand #connectandcultivate #brandmates #atlantaevents #findyourpeople"
+  },
+  {
+   "id": "d15-am",
+   "date": "2026-11-06",
+   "slot": "09:15",
+   "kind": "say",
+   "door": "cc",
+   "slides": [
+    {
+     "t": "say",
+     "lines": [
+      "We need this.",
+      "I need this more",
+      "than ever today."
+     ],
+     "who": "Krystal",
+     "role": "Brand Mate",
+     "photo": "hob_laptop_women.jpg",
+     "pos": "center 35%"
+    }
+   ],
+   "caption": "Krystal said this walking into a game night. Not a workshop. A game night.\n\nBecause sometimes what you need from a community is to laugh with people who get it. November 7th has both. Connect & Cultivate, 4pm, Buckhead. $35. {door}\n\nWhat do you need more than ever right now?",
+   "threads": "\"we need this. I need this more than ever today.\" Krystal, walking into a House of Brand game night. Nov 7, 4pm, Buckhead. $35. {door}",
+   "hashtags": "#houseofbrand #connectandcultivate #brandmates #atlantaevents #findyourpeople"
+  },
+  {
+   "id": "d15-pm",
+   "date": "2026-11-06",
+   "slot": "19:15",
+   "kind": "moment",
+   "door": "cc",
+   "slides": [
+    {
+     "t": "tribe",
+     "lines": [
+      "13 of them went",
+      "to a concert together",
+      "the next day."
+     ],
+     "kicker": "True story",
+     "body": "After our last meetup, a group of ladies who'd just met went to a Tasha Cobbs concert together the following night.",
+     "photo": "hob_two_men_bar.jpg",
+     "pos": "center 35%"
+    }
+   ],
+   "caption": "After the last meetup, thirteen ladies who had just met went to a concert together the next night. Some of them had never been in the same room before Saturday.\n\nThat's not networking. That's your people. November 7th, Connect & Cultivate, 4pm, Buckhead. $35. {door}\n\nWho are you bringing?",
+   "threads": "true story: after our last meetup, 13 ladies who'd just met went to a concert together the next night. that's your people. Nov 7, 4pm, Buckhead. $35. {door}",
+   "hashtags": "#houseofbrand #connectandcultivate #brandmates #atlantaevents #findyourpeople"
+  },
+  {
+   "id": "d16-am",
+   "date": "2026-11-07",
+   "slot": "09:15",
+   "kind": "say",
+   "door": "cc",
+   "slides": [
+    {
+     "t": "say",
+     "lines": [
+      "You invested",
+      "in yourselves."
+     ],
+     "who": "Dalin",
+     "role": "Guest coach",
+     "photo": "hob_coffee_selfie.jpg",
+     "pos": "center 35%",
+     "join": "*Today.* Doors at 4pm. Link in bio."
+    }
+   ],
+   "caption": "Dalin, our guest coach, said this to the house: you didn't invest in Rod, you invested in yourselves.\n\n$35 and a Saturday afternoon. That's the investment. Connect & Cultivate, November 7th, 4pm, Buckhead. 60 seats. {door}\n\nWhen's the last time you spent money on yourself and not the business?",
+   "threads": "\"you invested in yourselves.\" Dalin, guest coach, to the house. $35 and a Saturday. Nov 7, 4pm, Buckhead. {door}",
+   "hashtags": "#houseofbrand #connectandcultivate #brandmates #atlantaevents #findyourpeople"
+  },
+  {
+   "id": "d16-pm",
+   "date": "2026-11-07",
+   "slot": "13:30",
+   "kind": "say",
+   "door": "cc",
+   "slides": [
+    {
+     "t": "say",
+     "lines": [
+      "It's been",
+      "life-changing for me."
+     ],
+     "who": "Adesanya",
+     "role": "Brand Mate",
+     "photo": "hob_home_group.jpg",
+     "pos": "center 35%",
+     "join": "*Today.* Doors at 4pm. Link in bio."
+    }
+   ],
+   "caption": "Adesanya's words, not mine. She said it wasn't bells and whistles, it was a couple of things that hit her right in the gut.\n\nThat's what happens when you stop building by yourself. Connect & Cultivate, November 7th, 4pm, Buckhead. House of Brand in person. $35. {door}\n\nCome see for yourself.",
+   "threads": "\"it's been life-changing for me.\" Adesanya, Brand Mate. House of Brand in person, Nov 7, 4pm, Buckhead. $35. {door}",
+   "hashtags": "#houseofbrand #connectandcultivate #brandmates #atlantaevents #findyourpeople"
   }
  ]
 }
