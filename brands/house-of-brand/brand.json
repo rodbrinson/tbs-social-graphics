@@ -2,18 +2,17 @@
  "slug": "house-of-brand",
  "name": "House of Brand",
  "metricool": {
-  "blogId": "6295498",
+  "blogId": "6405129",
   "timezone": "America/New_York",
   "utc_offset_std": "-05:00",
   "utc_offset_dst": "-04:00",
   "networks": [
    "instagram",
    "facebook",
-   "linkedin",
    "threads"
   ],
   "instagram_collaborators": [
-   "houseofbrandcommunity"
+   "rod.brinson"
   ]
  },
  "handles": {
