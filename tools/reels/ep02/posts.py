@@ -5,11 +5,15 @@ usage: python3 posts.py payloads <day-index 0..5>   -> one JSON line per network
        python3 posts.py check                       -> length and style checks
 """
 import json
+import os
 import re
 import sys
 
 EP = 'https://www.youtube.com/watch?v=YkNW-ihYpQg'
-HOST = 'https://raw.githubusercontent.com/rodbrinson/tbs-social-graphics/main/2026-11/reels'
+# raw.githubusercontent.com caches a branch path for about five minutes. When a reel is replaced under the same
+# name, set REELS_REF to the new commit SHA so Metricool fetches the new file and not the cached one.
+REF = os.environ.get('REELS_REF', 'main')
+HOST = f'https://raw.githubusercontent.com/rodbrinson/tbs-social-graphics/{REF}/2026-11/reels'
 TZ = 'America/New_York'
 IG_CTA = 'The full episode is on YouTube. Search @rod.brinson'
 

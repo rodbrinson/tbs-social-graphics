@@ -1,6 +1,7 @@
-"""Render an Episode 2 reel: voice + ducked music bed, hook card, word captions, progress bar.
+"""Render an Episode 2 reel: his voice, hook card, word captions, progress bar. No music since Nov 17 (USE_MUSIC).
 
 usage: python3 render.py <clip> [--test SECONDS]      (run from /home/claude/wm)
+       python3 render.py --swap-audio RENDERED_DIR OUT_DIR <clip> ...   (new sound, same picture)
 The end card that is already on the clip is left alone; everything added fades out with the clip's own crossfade.
 """
 import json
@@ -17,6 +18,7 @@ MUSIC = ('/mnt/user-data/uploads/Podcast Episodes/Music/inspiring-hip-hop-ambien
 MUSIC_LUFS = -8.5        # measured
 BED_LUFS = -25.0         # bed level before ducking; lands near -28 dBFS in his pauses, as in the Episode 1 reels
 TARGET_LUFS = -14.0
+USE_MUSIC = False        # Rod, Nov 17: "lets do these clips without the music". True brings the bed back.
 HOOK_Y = 98              # card top lands at y=112, where the Episode 1 hook cards sat
 
 
@@ -33,11 +35,20 @@ def loudness(path):
     return i, pk
 
 
-def mix_audio(k):
+def mix_audio(k, music=None):
+    """Write mix/<k>.wav: his voice at the target level, with the ducked bed only when music is on."""
     body = CLIPS[k]['body']
     src = f'{WM}/src/{k}.mp4'
+    out = f'{WM}/mix/{k}.wav'
     i, _ = loudness(src)
     gain = TARGET_LUFS - i
+    if not (USE_MUSIC if music is None else music):
+        # voice only: the same gain and limiter the music mix used, so his level does not change
+        fc = (f"[0:a]aresample=48000,volume={gain:.2f}dB,"
+              "alimiter=limit=0.89:attack=5:release=60:level=disabled[a]")
+        run(['ffmpeg', '-y', '-v', 'error', '-i', src, '-filter_complex', fc, '-map', '[a]',
+             '-ar', '48000', '-ac', '2', '-c:a', 'pcm_s16le', out])
+        return dict(src_lufs=i, gain=round(gain, 2), music=False, out_lufs=loudness(out))
     bed = BED_LUFS - MUSIC_LUFS
     fo_st = body - 1.3
     if body <= 112:
@@ -56,9 +67,15 @@ def mix_audio(k):
     fc = (f"[0:a]aresample=48000,volume={gain:.2f}dB,asplit=2[v][key];" + music +
           ";[m][key]sidechaincompress=threshold=0.05:ratio=3:attack=20:release=300:makeup=1[duck];"
           "[v][duck]amix=inputs=2:normalize=0:duration=first,alimiter=limit=0.89:attack=5:release=60:level=disabled[a]")
-    out = f'{WM}/mix/{k}.wav'
     run(['ffmpeg', '-y', '-v', 'error', '-i', src, *ins, '-filter_complex', fc, '-map', '[a]', '-ar', '48000', '-ac', '2', '-c:a', 'pcm_s16le', out])
-    return dict(src_lufs=i, gain=round(gain, 2), out_lufs=loudness(out))
+    return dict(src_lufs=i, gain=round(gain, 2), music=True, out_lufs=loudness(out))
+
+
+def swap_audio(k, video, out):
+    """Put mix/<k>.wav on a reel that is already rendered. The picture is copied, not re-encoded."""
+    run(['ffmpeg', '-y', '-v', 'error', '-i', video, '-i', f'{WM}/mix/{k}.wav', '-map', '0:v', '-map', '1:a',
+         '-c:v', 'copy', '-c:a', 'aac', '-b:a', '192k', '-ar', '48000', '-movflags', '+faststart', out])
+    return out
 
 
 def render(k, test=None):
@@ -101,6 +118,18 @@ if __name__ == '__main__':
         j = args.index('--test')
         test = float(args[j + 1])
         args = args[:j] + args[j + 2:]
+    if '--swap-audio' in args:
+        # new sound on reels that are already rendered:
+        #   python3 render.py --swap-audio RENDERED_DIR OUT_DIR c1 c2 ...
+        j = args.index('--swap-audio')
+        src_dir, out_dir, keys = args[j + 1], args[j + 2], args[j + 3:]
+        os.makedirs(out_dir, exist_ok=True)
+        for k in keys:
+            a = mix_audio(k)
+            name = f'ep02-clip{int(k[1:]):02d}.mp4'
+            o = swap_audio(k, f'{src_dir}/{name}', f'{out_dir}/{name}')
+            print(k, json.dumps(a), o, flush=True)
+        sys.exit(0)
     for k in args:
         t0 = time.time()
         a = mix_audio(k)
