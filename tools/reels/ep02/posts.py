@@ -167,7 +167,7 @@ CLIPS = {
     4: dict(
         name='The Company That Laid Me Off Hired My Company',
         title='The Company That Laid Me Off Hired My Company',
-        tiktok_title='They laid me off, then hired me',
+        tiktok_title='They hired my company',
         threads=(
             "The same company that laid me off hired MY company.\n\n"
             "A lady I connected with before I left went quiet on me for six months. Then she liked one of my posts, "
